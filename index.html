@@ -1,9 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<title>Teste</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPERAÇÃO YUSEN - EXPEDIÇÃO</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+body{
+background:#001B5E;
+font-family:Arial, sans-serif;
+color:white;
+}
+.header{
+padding:20px;
+text-align:center;
+background:#001447;
+}
+.header h1{
+font-size:50px;
+}
+.header p{
+font-size:24px;
+margin-top:10px;
+}
+.section{
+margin:20px;
+border-radius:10px;
+overflow:hidden;
+}
+.section-title{
+background:#FFC107;
+color:#000;
+text-align:center;
+font-size:32px;
+font-weight:bold;
+padding:10px;
+}
+table{
+width:100%;
+border-collapse:collapse;
+}
+th{
+background:#003DA5;
+color:white;
+font-size:28px;
+padding:15px;
+}
+td{
+font-size:26px;
+padding:15px;
+text-align:center;
+font-weight:bold;
+}
+.atrasado{
+background:#D32F2F;
+}
+.carregamento{
+background:#F9A825;
+color:black;
+}
+.carregado{
+background:#2E7D32;
+}
+.transito{
+background:#1976D2;
+}
+.patio{
+background:#616161;
+}
+.footer{
+text-align:center;
+padding:20px;
+font-size:22px;
+}
+</style>
 </head>
-<body style="background:blue;color:white;">
-<h1>OPERAÇÃO YUSEN</h1>
+<body>
+<div class="header">
+<h1>OPERAÇÃO YUSEN - EXPEDIÇÃO</h1>
+<p id="relogio"></p>
+</div>
+<div class="section">
+<div class="section-title">
+ENERGY
+</div>
+<table>
+<tr>
+<th>TRANSPORTADORA</th>
+<th>VEÍCULO</th>
+<th>JANELA</th>
+<th>STATUS</th>
+</tr>
+<tr class="atrasado">
+<td>REITER</td>
+<td>TRUCK</td>
+<td>09:30</td>
+<td>ATRASADO</td>
+</tr>
+<tr class="carregamento">
+<td>KAIZEN</td>
+<td>VAN</td>
+<td>10:00</td>
+<td>EM CARREGAMENTO</td>
+</tr>
+<tr class="atrasado">
+<td>MMA</td>
+<td>VUC</td>
+<td>11:00</td>
+<td>ATRASADO</td>
+</tr>
+<tr class="carregado">
+<td>MANDALA</td>
+<td>TRUCK</td>
+<td>12:00</td>
+<td>CARREGADO</td>
+</tr>
+<tr class="patio">
+<td>MONFREDINI</td>
+<td>TRUCK</td>
+<td>14:00</td>
+<td>NO PÁTIO</td>
+</tr>
+<tr class="transito">
+<td>LLS</td>
+<td>TRUCK</td>
+<td>14:30</td>
+<td>EM TRÂNSITO</td>
+</tr>
+</table>
+</div>
+<div class="section">
+<div class="section-title">
+AUTOMOTIVO
+</div>
+<table>
+<tr>
+<th>TRANSPORTADORA</th>
+<th>VEÍCULO</th>
+<th>JANELA</th>
+<th>STATUS</th>
+</tr>
+<tr class="carregado">
+<td>LSL HONDA</td>
+<td>CARRETA</td>
+<td>10:00</td>
+<td>CARREGADO</td>
+</tr>
+<tr class="carregado">
+<td>VELOCE</td>
+<td>CARRETA</td>
+<td>10:00</td>
+<td>CARREGADO</td>
+</tr>
+</table>
+</div>
+<div class="footer">
+Atualização automática a cada minuto
+</div>
+<script>
+function atualizarRelogio() {
+const agora = new Date();
+document.getElementById("relogio").innerHTML =
+agora.toLocaleDateString('pt-BR') +
+' - ' +
+agora.toLocaleTimeString('pt-BR');
+}
+atualizarRelogio();
+setInterval(atualizarRelogio,1000);
+</script>
 </body>
 </html>

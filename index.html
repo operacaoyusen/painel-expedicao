@@ -18,8 +18,23 @@ body{
 
 .header{
   background:#001447;
+  padding:20px 30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.header-logo{
+  width:140px;
+  height:auto;
+  display:block;
+  filter: drop-shadow(0 0 2px rgba(255,255,255,0.3));
+}
+
+.header-text{
+  flex:1;
   text-align:center;
-  padding:20px;
 }
 
 .header h1{
@@ -139,8 +154,16 @@ td{
 <body>
 
 <div class="header">
-  <h1>OPERAÇÃO YUSEN - EXPEDIÇÃO</h1>
-  <div id="relogio"></div>
+  <img
+    src="https://vectorez.biz.id/wp-content/uploads/2023/10/Logo-Yusen-Logistik-1.png"
+    alt="Yusen Logistik"
+    class="header-logo"
+  >
+
+  <div class="header-text">
+    <h1>OPERAÇÃO YUSEN - EXPEDIÇÃO</h1>
+    <div id="relogio"></div>
+  </div>
 </div>
 
 <div class="kpis" id="painelKpi"></div>

@@ -233,6 +233,7 @@ async function carregarDados(){
       <th>TRANSPORTADORA</th>
       <th>VEÍCULO</th>
       <th>JANELA</th>
+      <th>PESO</th>
       <th>STATUS</th>
       </tr>
       `;
@@ -247,7 +248,7 @@ async function carregarDados(){
       colunas[0] !== "OPERAÇÃO YUSEN - EXPEDIÇÃO PANASONIC SJC"
     ){
 
-      let status=(colunas[3] || "").toUpperCase();
+      let status=(colunas[4] || "").toUpperCase();
 
       let classe="";
 
@@ -294,6 +295,7 @@ async function carregarDados(){
       <td>${colunas[1] || ""}</td>
       <td>${colunas[2] || ""}</td>
       <td>${colunas[3] || ""}</td>
+      <td>${colunas[4] || ""}</td>
       </tr>
       `;
     }

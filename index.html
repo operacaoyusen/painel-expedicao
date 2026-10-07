@@ -112,15 +112,15 @@ color:white;
 }
 
 .carregado{
-background:#2E7D32;
+background:#0BF311;
 }
 
 .aguardando{
-background:#9E9E9E;
+background:#0000CC;
 }
 
 .patio{
-background:#FFC107;
+background:#E8FA04;
 color:black;
 }
 
@@ -218,7 +218,7 @@ continue;
 if(
 colunas[0] &&
 colunas[0] !== "TRANSPORTADORA" &&
-colunas[0] !== "OPERAÇÃO YUSEN - EXPEDIÇÃO"
+colunas[0] !== "OPERAÇÃO YUSEN - EXPEDIÇÃO PANASONIC SJC"
 ){
 
 let status=(colunas[3] || "").toUpperCase();
@@ -294,7 +294,7 @@ document.getElementById("painelKpi").innerHTML = `
 </div>
 
 <div class="kpi kpi-carregamento">
-🟪 CARREGANDO: ${carregamento}
+📦 CARREGANDO: ${carregamento}
 </div>
 
 <div class="kpi kpi-carregado">

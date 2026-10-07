@@ -55,13 +55,19 @@ body{
   box-shadow: var(--shadow);
 }
 
-.header-brand,
-.header-brand-right{
-  width: 140px;
+.header-brand{
+  width: 180px;
   display:flex;
   align-items:center;
   justify-content:center;
   flex-shrink: 0;
+}
+
+.brand-stack{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
 }
 
 .header-logo,
@@ -73,7 +79,7 @@ body{
 }
 
 .header-logo-right {
-  width: 150px;
+  width: 130px;
   filter: none;
   background: transparent;
 }
@@ -231,8 +237,7 @@ tr.patio td {
     text-align:center;
   }
 
-  .header-brand,
-  .header-brand-right {
+  .header-brand {
     width:auto;
   }
 
@@ -264,24 +269,23 @@ tr.patio td {
 
 <div class="header">
   <div class="header-brand">
-    <img
-      src="https://vectorez.biz.id/wp-content/uploads/2023/10/Logo-Yusen-Logistik-1.png"
-      alt="Yusen Logistik"
-      class="header-logo"
-    >
+    <div class="brand-stack">
+      <img
+        src="https://vectorez.biz.id/wp-content/uploads/2023/10/Logo-Yusen-Logistik-1.png"
+        alt="Yusen Logistik"
+        class="header-logo"
+      >
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/019/909/647/large_2x/panasonic-transparent-panasonic-free-free-png.png"
+        alt="Panasonic"
+        class="header-logo-right"
+      >
+    </div>
   </div>
 
   <div class="header-text">
     <h1>OPERAÇÃO YUSEN - PANASONIC SJC</h1>
     <div id="relogio"></div>
-  </div>
-
-  <div class="header-brand-right">
-    <img
-      src="https://static.vecteezy.com/system/resources/previews/019/909/647/large_2x/panasonic-transparent-panasonic-free-free-png.png"
-      alt="Panasonic"
-      class="header-logo-right"
-    >
   </div>
 </div>
 

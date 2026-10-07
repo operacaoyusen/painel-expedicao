@@ -55,11 +55,29 @@ body{
   box-shadow: var(--shadow);
 }
 
+.header-brand,
+.header-brand-right{
+  width: 170px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
 .header-logo{
   width:170px;
   height:auto;
   display:block;
   filter: drop-shadow(0 6px 18px rgba(7, 15, 20, 0.35));
+}
+
+.header-brand-right .header-logo-right{
+  width:170px;
+  height:auto;
+  display:block;
+  filter: drop-shadow(0 6px 18px rgba(7, 15, 20, 0.35));
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 6px 10px;
 }
 
 .header-text{
@@ -199,7 +217,13 @@ tr.atrasado td {
     text-align:center;
   }
 
-  .header-logo {
+  .header-brand,
+  .header-brand-right {
+    width:auto;
+  }
+
+  .header-logo,
+  .header-brand-right .header-logo-right {
     width:120px;
   }
 
@@ -225,15 +249,25 @@ tr.atrasado td {
 <body>
 
 <div class="header">
-  <img
-    src="https://vectorez.biz.id/wp-content/uploads/2023/10/Logo-Yusen-Logistik-1.png"
-    alt="Yusen Logistik"
-    class="header-logo"
-  >
+  <div class="header-brand">
+    <img
+      src="https://vectorez.biz.id/wp-content/uploads/2023/10/Logo-Yusen-Logistik-1.png"
+      alt="Yusen Logistik"
+      class="header-logo"
+    >
+  </div>
 
   <div class="header-text">
-    <h1>OPERAÇÃO YUSEN - EXPEDIÇÃO</h1>
+    <h1>OPERAÇÃO YUSEN - PANASONIC SJC</h1>
     <div id="relogio"></div>
+  </div>
+
+  <div class="header-brand-right">
+    <img
+      src="https://static.vecteezy.com/system/resources/previews/022/424/400/original/panasonic-logo-editorial-free-vector.jpg"
+      alt="Panasonic"
+      class="header-logo-right"
+    >
   </div>
 </div>
 

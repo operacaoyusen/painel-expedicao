@@ -13,7 +13,7 @@
   --bg-2: #0d233f;
   --panel: rgba(10, 24, 42, 0.9);
   --panel-strong: #122c4a;
-  --header: linear-gradient(90deg, #0f2d5c 0%, #0c2347 30%, #0b1e39 100%);
+  --header: linear-gradient(90deg, #1a3a52 0%, #0f2d45 30%, #0a1f38 100%);
   --line: rgba(255,255,255,0.08);
   --text: #edf4ff;
   --muted: #bfd0ea;
@@ -298,7 +298,7 @@ function statusEmoticon(status) {
   if (s.includes("CARREGANDO") || s.includes("CARREGAMENTO")) return "📦 CARREGANDO";
   if (s.includes("CARREGADO") || s.includes("FINALIZADO")) return "✅ CARREGADO";
   if (s.includes("AGUARDANDO")) return "🚚 AGUARDANDO";
-  if (s.includes("PATIO") || s.includes("NO PATIO")) return "🏭 NO PÁTIO";
+  if (s.includes("PATIO") || s.includes("NO PATIO")) return "🚚 AGUARDANDO";
   return status || "";
 }
 
@@ -436,16 +436,12 @@ async function carregarDados(){
 
   document.getElementById("painelKpi").innerHTML = `
 
-  <div class="kpi kpi-aguardando">
-  🚚 AGUARDANDO VEÍCULO: ${aguardando}
-  </div>
-
   <div class="kpi kpi-atrasado">
   🚨 ATRASADOS: ${atrasados}
   </div>
 
   <div class="kpi kpi-patio">
-  🏭 NO PÁTIO: ${patio}
+  🚚 AGUARDANDO: ${patio}
   </div>
 
   <div class="kpi kpi-carregamento">

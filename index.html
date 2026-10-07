@@ -51,12 +51,21 @@ background:#D32F2F;
 }
 
 .kpi-carregamento{
-background:#F9A825;
-color:black;
+background:#8E24AA;
 }
 
 .kpi-carregado{
 background:#2E7D32;
+}
+
+.kpi-aguardando{
+background:#9E9E9E;
+color:white;
+}
+
+.kpi-patio{
+background:#FFC107;
+color:black;
 }
 
 .section{
@@ -98,20 +107,21 @@ background:#D32F2F;
 }
 
 .emcarregamento{
-background:#F9A825;
-color:black;
+background:#8E24AA;
+color:white;
 }
 
 .carregado{
 background:#2E7D32;
 }
 
-.transito{
-background:#1976D2;
+.aguardando{
+background:#9E9E9E;
 }
 
 .patio{
-background:#616161;
+background:#FFC107;
+color:black;
 }
 
 .footer{
@@ -128,11 +138,8 @@ color:#ddd;
 <body>
 
 <div class="header">
-
-<h1>🚚 OPERAÇÃO YUSEN - EXPEDIÇÃO</h1>
-
+<h1> OPERAÇÃO YUSEN - EXPEDIÇÃO</h1>
 <div id="relogio"></div>
-
 </div>
 
 <div class="kpis" id="painelKpi"></div>
@@ -156,7 +163,6 @@ document.getElementById("relogio").innerHTML =
 agora.toLocaleDateString('pt-BR')
 + " - " +
 agora.toLocaleTimeString('pt-BR');
-
 }
 
 setInterval(atualizarRelogio,1000);
@@ -174,6 +180,8 @@ let html = "";
 let atrasados = 0;
 let carregamento = 0;
 let carregados = 0;
+let aguardando = 0;
+let patio = 0;
 
 let tabelaAberta = false;
 
@@ -205,7 +213,6 @@ html += `
 
 tabelaAberta=true;
 continue;
-
 }
 
 if(
@@ -223,7 +230,10 @@ classe="atrasado";
 atrasados++;
 }
 
-else if(status.includes("CARREGAMENTO")){
+else if(
+status.includes("CARREGANDO") ||
+status.includes("CARREGAMENTO")
+){
 classe="emcarregamento";
 carregamento++;
 }
@@ -236,12 +246,20 @@ classe="carregado";
 carregados++;
 }
 
-else if(status.includes("TRANSITO")){
-classe="transito";
+else if(
+status.includes("AGUARDANDO") ||
+status.includes("AGUARDANDO O VEICULO")
+){
+classe="aguardando";
+aguardando++;
 }
 
-else if(status.includes("PATIO")){
+else if(
+status.includes("PATIO") ||
+status.includes("NO PATIO")
+){
 classe="patio";
+patio++;
 }
 
 html += `
@@ -252,9 +270,7 @@ html += `
 <td>${colunas[3] || ""}</td>
 </tr>
 `;
-
 }
-
 }
 
 if(tabelaAberta){
@@ -265,12 +281,20 @@ document.getElementById("conteudo").innerHTML = html;
 
 document.getElementById("painelKpi").innerHTML = `
 
+<div class="kpi kpi-aguardando">
+🚚 AGUARDANDO: ${aguardando}
+</div>
+
+<div class="kpi kpi-patio">
+🏭 NO PÁTIO: ${patio}
+</div>
+
 <div class="kpi kpi-atrasado">
 🚨 ATRASADOS: ${atrasados}
 </div>
 
 <div class="kpi kpi-carregamento">
-📦 CARREGANDO: ${carregamento}
+🟪 CARREGANDO: ${carregamento}
 </div>
 
 <div class="kpi kpi-carregado">
@@ -278,7 +302,6 @@ document.getElementById("painelKpi").innerHTML = `
 </div>
 
 `;
-
 }
 
 carregarDados();

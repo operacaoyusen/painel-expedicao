@@ -210,6 +210,7 @@ async function carregarDados(){
   let patio = 0;
 
   let tabelaAberta = false;
+  let secaoAtual = "";
 
   for(let i=0;i<linhas.length;i++){
 
@@ -218,6 +219,8 @@ async function carregarDados(){
       .map(x=>x.replace(/"/g,"").trim());
 
     if(colunas[0] === "ENERGY" || colunas[0] === "AUTOMOTIVO"){
+
+      secaoAtual = colunas[0];
 
       if(tabelaAberta){
         html += "</table></div>";
@@ -233,7 +236,13 @@ async function carregarDados(){
       <th>TRANSPORTADORA</th>
       <th>VEÍCULO</th>
       <th>JANELA</th>
-      <th>PESO</th>
+      `;
+
+      if(secaoAtual === "ENERGY"){
+        html += "<th>PESO</th>";
+      }
+
+      html += `
       <th>STATUS</th>
       </tr>
       `;
@@ -248,13 +257,20 @@ async function carregarDados(){
       colunas[0] !== "OPERAÇÃO YUSEN - EXPEDIÇÃO PANASONIC SJC"
     ){
 
-      let status=(colunas[4] || "").toUpperCase();
-      let peso = colunas[3] || "";
+      let status = "";
+      let peso = "";
 
-      let classe="";
+      if(secaoAtual === "ENERGY"){
+        status = (colunas[4] || "").toUpperCase();
+        peso = colunas[3] || "";
+      } else {
+        status = (colunas[3] || "").toUpperCase();
+      }
+
+      let classe = "";
 
       if(status.includes("ATRASADO")){
-        classe="atrasado";
+        classe = "atrasado";
         atrasados++;
       }
 
@@ -262,7 +278,7 @@ async function carregarDados(){
         status.includes("CARREGANDO") ||
         status.includes("CARREGAMENTO")
       ){
-        classe="emcarregamento";
+        classe = "emcarregamento";
         carregamento++;
       }
 
@@ -270,7 +286,7 @@ async function carregarDados(){
         status.includes("CARREGADO") ||
         status.includes("FINALIZADO")
       ){
-        classe="carregado";
+        classe = "carregado";
         carregados++;
       }
 
@@ -278,7 +294,7 @@ async function carregarDados(){
         status.includes("AGUARDANDO") ||
         status.includes("AGUARDANDO O VEICULO")
       ){
-        classe="aguardando";
+        classe = "aguardando";
         aguardando++;
       }
 
@@ -286,7 +302,7 @@ async function carregarDados(){
         status.includes("PATIO") ||
         status.includes("NO PATIO")
       ){
-        classe="patio";
+        classe = "patio";
         patio++;
       }
 
@@ -295,8 +311,14 @@ async function carregarDados(){
       <td>${colunas[0]}</td>
       <td>${colunas[1] || ""}</td>
       <td>${colunas[2] || ""}</td>
-      <td>${peso}</td>
-      <td>${colunas[4] || ""}</td>
+      `;
+
+      if(secaoAtual === "ENERGY"){
+        html += `<td>${peso}</td>`;
+      }
+
+      html += `
+      <td>${secaoAtual === "ENERGY" ? (colunas[4] || "") : (colunas[3] || "")}</td>
       </tr>
       `;
     }

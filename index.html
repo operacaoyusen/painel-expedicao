@@ -257,16 +257,22 @@ async function carregarDados(){
       colunas[0] !== "OPERAÇÃO YUSEN - EXPEDIÇÃO PANASONIC SJC"
     ){
 
-      let status = "";
+      let statusIndex = secaoAtual === "ENERGY" ? 4 : 3;
       let peso = "";
 
-      if(secaoAtual === "ENERGY"){
-        status = (colunas[4] || "").toUpperCase();
-        peso = colunas[3] || "";
-      } else {
-        status = (colunas[3] || "").toUpperCase();
+      if(secaoAtual === "AUTOMOTIVO" && colunas.length > 4){
+        const valorQuarto = (colunas[3] || "").trim();
+        const parecePeso = /^\d+[\.,]?\d*$/.test(valorQuarto.replace(/\s/g, ""));
+        if(!parecePeso && (colunas[4] || "").trim()){
+          statusIndex = 4;
+        }
       }
 
+      if(secaoAtual === "ENERGY"){
+        peso = colunas[3] || "";
+      }
+
+      const status = (colunas[statusIndex] || "").toUpperCase();
       let classe = "";
 
       if(status.includes("ATRASADO")){
@@ -318,7 +324,7 @@ async function carregarDados(){
       }
 
       html += `
-      <td>${status}</td>
+      <td>${colunas[statusIndex] || ""}</td>
       </tr>
       `;
     }

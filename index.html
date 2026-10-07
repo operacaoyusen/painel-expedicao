@@ -8,28 +8,58 @@
 
 <style>
 
+:root{
+  --bg: #071b2d;
+  --bg-2: #0d233f;
+  --panel: rgba(10, 24, 42, 0.9);
+  --panel-strong: #122c4a;
+  --header: linear-gradient(90deg, #0f2d5c 0%, #0c2347 30%, #0b1e39 100%);
+  --line: rgba(255,255,255,0.08);
+  --text: #edf4ff;
+  --muted: #bfd0ea;
+  --yellow: #f5c451;
+  --yellow-strong: #ffbf1f;
+  --red: #ef4d5d;
+  --red-strong: #d62b45;
+  --purple: #8a5cf6;
+  --purple-strong: #6d3eea;
+  --green: #1fbf75;
+  --green-strong: #10985d;
+  --blue: #2f7ef7;
+  --blue-strong: #1659d6;
+  --patio: #d9d729;
+  --patio-strong: #b8b61c;
+  --shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+}
+
+* { box-sizing: border-box; }
+
 body{
   margin:0;
-  background:#001B5E;
-  color:white;
+  background:
+    radial-gradient(circle at top, rgba(35, 88, 155, 0.25), transparent 35%),
+    linear-gradient(180deg, var(--bg) 0%, #050f1d 100%);
+  color:var(--text);
   font-family:Arial, sans-serif;
   font-size:14px;
 }
 
 .header{
-  background:#0B2F6F;
-  padding:15px 20px;
+  background: var(--header);
+  padding: 18px 28px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:15px;
+  gap:20px;
+  border-bottom: 1px solid var(--line);
+  box-shadow: var(--shadow);
 }
 
 .header-logo{
   width:170px;
   height:auto;
   display:block;
-  filter: none;
+  filter: drop-shadow(0 6px 18px rgba(7, 15, 20, 0.35));
 }
 
 .header-text{
@@ -41,63 +71,63 @@ body{
   margin:0;
   font-size:38px;
   letter-spacing:0.5px;
+  font-weight:700;
+  text-transform:uppercase;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.28);
 }
 
 #relogio{
   margin-top:8px;
   font-size:20px;
-  color:#EAF0FF;
+  color:var(--muted);
+  letter-spacing:0.5px;
+  font-weight:600;
 }
 
 .kpis{
   display:flex;
   justify-content:center;
-  gap:20px;
-  padding:15px;
+  gap:18px;
+  padding:18px 20px 8px;
   flex-wrap:wrap;
 }
 
 .kpi{
-  padding:12px 20px;
-  border-radius:10px;
+  min-width:200px;
+  padding:16px 20px;
+  border-radius:14px;
   font-size:18px;
-  font-weight:bold;
+  font-weight:700;
+  letter-spacing:0.3px;
+  box-shadow: var(--shadow);
+  border:1px solid rgba(255,255,255,0.08);
+  text-transform:uppercase;
 }
 
-.kpi-atrasado{
-  background:#D32F2F;
-}
-
-.kpi-carregamento{
-  background:#8E24AA;
-}
-
-.kpi-carregado{
-  background:#2E7D32;
-}
-
-.kpi-aguardando{
-  background:#2304DE;
-  color:white;
-}
-
-.kpi-patio{
-  background:#FFC107;
-  color:black;
-}
+.kpi-atrasado{ background:linear-gradient(135deg, var(--red) 0%, var(--red-strong) 100%); }
+.kpi-carregamento{ background:linear-gradient(135deg, var(--purple) 0%, var(--purple-strong) 100%); }
+.kpi-carregado{ background:linear-gradient(135deg, var(--green) 0%, var(--green-strong) 100%); }
+.kpi-aguardando{ background:linear-gradient(135deg, var(--blue) 0%, var(--blue-strong) 100%); }
+.kpi-patio{ background:linear-gradient(135deg, var(--patio) 0%, var(--patio-strong) 100%); color:#111; }
 
 .section{
-  margin:20px;
+  margin:20px 18px 10px;
+  background: rgba(10, 24, 42, 0.62);
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow: var(--shadow);
 }
 
 .section-title{
-  background:#FFC107;
-  color:black;
-  padding:10px;
+  background:linear-gradient(90deg, var(--yellow) 0%, var(--yellow-strong) 100%);
+  color:#0f172a;
+  padding:14px 20px;
   text-align:center;
   font-size:24px;
-  font-weight:bold;
-  border-radius:8px 8px 0 0;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
 }
 
 table{
@@ -105,48 +135,69 @@ table{
   border-collapse:collapse;
 }
 
+thead tr th:first-child,
+tbody tr td:first-child{ border-left:none; }
+
 th{
-  background:#FFC107;
-  color:black;
-  padding:14px;
-  font-size:22px;
-  font-weight:bold;
+  background:rgba(255, 191, 31, 0.13);
+  color:var(--yellow);
+  padding:14px 12px;
+  font-size:18px;
+  font-weight:800;
+  text-transform:uppercase;
+  border-bottom:1px solid var(--line);
+  letter-spacing:0.6px;
 }
 
 td{
-  padding:14px;
+  padding:14px 12px;
   text-align:center;
-  font-size:22px;
-  font-weight:bold;
+  font-size:20px;
+  font-weight:700;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.02);
 }
 
-.atrasado{
-  background:#D32F2F;
-}
+tr:last-child td { border-bottom:none; }
 
-.emcarregamento{
-  background:#8E24AA;
-  color:white;
-}
-
-.carregado{
-  background:#0BF311;
-}
-
-.aguardando{
-  background:#0000CC;
-}
-
-.patio{
-  background:#E8FA04;
-  color:black;
-}
+.atrasado{ background:rgba(239, 77, 93, 0.18); }
+.emcarregamento{ background:rgba(138, 92, 246, 0.18); }
+.carregado{ background:rgba(31, 191, 117, 0.15); }
+.aguardando{ background:rgba(47, 126, 247, 0.18); }
+.patio{ background:rgba(217, 215, 41, 0.18); color:#111; }
 
 .footer{
   text-align:center;
-  padding:20px;
-  font-size:16px;
-  color:#ddd;
+  padding:18px 20px 28px;
+  font-size:15px;
+  color:var(--muted);
+  letter-spacing:0.4px;
+}
+
+@media (max-width: 900px) {
+  .header {
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+
+  .header-logo {
+    width:120px;
+  }
+
+  .header h1 {
+    font-size:28px;
+  }
+
+  th, td {
+    font-size:14px;
+    padding:10px 8px;
+  }
+
+  .kpi {
+    min-width: 160px;
+    font-size:14px;
+  }
 }
 
 </style>
@@ -182,13 +233,9 @@ const csvUrl =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vTN1vOH2C4htkHC3NnXIqy7JcjCe_6mfulx2Qg1NuVR6zB73jYm81QKBbaPbGoBZIjGdvB777wo7TYm/pub?gid=0&single=true&output=csv";
 
 function atualizarRelogio(){
-
   const agora = new Date();
-
   document.getElementById("relogio").innerHTML =
-    agora.toLocaleDateString('pt-BR')
-    + " - " +
-    agora.toLocaleTimeString('pt-BR');
+    agora.toLocaleDateString('pt-BR') + " - " + agora.toLocaleTimeString('pt-BR');
 }
 
 setInterval(atualizarRelogio,1000);
@@ -216,7 +263,7 @@ async function carregarDados(){
 
     let colunas = linhas[i]
       .split(",")
-      .map(x=>x.replace(/"/g,"").trim());
+      .map(x => x.replace(/"/g, "").trim());
 
     if(colunas[0] === "ENERGY" || colunas[0] === "AUTOMOTIVO"){
 
@@ -231,23 +278,16 @@ async function carregarDados(){
       <div class="section-title">${colunas[0]}</div>
 
       <table>
-
       <tr>
       <th>TRANSPORTADORA</th>
       <th>VEÍCULO</th>
       <th>JANELA</th>
-      `;
-
-      if(secaoAtual === "ENERGY"){
-        html += "<th>PESO</th>";
-      }
-
-      html += `
+      ${secaoAtual === "ENERGY" ? "<th>PESO</th>" : ""}
       <th>STATUS</th>
       </tr>
       `;
 
-      tabelaAberta=true;
+      tabelaAberta = true;
       continue;
     }
 
@@ -317,13 +357,7 @@ async function carregarDados(){
       <td>${colunas[0]}</td>
       <td>${colunas[1] || ""}</td>
       <td>${colunas[2] || ""}</td>
-      `;
-
-      if(secaoAtual === "ENERGY"){
-        html += `<td>${peso}</td>`;
-      }
-
-      html += `
+      ${secaoAtual === "ENERGY" ? `<td>${peso}</td>` : ""}
       <td>${colunas[statusIndex] || ""}</td>
       </tr>
       `;
@@ -362,7 +396,6 @@ async function carregarDados(){
 }
 
 carregarDados();
-
 setInterval(carregarDados,30000);
 
 </script>

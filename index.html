@@ -104,7 +104,19 @@ body{
   text-transform:uppercase;
 }
 
-.kpi-atrasado{ background:linear-gradient(135deg, var(--red) 0%, var(--red-strong) 100%); }
+.kpi-atrasado{ 
+  background:linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+  box-shadow: 0 0 20px rgba(255, 68, 68, 0.5), var(--shadow);
+  animation: pulse-alert 2s infinite;
+  font-size: 20px;
+  color: #fff;
+}
+
+@keyframes pulse-alert {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
 .kpi-carregamento{ background:linear-gradient(135deg, var(--purple) 0%, var(--purple-strong) 100%); }
 .kpi-carregado{ background:linear-gradient(135deg, var(--green) 0%, var(--green-strong) 100%); }
 .kpi-aguardando{ background:linear-gradient(135deg, var(--blue) 0%, var(--blue-strong) 100%); }
@@ -160,7 +172,13 @@ td{
 
 tr:last-child td { border-bottom:none; }
 
-.atrasado{ background:rgba(239, 77, 93, 0.18); }
+.atrasado{ 
+  background:rgba(255, 68, 68, 0.25) !important;
+  color: #ff6b6b;
+  font-weight: 900;
+  box-shadow: inset 0 0 10px rgba(255, 68, 68, 0.3);
+}
+
 .emcarregamento{ background:rgba(138, 92, 246, 0.18); }
 .carregado{ background:rgba(31, 191, 117, 0.15); }
 .aguardando{ background:rgba(47, 126, 247, 0.18); }
@@ -373,23 +391,23 @@ async function carregarDados(){
   document.getElementById("painelKpi").innerHTML = `
 
   <div class="kpi kpi-aguardando">
-  🚚 AGUARDANDO VEÍCULO: ${aguardando}
+  🚚 🚚 AGUARDANDO VEÍCULO: ${aguardando}
   </div>
 
   <div class="kpi kpi-atrasado">
-  🚨 ATRASADOS: ${atrasados}
+  🚨 🚨 ATRASADOS: ${atrasados}
   </div>
 
   <div class="kpi kpi-patio">
-  🏭 NO PÁTIO: ${patio}
+  🏭 🏭 NO PÁTIO: ${patio}
   </div>
 
   <div class="kpi kpi-carregamento">
-  📦 CARREGANDO: ${carregamento}
+  📦 📦 CARREGANDO: ${carregamento}
   </div>
 
   <div class="kpi kpi-carregado">
-  ✅ CARREGADOS: ${carregados}
+  ✅ ✅ CARREGADOS: ${carregados}
   </div>
 
   `;

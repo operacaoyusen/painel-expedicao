@@ -249,6 +249,7 @@ async function carregarDados(){
     ){
 
       let status=(colunas[4] || "").toUpperCase();
+      let peso = colunas[3] || "";
 
       let classe="";
 
@@ -294,7 +295,7 @@ async function carregarDados(){
       <td>${colunas[0]}</td>
       <td>${colunas[1] || ""}</td>
       <td>${colunas[2] || ""}</td>
-      <td>${colunas[3] || ""}</td>
+      <td>${peso}</td>
       <td>${colunas[4] || ""}</td>
       </tr>
       `;

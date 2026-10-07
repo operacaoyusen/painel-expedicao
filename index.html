@@ -9,126 +9,127 @@
 <style>
 
 body{
-margin:0;
-background:#001B5E;
-color:white;
-font-family:Arial, sans-serif;
+  margin:0;
+  background:#001B5E;
+  color:white;
+  font-family:Arial, sans-serif;
+  font-size:14px;
 }
 
 .header{
-background:#001447;
-text-align:center;
-padding:20px;
+  background:#001447;
+  text-align:center;
+  padding:20px;
 }
 
 .header h1{
-margin:0;
-font-size:56px;
+  margin:0;
+  font-size:42px;
 }
 
 #relogio{
-margin-top:10px;
-font-size:28px;
+  margin-top:10px;
+  font-size:22px;
 }
 
 .kpis{
-display:flex;
-justify-content:center;
-gap:20px;
-padding:15px;
-flex-wrap:wrap;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  padding:15px;
+  flex-wrap:wrap;
 }
 
 .kpi{
-padding:15px 25px;
-border-radius:10px;
-font-size:24px;
-font-weight:bold;
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:18px;
+  font-weight:bold;
 }
 
 .kpi-atrasado{
-background:#D32F2F;
+  background:#D32F2F;
 }
 
 .kpi-carregamento{
-background:#8E24AA;
+  background:#8E24AA;
 }
 
 .kpi-carregado{
-background:#2E7D32;
+  background:#2E7D32;
 }
 
 .kpi-aguardando{
-background:#2304DE;
-color:white;
+  background:#2304DE;
+  color:white;
 }
 
 .kpi-patio{
-background:#FFC107;
-color:black;
+  background:#FFC107;
+  color:black;
 }
 
 .section{
-margin:20px;
+  margin:20px;
 }
 
 .section-title{
-background:#FFC107;
-color:black;
-padding:12px;
-text-align:center;
-font-size:30px;
-font-weight:bold;
-border-radius:8px 8px 0 0;
+  background:#FFC107;
+  color:black;
+  padding:10px;
+  text-align:center;
+  font-size:24px;
+  font-weight:bold;
+  border-radius:8px 8px 0 0;
 }
 
 table{
-width:100%;
-border-collapse:collapse;
+  width:100%;
+  border-collapse:collapse;
 }
 
 th{
-background:#FFC107;
-color:black;
-padding:18px;
-font-size:30px;
-font-weight:bold;
+  background:#FFC107;
+  color:black;
+  padding:14px;
+  font-size:22px;
+  font-weight:bold;
 }
 
 td{
-padding:18px;
-text-align:center;
-font-size:30px;
-font-weight:bold;
+  padding:14px;
+  text-align:center;
+  font-size:22px;
+  font-weight:bold;
 }
 
 .atrasado{
-background:#D32F2F;
+  background:#D32F2F;
 }
 
 .emcarregamento{
-background:#8E24AA;
-color:white;
+  background:#8E24AA;
+  color:white;
 }
 
 .carregado{
-background:#0BF311;
+  background:#0BF311;
 }
 
 .aguardando{
-background:#0000CC;
+  background:#0000CC;
 }
 
 .patio{
-background:#E8FA04;
-color:black;
+  background:#E8FA04;
+  color:black;
 }
 
 .footer{
-text-align:center;
-padding:20px;
-font-size:20px;
-color:#ddd;
+  text-align:center;
+  padding:20px;
+  font-size:16px;
+  color:#ddd;
 }
 
 </style>
@@ -138,8 +139,8 @@ color:#ddd;
 <body>
 
 <div class="header">
-<h1> OPERAÇÃO YUSEN - EXPEDIÇÃO</h1>
-<div id="relogio"></div>
+  <h1>OPERAÇÃO YUSEN - EXPEDIÇÃO</h1>
+  <div id="relogio"></div>
 </div>
 
 <div class="kpis" id="painelKpi"></div>
@@ -147,7 +148,7 @@ color:#ddd;
 <div id="conteudo"></div>
 
 <div class="footer">
-Atualização automática a cada 30 segundos
+  Atualização automática a cada 30 segundos
 </div>
 
 <script>
@@ -157,12 +158,12 @@ const csvUrl =
 
 function atualizarRelogio(){
 
-const agora = new Date();
+  const agora = new Date();
 
-document.getElementById("relogio").innerHTML =
-agora.toLocaleDateString('pt-BR')
-+ " - " +
-agora.toLocaleTimeString('pt-BR');
+  document.getElementById("relogio").innerHTML =
+    agora.toLocaleDateString('pt-BR')
+    + " - " +
+    agora.toLocaleTimeString('pt-BR');
 }
 
 setInterval(atualizarRelogio,1000);
@@ -170,138 +171,138 @@ atualizarRelogio();
 
 async function carregarDados(){
 
-const resposta = await fetch(csvUrl);
-const texto = await resposta.text();
+  const resposta = await fetch(csvUrl);
+  const texto = await resposta.text();
 
-const linhas = texto.split("\n");
+  const linhas = texto.split("\n");
 
-let html = "";
+  let html = "";
 
-let atrasados = 0;
-let carregamento = 0;
-let carregados = 0;
-let aguardando = 0;
-let patio = 0;
+  let atrasados = 0;
+  let carregamento = 0;
+  let carregados = 0;
+  let aguardando = 0;
+  let patio = 0;
 
-let tabelaAberta = false;
+  let tabelaAberta = false;
 
-for(let i=0;i<linhas.length;i++){
+  for(let i=0;i<linhas.length;i++){
 
-let colunas = linhas[i]
-.split(",")
-.map(x=>x.replace(/"/g,"").trim());
+    let colunas = linhas[i]
+      .split(",")
+      .map(x=>x.replace(/"/g,"").trim());
 
-if(colunas[0] === "ENERGY" || colunas[0] === "AUTOMOTIVO"){
+    if(colunas[0] === "ENERGY" || colunas[0] === "AUTOMOTIVO"){
 
-if(tabelaAberta){
-html += "</table></div>";
-}
+      if(tabelaAberta){
+        html += "</table></div>";
+      }
 
-html += `
-<div class="section">
-<div class="section-title">${colunas[0]}</div>
+      html += `
+      <div class="section">
+      <div class="section-title">${colunas[0]}</div>
 
-<table>
+      <table>
 
-<tr>
-<th>TRANSPORTADORA</th>
-<th>VEÍCULO</th>
-<th>JANELA</th>
-<th>STATUS</th>
-</tr>
-`;
+      <tr>
+      <th>TRANSPORTADORA</th>
+      <th>VEÍCULO</th>
+      <th>JANELA</th>
+      <th>STATUS</th>
+      </tr>
+      `;
 
-tabelaAberta=true;
-continue;
-}
+      tabelaAberta=true;
+      continue;
+    }
 
-if(
-colunas[0] &&
-colunas[0] !== "TRANSPORTADORA" &&
-colunas[0] !== "OPERAÇÃO YUSEN - EXPEDIÇÃO PANASONIC SJC"
-){
+    if(
+      colunas[0] &&
+      colunas[0] !== "TRANSPORTADORA" &&
+      colunas[0] !== "OPERAÇÃO YUSEN - EXPEDIÇÃO PANASONIC SJC"
+    ){
 
-let status=(colunas[3] || "").toUpperCase();
+      let status=(colunas[3] || "").toUpperCase();
 
-let classe="";
+      let classe="";
 
-if(status.includes("ATRASADO")){
-classe="atrasado";
-atrasados++;
-}
+      if(status.includes("ATRASADO")){
+        classe="atrasado";
+        atrasados++;
+      }
 
-else if(
-status.includes("CARREGANDO") ||
-status.includes("CARREGAMENTO")
-){
-classe="emcarregamento";
-carregamento++;
-}
+      else if(
+        status.includes("CARREGANDO") ||
+        status.includes("CARREGAMENTO")
+      ){
+        classe="emcarregamento";
+        carregamento++;
+      }
 
-else if(
-status.includes("CARREGADO") ||
-status.includes("FINALIZADO")
-){
-classe="carregado";
-carregados++;
-}
+      else if(
+        status.includes("CARREGADO") ||
+        status.includes("FINALIZADO")
+      ){
+        classe="carregado";
+        carregados++;
+      }
 
-else if(
-status.includes("AGUARDANDO") ||
-status.includes("AGUARDANDO O VEICULO")
-){
-classe="aguardando";
-aguardando++;
-}
+      else if(
+        status.includes("AGUARDANDO") ||
+        status.includes("AGUARDANDO O VEICULO")
+      ){
+        classe="aguardando";
+        aguardando++;
+      }
 
-else if(
-status.includes("PATIO") ||
-status.includes("NO PATIO")
-){
-classe="patio";
-patio++;
-}
+      else if(
+        status.includes("PATIO") ||
+        status.includes("NO PATIO")
+      ){
+        classe="patio";
+        patio++;
+      }
 
-html += `
-<tr class="${classe}">
-<td>${colunas[0]}</td>
-<td>${colunas[1] || ""}</td>
-<td>${colunas[2] || ""}</td>
-<td>${colunas[3] || ""}</td>
-</tr>
-`;
-}
-}
+      html += `
+      <tr class="${classe}">
+      <td>${colunas[0]}</td>
+      <td>${colunas[1] || ""}</td>
+      <td>${colunas[2] || ""}</td>
+      <td>${colunas[3] || ""}</td>
+      </tr>
+      `;
+    }
+  }
 
-if(tabelaAberta){
-html += "</table></div>";
-}
+  if(tabelaAberta){
+    html += "</table></div>";
+  }
 
-document.getElementById("conteudo").innerHTML = html;
+  document.getElementById("conteudo").innerHTML = html;
 
-document.getElementById("painelKpi").innerHTML = `
+  document.getElementById("painelKpi").innerHTML = `
 
-<div class="kpi kpi-aguardando">
-🚚 AGUARDANDO VEÍCULO: ${aguardando}
-</div>
+  <div class="kpi kpi-aguardando">
+  🚚 AGUARDANDO VEÍCULO: ${aguardando}
+  </div>
 
-<div class="kpi kpi-atrasado">
-🚨 ATRASADOS: ${atrasados}
-</div>
+  <div class="kpi kpi-atrasado">
+  🚨 ATRASADOS: ${atrasados}
+  </div>
 
-<div class="kpi kpi-patio">
-🏭 NO PÁTIO: ${patio}
-</div>
+  <div class="kpi kpi-patio">
+  🏭 NO PÁTIO: ${patio}
+  </div>
 
-<div class="kpi kpi-carregamento">
-📦 CARREGANDO: ${carregamento}
-</div>
+  <div class="kpi kpi-carregamento">
+  📦 CARREGANDO: ${carregamento}
+  </div>
 
-<div class="kpi kpi-carregado">
-✅ CARREGADOS: ${carregados}
-</div>
+  <div class="kpi kpi-carregado">
+  ✅ CARREGADOS: ${carregados}
+  </div>
 
-`;
+  `;
 }
 
 carregarDados();

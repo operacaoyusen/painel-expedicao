@@ -46,7 +46,7 @@ body{
 
 .header{
   background: var(--header);
-  padding: 18px 28px;
+  padding: 14px 28px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -57,27 +57,19 @@ body{
 
 .header-brand,
 .header-brand-right{
-  width: 170px;
+  width: 140px;
   display:flex;
   align-items:center;
   justify-content:center;
+  flex-shrink: 0;
 }
 
-.header-logo{
-  width:170px;
+.header-logo,
+.header-logo-right{
+  width:140px;
   height:auto;
   display:block;
   filter: drop-shadow(0 6px 18px rgba(7, 15, 20, 0.35));
-}
-
-.header-brand-right .header-logo-right{
-  width:170px;
-  height:auto;
-  display:block;
-  filter: drop-shadow(0 6px 18px rgba(7, 15, 20, 0.35));
-  background: rgba(255,255,255,0.08);
-  border-radius: 12px;
-  padding: 6px 10px;
 }
 
 .header-text{
@@ -87,7 +79,7 @@ body{
 
 .header h1{
   margin:0;
-  font-size:38px;
+  font-size:36px;
   letter-spacing:0.5px;
   font-weight:700;
   text-transform:uppercase;
@@ -95,8 +87,8 @@ body{
 }
 
 #relogio{
-  margin-top:8px;
-  font-size:20px;
+  margin-top:6px;
+  font-size:18px;
   color:var(--muted);
   letter-spacing:0.5px;
   font-weight:600;
@@ -223,8 +215,8 @@ tr.atrasado td {
   }
 
   .header-logo,
-  .header-brand-right .header-logo-right {
-    width:120px;
+  .header-logo-right {
+    width:100px;
   }
 
   .header h1 {
@@ -267,6 +259,7 @@ tr.atrasado td {
       src="https://static.vecteezy.com/system/resources/previews/022/424/400/original/panasonic-logo-editorial-free-vector.jpg"
       alt="Panasonic"
       class="header-logo-right"
+      style="filter: brightness(0) invert(1) drop-shadow(0 6px 18px rgba(7, 15, 20, 0.35));"
     >
   </div>
 </div>

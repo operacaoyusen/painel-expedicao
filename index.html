@@ -172,11 +172,11 @@ td{
 
 tr:last-child td { border-bottom:none; }
 
-.atrasado{ 
+tr.atrasado td {
   background:rgba(255, 68, 68, 0.25) !important;
-  color: #ff6b6b;
-  font-weight: 900;
-  box-shadow: inset 0 0 10px rgba(255, 68, 68, 0.3);
+  color:#ff8a8a;
+  font-weight:900;
+  text-shadow: 0 0 10px rgba(255, 77, 77, 0.4);
 }
 
 .emcarregamento{ background:rgba(138, 92, 246, 0.18); }
@@ -259,6 +259,17 @@ function atualizarRelogio(){
 setInterval(atualizarRelogio,1000);
 atualizarRelogio();
 
+function statusEmoticon(status) {
+  const s = (status || "").toUpperCase();
+
+  if (s.includes("ATRASADO")) return "🚨 ATRASADO";
+  if (s.includes("CARREGANDO") || s.includes("CARREGAMENTO")) return "📦 CARREGANDO";
+  if (s.includes("CARREGADO") || s.includes("FINALIZADO")) return "✅ CARREGADO";
+  if (s.includes("AGUARDANDO")) return "🚚 AGUARDANDO";
+  if (s.includes("PATIO") || s.includes("NO PATIO")) return "🏭 NO PÁTIO";
+  return status || "";
+}
+
 async function carregarDados(){
 
   const resposta = await fetch(csvUrl);
@@ -330,7 +341,8 @@ async function carregarDados(){
         peso = colunas[3] || "";
       }
 
-      const status = (colunas[statusIndex] || "").toUpperCase();
+      const statusRaw = (colunas[statusIndex] || "").trim();
+      const status = statusRaw.toUpperCase();
       let classe = "";
 
       if(status.includes("ATRASADO")){
@@ -370,13 +382,15 @@ async function carregarDados(){
         patio++;
       }
 
+      const statusTexto = statusEmoticon(statusRaw);
+
       html += `
       <tr class="${classe}">
       <td>${colunas[0]}</td>
       <td>${colunas[1] || ""}</td>
       <td>${colunas[2] || ""}</td>
       ${secaoAtual === "ENERGY" ? `<td>${peso}</td>` : ""}
-      <td>${colunas[statusIndex] || ""}</td>
+      <td>${statusTexto}</td>
       </tr>
       `;
     }

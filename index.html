@@ -9,26 +9,26 @@
 <style>
 
 :root{
-  --bg: #071b2d;
-  --bg-2: #0d233f;
-  --panel: rgba(10, 24, 42, 0.9);
-  --panel-strong: #122c4a;
-  --header: linear-gradient(90deg, #1a3a52 0%, #0f2d45 30%, #0a1f38 100%);
-  --line: rgba(255,255,255,0.08);
+  --bg: #0d233b;
+  --bg-2: #143b61;
+  --panel: rgba(14, 31, 52, 0.82);
+  --panel-strong: #173f68;
+  --header: linear-gradient(90deg, #295d95 0%, #1b4d80 35%, #0f2d50 100%);
+  --line: rgba(255,255,255,0.12);
   --text: #edf4ff;
-  --muted: #bfd0ea;
-  --yellow: #f5c451;
-  --yellow-strong: #ffbf1f;
-  --red: #ef4d5d;
-  --red-strong: #d62b45;
-  --purple: #8a5cf6;
-  --purple-strong: #6d3eea;
-  --green: #1fbf75;
-  --green-strong: #10985d;
-  --blue: #2f7ef7;
-  --blue-strong: #1659d6;
-  --patio: #d9d729;
-  --patio-strong: #b8b61c;
+  --muted: #cfe0fb;
+  --yellow: #ffd166;
+  --yellow-strong: #ffc93c;
+  --red: #ff5b6e;
+  --red-strong: #e33a53;
+  --purple: #9b6dff;
+  --purple-strong: #7a49ee;
+  --green: #2ed085;
+  --green-strong: #1ca96b;
+  --blue: #46a3ff;
+  --blue-strong: #1e7ce0;
+  --patio: #f4df4d;
+  --patio-strong: #d9c326;
   --shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
 }
 
@@ -37,7 +37,7 @@
 body{
   margin:0;
   background:
-    radial-gradient(circle at top, rgba(35, 88, 155, 0.25), transparent 35%),
+    radial-gradient(circle at top, rgba(76, 132, 214, 0.32), transparent 35%),
     linear-gradient(180deg, var(--bg) 0%, #050f1d 100%);
   color:var(--text);
   font-family:Arial, sans-serif;
@@ -121,8 +121,8 @@ body{
 }
 
 .kpi-atrasado{ 
-  background:linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
-  box-shadow: 0 0 20px rgba(255, 68, 68, 0.5), var(--shadow);
+  background:linear-gradient(135deg, #ff5d6c 0%, #cc1538 100%);
+  box-shadow: 0 0 20px rgba(255, 93, 108, 0.5), var(--shadow);
   animation: pulse-alert 2s infinite;
   font-size: 20px;
   color: #fff;
@@ -140,7 +140,7 @@ body{
 
 .section{
   margin:20px 18px 10px;
-  background: rgba(10, 24, 42, 0.62);
+  background: rgba(13, 28, 44, 0.78);
   border:1px solid var(--line);
   border-radius:14px;
   overflow:hidden;
@@ -167,7 +167,7 @@ thead tr th:first-child,
 tbody tr td:first-child{ border-left:none; }
 
 th{
-  background:rgba(255, 191, 31, 0.13);
+  background:rgba(255, 209, 102, 0.16);
   color:var(--yellow);
   padding:14px 12px;
   font-size:18px;
@@ -183,22 +183,22 @@ td{
   font-size:20px;
   font-weight:700;
   border-bottom:1px solid rgba(255,255,255,0.06);
-  background:rgba(255,255,255,0.02);
+  background:rgba(255,255,255,0.03);
 }
 
 tr:last-child td { border-bottom:none; }
 
 tr.atrasado td {
-  background:rgba(255, 68, 68, 0.25) !important;
-  color:#ff8a8a;
+  background:rgba(255, 93, 108, 0.28) !important;
+  color:#ffadb6;
   font-weight:900;
-  text-shadow: 0 0 10px rgba(255, 77, 77, 0.4);
+  text-shadow: 0 0 10px rgba(255, 93, 108, 0.45);
 }
 
-.emcarregamento{ background:rgba(138, 92, 246, 0.18); }
-.carregado{ background:rgba(31, 191, 117, 0.15); }
-.aguardando{ background:rgba(47, 126, 247, 0.18); }
-.patio{ background:rgba(217, 215, 41, 0.18); color:#111; }
+.emcarregamento{ background:rgba(155, 109, 255, 0.2); }
+.carregado{ background:rgba(46, 208, 133, 0.18); }
+.aguardando{ background:rgba(70, 163, 255, 0.2); }
+.patio{ background:rgba(244, 223, 77, 0.22); color:#111; }
 
 .footer{
   text-align:center;

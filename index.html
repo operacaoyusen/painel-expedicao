@@ -14,16 +14,8 @@
   --bg-2: #123b5f;
   --panel: rgba(14, 31, 52, 0.82);
   --panel-strong: #173f68;
-
-  --header: linear-gradient(
-    90deg,
-    #0d3d68 0%,
-    #0f4d7c 35%,
-    #0a2d49 100%
-  );
-
+  --header: linear-gradient(90deg, #0d3d68 0%, #0f4d7c 35%, #0a2d49 100%);
   --line: rgba(255,255,255,0.12);
-
   --text: #edf4ff;
   --muted: #dfeafc;
 
@@ -48,20 +40,17 @@
   --shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
 }
 
-
 *{
   box-sizing:border-box;
 }
 
-
 body{
-
   margin:0;
 
   background:
     radial-gradient(
       circle at top,
-      rgba(76,132,214,0.28),
+      rgba(76, 132, 214, 0.28),
       transparent 35%
     ),
     linear-gradient(
@@ -75,111 +64,38 @@ body{
   font-family:Arial, sans-serif;
 
   font-size:14px;
-
 }
 
 
-/* ==================================================
+/* =========================================
    CABEÇALHO
-================================================== */
+========================================= */
 
 .header{
-
   background:var(--header);
 
-  padding:12px 20px;
+  padding:20px;
 
-  display:grid;
-
-  grid-template-columns:220px 1fr 220px;
+  display:flex;
 
   align-items:center;
 
-  gap:16px;
+  justify-content:center;
 
   border-bottom:1px solid var(--line);
 
   box-shadow:var(--shadow);
 
   min-height:105px;
-
 }
-
-
-/* LOGOS */
-
-.header-brand{
-
-  display:flex;
-
-  align-items:center;
-
-}
-
-
-.header-left{
-
-  justify-content:flex-start;
-
-}
-
-
-.header-right{
-
-  justify-content:flex-end;
-
-}
-
-
-.header-logo{
-
-  display:block;
-
-  width:150px;
-
-  max-width:100%;
-
-  height:auto;
-
-  object-fit:contain;
-
-  filter:
-    drop-shadow(
-      0 6px 18px
-      rgba(7,15,20,0.35)
-    );
-
-}
-
-
-.header-logo-right{
-
-  display:block;
-
-  width:200px;
-
-  max-width:100%;
-
-  height:auto;
-
-  object-fit:contain;
-
-}
-
-
-/* TÍTULO */
 
 .header-text{
+  width:100%;
 
   text-align:center;
-
-  min-width:0;
-
 }
 
-
 .header h1{
-
   margin:0;
 
   font-size:32px;
@@ -193,12 +109,9 @@ body{
   text-shadow:
     0 3px 10px
     rgba(0,0,0,0.28);
-
 }
 
-
 #relogio{
-
   margin-top:6px;
 
   font-size:18px;
@@ -208,16 +121,14 @@ body{
   letter-spacing:0.5px;
 
   font-weight:600;
-
 }
 
 
-/* ==================================================
+/* =========================================
    KPIs
-================================================== */
+========================================= */
 
 .kpis{
-
   display:flex;
 
   justify-content:center;
@@ -227,12 +138,9 @@ body{
   padding:18px 20px 8px;
 
   flex-wrap:wrap;
-
 }
 
-
 .kpi{
-
   min-width:200px;
 
   padding:16px 20px;
@@ -252,14 +160,14 @@ body{
     rgba(255,255,255,0.08);
 
   text-transform:uppercase;
-
 }
 
 
-/* ATRASADO */
+/* =========================================
+   KPI ATRASADO
+========================================= */
 
 .kpi-atrasado{
-
   background:
     linear-gradient(
       135deg,
@@ -268,20 +176,15 @@ body{
     );
 
   box-shadow:
-    0 0 20px
-    rgba(255,75,93,0.5),
+    0 0 20px rgba(255, 75, 93, 0.5),
     var(--shadow);
 
-  animation:
-    pulse-alert
-    2s infinite;
+  animation:pulse-alert 2s infinite;
 
   font-size:20px;
 
   color:#fff;
-
 }
-
 
 @keyframes pulse-alert{
 
@@ -293,36 +196,32 @@ body{
   50%{
     transform:scale(1.05);
   }
-
 }
 
 
-.kpi-carregamento{
+/* =========================================
+   OUTROS KPIs
+========================================= */
 
+.kpi-carregamento{
   background:
     linear-gradient(
       135deg,
       var(--purple) 0%,
       var(--purple-strong) 100%
     );
-
 }
 
-
 .kpi-carregado{
-
   background:
     linear-gradient(
       135deg,
       var(--green) 0%,
       var(--green-strong) 100%
     );
-
 }
-
 
 .kpi-aguardando{
-
   background:
     linear-gradient(
       135deg,
@@ -331,12 +230,9 @@ body{
     );
 
   color:#1f1b10;
-
 }
-
 
 .kpi-patio{
-
   background:
     linear-gradient(
       135deg,
@@ -345,21 +241,18 @@ body{
     );
 
   color:#1f1b10;
-
 }
 
 
-/* ==================================================
+/* =========================================
    SEÇÕES
-================================================== */
+========================================= */
 
 .section{
-
-  margin:
-    20px 18px 10px;
+  margin:20px 18px 10px;
 
   background:
-    rgba(13,28,44,0.78);
+    rgba(13, 28, 44, 0.78);
 
   border:
     1px solid
@@ -369,14 +262,10 @@ body{
 
   overflow:hidden;
 
-  box-shadow:
-    var(--shadow);
-
+  box-shadow:var(--shadow);
 }
 
-
 .section-title{
-
   background:
     linear-gradient(
       90deg,
@@ -397,35 +286,27 @@ body{
   letter-spacing:1px;
 
   text-transform:uppercase;
-
 }
 
 
-/* ==================================================
+/* =========================================
    TABELA
-================================================== */
+========================================= */
 
 table{
-
   width:100%;
 
   border-collapse:collapse;
-
 }
-
 
 thead tr th:first-child,
 tbody tr td:first-child{
-
   border-left:none;
-
 }
 
-
 th{
-
   background:
-    rgba(20,23,28,0.9);
+    rgba(20, 23, 28, 0.9);
 
   color:var(--yellow);
 
@@ -442,12 +323,9 @@ th{
     var(--line);
 
   letter-spacing:0.6px;
-
 }
 
-
 td{
-
   padding:14px 12px;
 
   text-align:center;
@@ -464,28 +342,20 @@ td{
     rgba(255,255,255,0.03);
 
   color:#f4f8ff;
-
 }
-
 
 tr:last-child td{
-
   border-bottom:none;
-
 }
 
 
-/* ==================================================
-   STATUS DA TABELA
-================================================== */
-
-
-/* ATRASADO */
+/* =========================================
+   ATRASADO
+========================================= */
 
 tr.atrasado td{
-
   background:
-    rgba(103,15,29,0.9)
+    rgba(103, 15, 29, 0.9)
     !important;
 
   color:
@@ -496,150 +366,116 @@ tr.atrasado td{
 
   text-shadow:
     0 0 10px
-    rgba(255,93,108,0.45);
-
+    rgba(255, 93, 108, 0.45);
 }
 
 
-/* CARREGANDO */
+/* =========================================
+   CARREGANDO
+========================================= */
 
 tr.emcarregamento td{
-
   background:
-    rgba(75,46,122,0.82)
+    rgba(75, 46, 122, 0.82)
     !important;
 
   color:
     #f2ebff
     !important;
-
 }
 
 
-/* CARREGADO */
+/* =========================================
+   CARREGADO
+========================================= */
 
 tr.carregado td{
-
   background:
-    rgba(20,77,58,0.85)
+    rgba(20, 77, 58, 0.85)
     !important;
 
   color:
     #ebfff5
     !important;
-
 }
 
 
-/* AGUARDANDO */
+/* =========================================
+   AGUARDANDO
+========================================= */
 
 tr.aguardando td{
-
   background:
-    rgba(118,104,26,0.85)
+    rgba(118, 104, 26, 0.85)
     !important;
 
   color:
     #fff9d9
     !important;
-
 }
 
 
-/* PÁTIO */
+/* =========================================
+   PÁTIO
+========================================= */
 
 tr.patio td{
-
   background:
-    rgba(118,104,26,0.85)
+    rgba(118, 104, 26, 0.85)
     !important;
 
   color:
     #fff9d9
     !important;
-
 }
 
 
-/* ==================================================
+/* =========================================
    RODAPÉ
-================================================== */
+========================================= */
 
 .footer{
-
   text-align:center;
 
-  padding:
-    18px 20px 28px;
+  padding:18px 20px 28px;
 
   font-size:15px;
 
   color:var(--muted);
 
   letter-spacing:0.4px;
-
 }
 
 
-/* ==================================================
-   TELAS MENORES
-================================================== */
+/* =========================================
+   RESPONSIVO
+========================================= */
 
 @media (max-width:900px){
 
   .header{
-
-    grid-template-columns:1fr;
-
-    text-align:center;
-
+    padding:18px 10px;
   }
-
-
-  .header-brand{
-
-    justify-content:center;
-
-  }
-
-
-  .header-logo{
-
-    width:120px;
-
-  }
-
-
-  .header-logo-right{
-
-    width:170px;
-
-  }
-
 
   .header h1{
-
     font-size:28px;
-
   }
 
+  #relogio{
+    font-size:16px;
+  }
 
   th,
   td{
-
     font-size:14px;
 
     padding:10px 8px;
-
   }
 
-
   .kpi{
-
     min-width:160px;
 
     font-size:14px;
-
   }
 
 }
@@ -652,23 +488,11 @@ tr.patio td{
 <body>
 
 
-<!-- ==================================================
-     CABEÇALHO
-================================================== -->
+<!-- =========================================
+     CABEÇALHO SEM LOGOS
+========================================= -->
 
 <div class="header">
-
-
-  <!-- YUSEN - ESQUERDA -->
-
-  <div class="header-brand header-left">
-
-    https://vectorez.biz.id/wp-content/uploads/2023/10/Logo-Yusen-Logistik-1.png
-
-  </div>
-
-
-  <!-- TÍTULO CENTRAL -->
 
   <div class="header-text">
 
@@ -680,22 +504,12 @@ tr.patio td{
 
   </div>
 
-
-  <!-- PANASONIC - DIREITA -->
-
-  <div class="header-brand header-right">
-
-    https://static.vecteezy.com/system/resources/previews/019/909/647/large_2x/panasonic-transparent-panasonic-free-free-png.png
-
-  </div>
-
-
 </div>
 
 
-<!-- ==================================================
-     PAINEL KPIs
-================================================== -->
+<!-- =========================================
+     KPIs
+========================================= -->
 
 <div
   class="kpis"
@@ -703,16 +517,16 @@ tr.patio td{
 </div>
 
 
-<!-- ==================================================
-     CONTEÚDO DAS TABELAS
-================================================== -->
+<!-- =========================================
+     CONTEÚDO
+========================================= -->
 
 <div id="conteudo"></div>
 
 
-<!-- ==================================================
+<!-- =========================================
      RODAPÉ
-================================================== -->
+========================================= -->
 
 <div class="footer">
 
@@ -724,41 +538,39 @@ tr.patio td{
 <script>
 
 
-/* ==================================================
+/* =========================================
    GOOGLE SHEETS
-================================================== */
+========================================= */
 
 const csvUrl =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vTN1vOH2C4htkHC3NnXIqy7JcjCe_6mfulx2Qg1NuVR6zB73jYm81QKBbaPbGoBZIjGdvB777wo7TYm/pub?gid=0&single=true&output=csv";
 
 
-/* ==================================================
+/* =========================================
    RELÓGIO
-================================================== */
+========================================= */
 
 function atualizarRelogio(){
 
-  const agora =
-    new Date();
-
+  const agora = new Date();
 
   document
     .getElementById("relogio")
     .innerHTML =
 
-      agora.toLocaleDateString(
-        "pt-BR"
-      )
+    agora.toLocaleDateString(
+      "pt-BR"
+    )
 
-      +
+    +
 
-      " - "
+    " - "
 
-      +
+    +
 
-      agora.toLocaleTimeString(
-        "pt-BR"
-      );
+    agora.toLocaleTimeString(
+      "pt-BR"
+    );
 
 }
 
@@ -772,10 +584,9 @@ setInterval(
 atualizarRelogio();
 
 
-
-/* ==================================================
+/* =========================================
    STATUS + EMOJIS
-================================================== */
+========================================= */
 
 function statusEmoticon(status){
 
@@ -840,15 +651,13 @@ function statusEmoticon(status){
 }
 
 
-
-/* ==================================================
-   CARREGAMENTO DO GOOGLE SHEETS
-================================================== */
+/* =========================================
+   CARREGAR DADOS
+========================================= */
 
 async function carregarDados(){
 
   try{
-
 
     const resposta =
       await fetch(csvUrl);
@@ -884,9 +693,9 @@ async function carregarDados(){
       "";
 
 
-    /* ==================================================
+    /* =========================================
        PERCORRE AS LINHAS
-    ================================================== */
+    ========================================= */
 
     for(
       let i = 0;
@@ -897,9 +706,7 @@ async function carregarDados(){
 
       let colunas =
         linhas[i]
-
         .split(",")
-
         .map(
           x =>
             x
@@ -908,9 +715,9 @@ async function carregarDados(){
         );
 
 
-      /* ==================================================
-         ENCONTRA ENERGY OU AUTOMOTIVO
-      ================================================== */
+      /* =========================================
+         IDENTIFICA ENERGY OU AUTOMOTIVO
+      ========================================= */
 
       if(
         colunas[0] === "ENERGY"
@@ -935,47 +742,33 @@ async function carregarDados(){
 
         html += `
 
-          <div class="section">
+        <div class="section">
 
-            <div class="section-title">
+          <div class="section-title">
+            ${colunas[0]}
+          </div>
 
-              ${colunas[0]}
+          <table>
 
-            </div>
+            <tr>
 
+              <th>TRANSPORTADORA</th>
 
-            <table>
+              <th>VEÍCULO</th>
 
+              <th>JANELA</th>
 
-              <tr>
+              ${
+                secaoAtual === "ENERGY"
+                ?
+                "<th>PESO</th>"
+                :
+                ""
+              }
 
-                <th>
-                  TRANSPORTADORA
-                </th>
+              <th>STATUS</th>
 
-                <th>
-                  VEÍCULO
-                </th>
-
-                <th>
-                  JANELA
-                </th>
-
-
-                ${
-                  secaoAtual === "ENERGY"
-                  ?
-                  "<th>PESO</th>"
-                  :
-                  ""
-                }
-
-
-                <th>
-                  STATUS
-                </th>
-
-              </tr>
+            </tr>
 
         `;
 
@@ -989,10 +782,9 @@ async function carregarDados(){
       }
 
 
-
-      /* ==================================================
-         LINHAS COM VEÍCULOS
-      ================================================== */
+      /* =========================================
+         LINHAS DOS VEÍCULOS
+      ========================================= */
 
       if(
 
@@ -1019,18 +811,16 @@ async function carregarDados(){
           3;
 
 
-        let peso =
-          "";
+        let peso = "";
 
 
-        /* ==================================================
+        /* =========================================
            AUTOMOTIVO
-        ================================================== */
+        ========================================= */
 
         if(
 
-          secaoAtual ===
-          "AUTOMOTIVO"
+          secaoAtual === "AUTOMOTIVO"
 
           &&
 
@@ -1040,12 +830,7 @@ async function carregarDados(){
 
 
           const valorQuarto =
-
-            (
-              colunas[3]
-              ||
-              ""
-            )
+            (colunas[3] || "")
             .trim();
 
 
@@ -1056,7 +841,6 @@ async function carregarDados(){
             .test(
 
               valorQuarto
-
               .replace(
                 /\s/g,
                 ""
@@ -1071,33 +855,25 @@ async function carregarDados(){
 
             &&
 
-            (
-              colunas[4]
-              ||
-              ""
-            )
+            (colunas[4] || "")
             .trim()
 
           ){
 
-
             statusIndex =
               4;
-
 
           }
 
         }
 
 
-
-        /* ==================================================
+        /* =========================================
            PESO ENERGY
-        ================================================== */
+        ========================================= */
 
         if(
-          secaoAtual ===
-          "ENERGY"
+          secaoAtual === "ENERGY"
         ){
 
           peso =
@@ -1108,17 +884,14 @@ async function carregarDados(){
         }
 
 
-
-        /* ==================================================
+        /* =========================================
            STATUS
-        ================================================== */
+        ========================================= */
 
         const statusRaw =
 
           (
-            colunas[
-              statusIndex
-            ]
+            colunas[statusIndex]
             ||
             ""
           )
@@ -1131,9 +904,7 @@ async function carregarDados(){
           .toUpperCase();
 
 
-        let classe =
-          "";
-
+        let classe = "";
 
 
         /* ATRASADO */
@@ -1144,16 +915,12 @@ async function carregarDados(){
           )
         ){
 
-
           classe =
             "atrasado";
 
-
           atrasados++;
 
-
         }
-
 
 
         /* CARREGANDO */
@@ -1172,16 +939,12 @@ async function carregarDados(){
 
         ){
 
-
           classe =
             "emcarregamento";
 
-
           carregamento++;
 
-
         }
-
 
 
         /* CARREGADO */
@@ -1200,16 +963,12 @@ async function carregarDados(){
 
         ){
 
-
           classe =
             "carregado";
 
-
           carregados++;
 
-
         }
-
 
 
         /* AGUARDANDO */
@@ -1228,16 +987,12 @@ async function carregarDados(){
 
         ){
 
-
           classe =
             "aguardando";
 
-
           aguardando++;
 
-
         }
-
 
 
         /* PÁTIO */
@@ -1256,93 +1011,64 @@ async function carregarDados(){
 
         ){
 
-
           classe =
             "patio";
 
-
           patio++;
-
 
         }
 
 
-
         const statusTexto =
-
           statusEmoticon(
             statusRaw
           );
 
 
-
-        /* ==================================================
-           CRIA LINHA DA TABELA
-        ================================================== */
+        /* =========================================
+           CRIA LINHA
+        ========================================= */
 
         html += `
 
-          <tr class="${classe}">
+        <tr class="${classe}">
 
+          <td>
+            ${colunas[0] || ""}
+          </td>
 
-            <td>
+          <td>
+            ${colunas[1] || ""}
+          </td>
 
-              ${colunas[0] || ""}
+          <td>
+            ${colunas[2] || ""}
+          </td>
 
-            </td>
+          ${
+            secaoAtual === "ENERGY"
+            ?
+            `<td>${peso}</td>`
+            :
+            ""
+          }
 
+          <td>
+            ${statusTexto}
+          </td>
 
-            <td>
-
-              ${colunas[1] || ""}
-
-            </td>
-
-
-            <td>
-
-              ${colunas[2] || ""}
-
-            </td>
-
-
-            ${
-              secaoAtual ===
-              "ENERGY"
-
-              ?
-
-              `<td>
-                ${peso}
-              </td>`
-
-              :
-
-              ""
-            }
-
-
-            <td>
-
-              ${statusTexto}
-
-            </td>
-
-
-          </tr>
+        </tr>
 
         `;
-
 
       }
 
     }
 
 
-
-    /* ==================================================
-       FECHA ÚLTIMA TABELA
-    ================================================== */
+    /* =========================================
+       FECHA A ÚLTIMA TABELA
+    ========================================= */
 
     if(
       tabelaAberta
@@ -1354,61 +1080,51 @@ async function carregarDados(){
     }
 
 
-
-    /* ==================================================
-       EXIBE TABELAS
-    ================================================== */
+    /* =========================================
+       EXIBE O CONTEÚDO
+    ========================================= */
 
     document
-      .getElementById(
-        "conteudo"
-      )
+      .getElementById("conteudo")
       .innerHTML =
       html;
 
 
-
-    /* ==================================================
-       PAINEL DE KPIs
-    ================================================== */
+    /* =========================================
+       KPIs
+    ========================================= */
 
     document
-      .getElementById(
-        "painelKpi"
-      )
+      .getElementById("painelKpi")
       .innerHTML = `
 
 
-        <div class="kpi kpi-atrasado">
+      <div class="kpi kpi-atrasado">
 
-          🚨 ATRASADOS:
-          ${atrasados}
+        🚨 ATRASADOS: ${atrasados}
 
-        </div>
-
-
-        <div class="kpi kpi-patio">
-
-          🚚 AGUARDANDO:
-          ${patio}
-
-        </div>
+      </div>
 
 
-        <div class="kpi kpi-carregamento">
+      <div class="kpi kpi-patio">
 
-          📦 CARREGANDO:
-          ${carregamento}
+        🚚 AGUARDANDO: ${patio}
 
-        </div>
+      </div>
 
 
-        <div class="kpi kpi-carregado">
+      <div class="kpi kpi-carregamento">
 
-          ✅ CARREGADOS:
-          ${carregados}
+        📦 CARREGANDO: ${carregamento}
 
-        </div>
+      </div>
+
+
+      <div class="kpi kpi-carregado">
+
+        ✅ CARREGADOS: ${carregados}
+
+      </div>
 
 
       `;
@@ -1427,46 +1143,43 @@ async function carregarDados(){
 
 
     document
-      .getElementById(
-        "conteudo"
-      )
+      .getElementById("conteudo")
       .innerHTML = `
 
-        <div
-          style="
-            margin:20px;
-            padding:20px;
-            background:#7a1724;
-            color:white;
-            border-radius:12px;
-            text-align:center;
-            font-size:20px;
-            font-weight:bold;
-          "
-        >
+      <div
+        style="
+          margin:20px;
+          padding:20px;
+          background:#7a1724;
+          color:white;
+          border-radius:12px;
+          text-align:center;
+          font-size:20px;
+          font-weight:bold;
+        "
+      >
 
-          Erro ao carregar os dados do painel.
+        Erro ao carregar os dados do painel.
 
-        </div>
+      </div>
 
       `;
-
 
   }
 
 }
 
 
-/* ==================================================
+/* =========================================
    CARREGAMENTO INICIAL
-================================================== */
+========================================= */
 
 carregarDados();
 
 
-/* ==================================================
-   ATUALIZAÇÃO AUTOMÁTICA
-================================================== */
+/* =========================================
+   ATUALIZAÇÃO AUTOMÁTICA - 30 SEGUNDOS
+========================================= */
 
 setInterval(
   carregarDados,
@@ -1476,7 +1189,5 @@ setInterval(
 
 </script>
 
-
 </body>
-
 </html>

@@ -24,24 +24,22 @@
   --line:rgba(255,255,255,0.12);
 
   --text:#edf4ff;
-
   --muted:#dfeafc;
 
   --yellow:#f6d34c;
-
   --yellow-strong:#e8c33b;
 
   --purple:#9d69ff;
-
   --purple-strong:#7c4ee4;
 
   --green:#34d38f;
-
   --green-strong:#20a86c;
 
   --orange:#ff9f1c;
-
   --orange-strong:#e67e00;
+
+  --blue:#51a6ff;
+  --blue-strong:#2487e4;
 
   --shadow:
     0 14px 32px
@@ -51,9 +49,7 @@
 
 
 *{
-
   box-sizing:border-box;
-
 }
 
 
@@ -92,8 +88,7 @@ body{
 
 .header{
 
-  background:
-    var(--header);
+  background:var(--header);
 
   padding:20px;
 
@@ -149,8 +144,7 @@ body{
 
   font-size:18px;
 
-  color:
-    var(--muted);
+  color:var(--muted);
 
   letter-spacing:0.5px;
 
@@ -211,23 +205,7 @@ body{
 
 
 
-/* PENDENTE */
-
-.kpi-pendente{
-
-  background:
-
-    linear-gradient(
-      135deg,
-      #536475,
-      #344454
-    );
-
-}
-
-
-
-/* ATRASADO */
+/* ATRASADOS */
 
 .kpi-atrasado{
 
@@ -235,8 +213,8 @@ body{
 
     linear-gradient(
       135deg,
-      #ff4b5d 0%,
-      #e22d42 100%
+      #ff4b5d,
+      #e22d42
     );
 
   box-shadow:
@@ -258,15 +236,11 @@ body{
 
   0%,
   100%{
-
     transform:scale(1);
-
   }
 
   50%{
-
     transform:scale(1.04);
-
   }
 
 }
@@ -281,19 +255,37 @@ body{
 
     linear-gradient(
       135deg,
-      var(--orange),
-      var(--orange-strong)
+      #536475,
+      #344454
     );
 
-  color:#161616;
+  color:white;
 
 }
 
 
 
-/* CARREGANDO */
+/* NO PATIO */
 
-.kpi-carregamento{
+.kpi-patio{
+
+  background:
+
+    linear-gradient(
+      135deg,
+      var(--orange),
+      var(--orange-strong)
+    );
+
+  color:#17130c;
+
+}
+
+
+
+/* EM PROCESSO */
+
+.kpi-processo{
 
   background:
 
@@ -303,13 +295,15 @@ body{
       var(--purple-strong)
     );
 
+  color:white;
+
 }
 
 
 
-/* CARREGADO */
+/* FINALIZADOS */
 
-.kpi-carregado{
+.kpi-finalizado{
 
   background:
 
@@ -318,6 +312,8 @@ body{
       var(--green),
       var(--green-strong)
     );
+
+  color:white;
 
 }
 
@@ -409,8 +405,7 @@ th{
   background:
     rgba(20,23,28,0.95);
 
-  color:
-    var(--yellow);
+  color:var(--yellow);
 
   padding:
     12px 8px;
@@ -464,76 +459,60 @@ tr:last-child td{
 
 
 /* ==================================================
-   COLUNAS ESPECÍFICAS
+   TAMANHOS DAS COLUNAS
 ================================================== */
 
 
 .col-transportadora{
-
-  min-width:155px;
-
+  min-width:150px;
 }
 
 
 .col-operacao{
-
   min-width:110px;
-
 }
 
 
 .col-veiculo{
-
   min-width:110px;
-
 }
 
 
 .col-janela{
-
   min-width:90px;
-
 }
 
 
 .col-peso{
-
   min-width:100px;
-
 }
 
 
 .col-status{
-
   min-width:150px;
-
 }
 
 
 .col-horario{
-
   min-width:110px;
-
 }
 
 
 
 /* ==================================================
-   STATUS DAS LINHAS
+   CORES DOS STATUS
 ================================================== */
 
 
-/* PENDENTE */
+/* AGUARDANDO */
 
-
-tr.pendente td{
+tr.aguardando td{
 
   background:
-    rgba(50,65,80,0.72)
+    rgba(50,65,80,0.78)
     !important;
 
-  color:
-    #edf4ff
+  color:#edf4ff
     !important;
 
 }
@@ -542,15 +521,13 @@ tr.pendente td{
 
 /* ATRASADO */
 
-
 tr.atrasado td{
 
   background:
     rgba(103,15,29,0.90)
     !important;
 
-  color:
-    #fff3f5
+  color:#fff3f5
     !important;
 
   font-weight:900;
@@ -564,51 +541,45 @@ tr.atrasado td{
 
 
 
-/* AGUARDANDO */
+/* NO PATIO */
 
-
-tr.aguardando td{
+tr.patio td{
 
   background:
     rgba(116,76,13,0.87)
     !important;
 
-  color:
-    #fff6d8
+  color:#fff6d8
     !important;
 
 }
 
 
 
-/* CARREGANDO */
+/* EM PROCESSO */
 
-
-tr.emcarregamento td{
+tr.processo td{
 
   background:
     rgba(75,46,122,0.82)
     !important;
 
-  color:
-    #f2ebff
+  color:#f2ebff
     !important;
 
 }
 
 
 
-/* CARREGADO */
+/* FINALIZADO */
 
-
-tr.carregado td{
+tr.finalizado td{
 
   background:
     rgba(20,77,58,0.85)
     !important;
 
-  color:
-    #ebfff5
+  color:#ebfff5
     !important;
 
 }
@@ -616,7 +587,7 @@ tr.carregado td{
 
 
 /* ==================================================
-   DESTAQUE NOS HORÁRIOS
+   HORÁRIOS
 ================================================== */
 
 
@@ -653,8 +624,7 @@ tr.carregado td{
 
   font-size:14px;
 
-  color:
-    var(--muted);
+  color:var(--muted);
 
   letter-spacing:0.4px;
 
@@ -670,15 +640,11 @@ tr.carregado td{
 @media(max-width:1100px){
 
   th{
-
     font-size:12px;
-
   }
 
   td{
-
     font-size:14px;
-
   }
 
 }
@@ -856,41 +822,39 @@ function statusEmoticon(status){
 
 
   if(
-    s.includes("PENDENTE")
-  ){
-
-    return "⏳ PENDENTE";
-
-  }
-
-
-  if(
     s.includes("AGUARDANDO")
   ){
 
-    return "🚚 AGUARDANDO";
+    return "⏳ AGUARDANDO";
 
   }
 
 
   if(
-    s.includes("CARREGANDO")
+    s.includes("NO PATIO")
     ||
-    s.includes("CARREGAMENTO")
+    s.includes("NO PÁTIO")
   ){
 
-    return "📦 CARREGANDO";
+    return "🚚 NO PATIO";
 
   }
 
 
   if(
-    s.includes("CARREGADO")
-    ||
+    s.includes("EM PROCESSO")
+  ){
+
+    return "📦 EM PROCESSO";
+
+  }
+
+
+  if(
     s.includes("FINALIZADO")
   ){
 
-    return "✅ CARREGADO";
+    return "✅ FINALIZADO";
 
   }
 
@@ -902,7 +866,7 @@ function statusEmoticon(status){
 
 
 /* ==================================================
-   DESCOBRE A CLASSE DO STATUS
+   DEFINE CLASSE DA LINHA
 ================================================== */
 
 
@@ -924,15 +888,6 @@ function classeStatus(status){
 
 
   if(
-    s.includes("PENDENTE")
-  ){
-
-    return "pendente";
-
-  }
-
-
-  if(
     s.includes("AGUARDANDO")
   ){
 
@@ -942,23 +897,30 @@ function classeStatus(status){
 
 
   if(
-    s.includes("CARREGANDO")
+    s.includes("NO PATIO")
     ||
-    s.includes("CARREGAMENTO")
+    s.includes("NO PÁTIO")
   ){
 
-    return "emcarregamento";
+    return "patio";
 
   }
 
 
   if(
-    s.includes("CARREGADO")
-    ||
+    s.includes("EM PROCESSO")
+  ){
+
+    return "processo";
+
+  }
+
+
+  if(
     s.includes("FINALIZADO")
   ){
 
-    return "carregado";
+    return "finalizado";
 
   }
 
@@ -979,11 +941,17 @@ async function carregarDados(){
   try{
 
 
+    /* EVITA CACHE */
+
     const resposta =
       await fetch(
+
         csvUrl +
+
         "&t=" +
+
         new Date().getTime()
+
       );
 
 
@@ -1018,22 +986,26 @@ async function carregarDados(){
     let tabelaAberta = false;
 
 
-    /* CONTADORES */
 
-    let pendentes = 0;
+    /* ==================================================
+       CONTADORES
+    ================================================== */
+
 
     let atrasados = 0;
 
     let aguardando = 0;
 
-    let carregando = 0;
+    let noPatio = 0;
 
-    let carregados = 0;
+    let emProcesso = 0;
+
+    let finalizados = 0;
 
 
 
     /* ==================================================
-       PERCORRE PLANILHA
+       PERCORRE A PLANILHA
     ================================================== */
 
 
@@ -1087,8 +1059,17 @@ async function carregarDados(){
           tabelaAberta
         ){
 
-          html +=
-            "</table></div></div>";
+          html += `
+
+            </tbody>
+
+            </table>
+
+            </div>
+
+            </div>
+
+          `;
 
         }
 
@@ -1100,6 +1081,7 @@ async function carregarDados(){
         html += `
 
         <div class="section">
+
 
           <div class="section-title">
 
@@ -1116,45 +1098,75 @@ async function carregarDados(){
 
             <thead>
 
+
               <tr>
 
+
                 <th class="col-transportadora">
+
                   TRANSPORTADORA
+
                 </th>
+
 
                 <th class="col-operacao">
+
                   OPERAÇÃO
+
                 </th>
+
 
                 <th class="col-veiculo">
+
                   VEÍCULO
+
                 </th>
+
 
                 <th class="col-janela">
+
                   JANELA
+
                 </th>
+
 
                 <th class="col-peso">
+
                   PESO (KG)
+
                 </th>
+
 
                 <th class="col-status">
+
                   STATUS
+
                 </th>
 
+
                 <th class="col-horario">
+
                   CHEGADA
+
                 </th>
 
+
                 <th class="col-horario">
+
                   INÍCIO CARR.
+
                 </th>
 
+
                 <th class="col-horario">
+
                   FIM CARR.
+
                 </th>
+
 
               </tr>
+
 
             </thead>
 
@@ -1175,7 +1187,7 @@ async function carregarDados(){
 
 
       /* ==================================================
-         IGNORA CABEÇALHOS DA PLANILHA
+         IGNORA CABEÇALHO ORIGINAL DA PLANILHA
       ================================================== */
 
 
@@ -1206,7 +1218,7 @@ async function carregarDados(){
 
 
       /* ==================================================
-         SÓ PROCESSA QUANDO JÁ ENCONTROU UMA SEÇÃO
+         NÃO PROCESSA ANTES DE ENERGY/AUTOMOTIVO
       ================================================== */
 
 
@@ -1221,7 +1233,7 @@ async function carregarDados(){
 
 
       /* ==================================================
-         NOVA ESTRUTURA DA PLANILHA
+         ESTRUTURA DA PLANILHA
 
          A = TRANSPORTADORA
          B = OPERAÇÃO
@@ -1273,7 +1285,7 @@ async function carregarDados(){
 
 
       /* ==================================================
-         IDENTIFICA STATUS
+         STATUS
       ================================================== */
 
 
@@ -1296,7 +1308,9 @@ async function carregarDados(){
 
 
       if(
-        status.includes("ATRASADO")
+        status.includes(
+          "ATRASADO"
+        )
       ){
 
         atrasados++;
@@ -1305,16 +1319,9 @@ async function carregarDados(){
 
 
       else if(
-        status.includes("PENDENTE")
-      ){
-
-        pendentes++;
-
-      }
-
-
-      else if(
-        status.includes("AGUARDANDO")
+        status.includes(
+          "AGUARDANDO"
+        )
       ){
 
         aguardando++;
@@ -1324,29 +1331,49 @@ async function carregarDados(){
 
       else if(
 
-        status.includes("CARREGANDO")
+        status.includes(
+          "NO PATIO"
+        )
+
         ||
-        status.includes("CARREGAMENTO")
+
+        status.includes(
+          "NO PÁTIO"
+        )
 
       ){
 
-        carregando++;
+        noPatio++;
 
       }
 
 
       else if(
-
-        status.includes("CARREGADO")
-        ||
-        status.includes("FINALIZADO")
-
+        status.includes(
+          "EM PROCESSO"
+        )
       ){
 
-        carregados++;
+        emProcesso++;
 
       }
 
+
+      else if(
+        status.includes(
+          "FINALIZADO"
+        )
+      ){
+
+        finalizados++;
+
+      }
+
+
+
+      /* ==================================================
+         TEXTO DO STATUS
+      ================================================== */
 
 
       const statusTexto =
@@ -1357,61 +1384,81 @@ async function carregarDados(){
 
 
       /* ==================================================
-         CRIA LINHA
+         MONTA LINHA
       ================================================== */
 
 
       html += `
 
+
       <tr class="${classe}">
 
 
         <td>
+
           ${transportadora}
+
         </td>
 
 
         <td>
+
           ${operacao}
+
         </td>
 
 
         <td>
+
           ${veiculo}
+
         </td>
 
 
         <td class="janela">
+
           ${janela}
+
         </td>
 
 
         <td>
+
           ${peso}
+
         </td>
 
 
         <td>
+
           ${statusTexto}
+
         </td>
 
 
         <td class="horario">
+
           ${chegada}
+
         </td>
 
 
         <td class="horario">
+
           ${inicio}
+
         </td>
 
 
         <td class="horario">
+
           ${fim}
+
         </td>
 
 
       </tr>
+
 
       `;
 
@@ -1421,7 +1468,7 @@ async function carregarDados(){
 
 
     /* ==================================================
-       FECHA ÚLTIMA TABELA
+       FECHA A ÚLTIMA TABELA
     ================================================== */
 
 
@@ -1431,13 +1478,13 @@ async function carregarDados(){
 
       html += `
 
-          </tbody>
+        </tbody>
 
         </table>
 
         </div>
 
-      </div>
+        </div>
 
       `;
 
@@ -1451,19 +1498,23 @@ async function carregarDados(){
 
 
     document
-      .getElementById("conteudo")
+      .getElementById(
+        "conteudo"
+      )
       .innerHTML =
       html;
 
 
 
     /* ==================================================
-       KPIs
+       EXIBE KPIs
     ================================================== */
 
 
     document
-      .getElementById("painelKpi")
+      .getElementById(
+        "painelKpi"
+      )
       .innerHTML = `
 
 
@@ -1475,34 +1526,34 @@ async function carregarDados(){
       </div>
 
 
-      <div class="kpi kpi-pendente">
-
-        ⏳ PENDENTES:
-        ${pendentes}
-
-      </div>
-
-
       <div class="kpi kpi-aguardando">
 
-        🚚 AGUARDANDO:
+        ⏳ AGUARDANDO:
         ${aguardando}
 
       </div>
 
 
-      <div class="kpi kpi-carregamento">
+      <div class="kpi kpi-patio">
 
-        📦 CARREGANDO:
-        ${carregando}
+        🚚 NO PATIO:
+        ${noPatio}
 
       </div>
 
 
-      <div class="kpi kpi-carregado">
+      <div class="kpi kpi-processo">
 
-        ✅ CARREGADOS:
-        ${carregados}
+        📦 EM PROCESSO:
+        ${emProcesso}
+
+      </div>
+
+
+      <div class="kpi kpi-finalizado">
+
+        ✅ FINALIZADOS:
+        ${finalizados}
 
       </div>
 
@@ -1523,25 +1574,40 @@ async function carregarDados(){
 
 
     document
-      .getElementById("conteudo")
+      .getElementById(
+        "conteudo"
+      )
       .innerHTML = `
 
+
       <div
+
         style="
+
           margin:20px;
+
           padding:20px;
+
           background:#7a1724;
+
           color:white;
+
           border-radius:12px;
+
           text-align:center;
+
           font-size:20px;
+
           font-weight:bold;
+
         "
+
       >
 
         ⚠️ Erro ao carregar os dados do painel.
 
       </div>
+
 
       `;
 
@@ -1552,7 +1618,7 @@ async function carregarDados(){
 
 
 /* ==================================================
-   CARREGA AO ABRIR
+   CARREGAMENTO INICIAL
 ================================================== */
 
 
@@ -1566,8 +1632,11 @@ carregarDados();
 
 
 setInterval(
+
   carregarDados,
+
   30000
+
 );
 
 

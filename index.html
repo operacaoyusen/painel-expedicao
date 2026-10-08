@@ -10,10 +10,6 @@
 
 <style>
 
-/* ==================================================
-   CONFIGURAÇÕES GERAIS
-================================================== */
-
 :root{
 
   --bg:#0b2441;
@@ -48,6 +44,10 @@
 
 }
 
+
+/* ==================================================
+   GERAL
+================================================== */
 
 *{
   box-sizing:border-box;
@@ -153,7 +153,7 @@ body{
 
 
 /* ==================================================
-   TICKER DAS NF'S
+   TICKER PIN PENDENTE
 ================================================== */
 
 .ticker{
@@ -179,8 +179,6 @@ body{
     2px solid
     var(--yellow);
 
-  display:flex;
-
   align-items:center;
 
   overflow:hidden;
@@ -198,7 +196,7 @@ body{
 
   height:100%;
 
-  min-width:230px;
+  min-width:210px;
 
   padding:
     0 20px;
@@ -210,6 +208,7 @@ body{
   justify-content:center;
 
   background:
+
     linear-gradient(
       135deg,
       var(--yellow),
@@ -218,7 +217,7 @@ body{
 
   color:#111827;
 
-  font-size:17px;
+  font-size:18px;
 
   font-weight:900;
 
@@ -235,7 +234,7 @@ body{
 }
 
 
-/* ÁREA DO MOVIMENTO */
+/* ÁREA DE MOVIMENTO */
 
 .ticker-area{
 
@@ -254,7 +253,7 @@ body{
 }
 
 
-/* CONTEÚDO DAS NF'S */
+/* PIN'S EM MOVIMENTO */
 
 .ticker-content{
 
@@ -281,8 +280,6 @@ body{
 }
 
 
-/* ANIMAÇÃO */
-
 @keyframes tickerMovimento{
 
   from{
@@ -302,7 +299,7 @@ body{
 }
 
 
-/* PAUSA AO PASSAR O MOUSE */
+/* PAUSA QUANDO PASSAR O MOUSE */
 
 .ticker-area:hover
 .ticker-content{
@@ -620,25 +617,31 @@ tr:last-child td{
   min-width:150px;
 }
 
+
 .col-operacao{
   min-width:110px;
 }
+
 
 .col-veiculo{
   min-width:110px;
 }
 
+
 .col-janela{
   min-width:90px;
 }
+
 
 .col-peso{
   min-width:100px;
 }
 
+
 .col-status{
   min-width:150px;
 }
+
 
 .col-horario{
   min-width:110px;
@@ -646,7 +649,7 @@ tr:last-child td{
 
 
 /* ==================================================
-   CORES DAS LINHAS
+   CORES STATUS
 ================================================== */
 
 
@@ -775,15 +778,11 @@ tr.finalizado td{
 @media(max-width:1100px){
 
   th{
-
     font-size:12px;
-
   }
 
   td{
-
     font-size:14px;
-
   }
 
 }
@@ -877,14 +876,21 @@ tr.finalizado td{
 
 
 <!-- ==================================================
-     TICKER NF'S PENDENTES
+     TICKER PIN PENDENTE
+
+     COMEÇA ESCONDIDO.
+     SÓ APARECE QUANDO EXISTIR PIN.
 ================================================== -->
 
-<div class="ticker">
+<div
+  class="ticker"
+  id="tickerContainer"
+  style="display:none;"
+>
 
   <div class="ticker-label">
 
-    📄 NF'S PENDENTES
+    📌 PIN PENDENTE
 
   </div>
 
@@ -893,11 +899,7 @@ tr.finalizado td{
 
     <div
       class="ticker-content"
-      id="tickerNFs"
-    >
-
-      Carregando NF's...
-
+      id="tickerNFs">
     </div>
 
   </div>
@@ -938,7 +940,7 @@ tr.finalizado td{
 
 
 /* ==================================================
-   URL PRINCIPAL
+   GOOGLE SHEETS - PÁGINA PRINCIPAL
 ================================================== */
 
 const csvUrl =
@@ -946,7 +948,7 @@ const csvUrl =
 
 
 /* ==================================================
-   URL ABA PIN - NF'S PENDENTES
+   GOOGLE SHEETS - ABA PIN
 ================================================== */
 
 const csvNFs =
@@ -1122,7 +1124,7 @@ function classeStatus(status){
 
 
 /* ==================================================
-   CARREGA NF'S
+   CARREGA PIN'S PENDENTES
 ================================================== */
 
 async function carregarNFs(){
@@ -1164,12 +1166,14 @@ async function carregarNFs(){
       .split("\n");
 
 
-    let nfs = [];
+    let pins = [];
 
 
-    /* COMEÇA NA LINHA 2
-       POIS A LINHA 1 É NF'S
-    */
+    /* ==================================================
+       COMEÇA NA LINHA 2
+
+       LINHA 1 = CABEÇALHO
+    ================================================== */
 
     for(
       let i = 1;
@@ -1178,7 +1182,7 @@ async function carregarNFs(){
     ){
 
 
-      const nf =
+      const pin =
         linhas[i]
 
         .split(",")[0]
@@ -1189,35 +1193,44 @@ async function carregarNFs(){
 
 
       if(
-        nf !== ""
+        pin !== ""
       ){
 
-        nfs.push(nf);
+        pins.push(pin);
 
       }
 
     }
 
 
+    const tickerContainer =
+      document.getElementById(
+        "tickerContainer"
+      );
+
+
     const ticker =
-      document
-      .getElementById(
+      document.getElementById(
         "tickerNFs"
       );
 
 
+    /* ==================================================
+       SE EXISTIR PIN
+    ================================================== */
+
     if(
-      nfs.length > 0
+      pins.length > 0
     ){
 
 
       const textoTicker =
-        nfs
+        pins
 
         .map(
 
-          nf =>
-            `📄 NF ${nf}`
+          pin =>
+            `📌 PIN ${pin}`
 
         )
 
@@ -1228,10 +1241,7 @@ async function carregarNFs(){
         );
 
 
-      /*
-         REPETE O CONTEÚDO PARA
-         O MOVIMENTO FICAR MAIS CONTÍNUO
-      */
+      /* DUPLICA PARA O TICKER FICAR CONTÍNUO */
 
       ticker.innerHTML =
 
@@ -1245,14 +1255,33 @@ async function carregarNFs(){
 
         textoTicker;
 
+
+      /* MOSTRA O TICKER */
+
+      tickerContainer.style.display =
+        "flex";
+
+
     }
 
+
+    /* ==================================================
+       SE NÃO EXISTIR PIN
+    ================================================== */
 
     else{
 
 
+      /* LIMPA O TEXTO */
+
       ticker.innerHTML =
-        "✅ NENHUMA NF PENDENTE";
+        "";
+
+
+      /* ESCONDE A FAIXA COMPLETA */
+
+      tickerContainer.style.display =
+        "none";
 
 
     }
@@ -1265,9 +1294,19 @@ async function carregarNFs(){
 
 
     console.error(
-      "Erro ao carregar NF's:",
+      "Erro ao carregar PIN's:",
       erro
     );
+
+
+    /* EM CASO DE ERRO ESCONDE A FAIXA */
+
+    document
+      .getElementById(
+        "tickerContainer"
+      )
+      .style.display =
+      "none";
 
 
     document
@@ -1275,7 +1314,7 @@ async function carregarNFs(){
         "tickerNFs"
       )
       .innerHTML =
-      "⚠️ ERRO AO CARREGAR NF'S";
+      "";
 
 
   }
@@ -1284,7 +1323,7 @@ async function carregarNFs(){
 
 
 /* ==================================================
-   CARREGAR DADOS OPERACIONAIS
+   CARREGA DADOS OPERACIONAIS
 ================================================== */
 
 async function carregarDados(){
@@ -1352,7 +1391,7 @@ async function carregarDados(){
 
 
     /* ==================================================
-       PERCORRE PLANILHA
+       PERCORRE A PLANILHA
     ================================================== */
 
     for(
@@ -1391,7 +1430,7 @@ async function carregarDados(){
 
 
       /* ==================================================
-         ENERGY / AUTOMOTIVO
+         IDENTIFICA ENERGY / AUTOMOTIVO
       ================================================== */
 
       if(
@@ -1532,7 +1571,7 @@ async function carregarDados(){
 
 
       /* ==================================================
-         IGNORA CABEÇALHO
+         IGNORA CABEÇALHO DA PLANILHA
       ================================================== */
 
       if(
@@ -1559,7 +1598,7 @@ async function carregarDados(){
 
 
       /* ==================================================
-         IGNORA ANTES DE ENCONTRAR UMA SEÇÃO
+         NÃO PROCESSA ANTES DE ENERGY / AUTOMOTIVO
       ================================================== */
 
       if(
@@ -1572,7 +1611,7 @@ async function carregarDados(){
 
 
       /* ==================================================
-         COLUNAS DA PLANILHA
+         ESTRUTURA
 
          A = TRANSPORTADORA
          B = OPERAÇÃO
@@ -1714,7 +1753,7 @@ async function carregarDados(){
 
 
       /* ==================================================
-         MONTA A LINHA
+         MONTA LINHA
       ================================================== */
 
       html += `
@@ -1796,7 +1835,7 @@ async function carregarDados(){
 
 
     /* ==================================================
-       FECHA ÚLTIMA TABELA
+       FECHA A ÚLTIMA TABELA
     ================================================== */
 
     if(
@@ -1819,7 +1858,7 @@ async function carregarDados(){
 
 
     /* ==================================================
-       MOSTRA TABELAS
+       EXIBE TABELAS
     ================================================== */
 
     document
@@ -1831,7 +1870,7 @@ async function carregarDados(){
 
 
     /* ==================================================
-       MOSTRA KPIs
+       EXIBE KPIs
     ================================================== */
 
     document

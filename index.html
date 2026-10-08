@@ -32,7 +32,9 @@
   --shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body{
   margin:0;
@@ -44,6 +46,10 @@ body{
   font-size:14px;
 }
 
+/* =========================
+   CABEÇALHO
+========================= */
+
 .header{
   background: var(--header);
   padding: 12px 20px;
@@ -53,41 +59,36 @@ body{
   gap:16px;
   border-bottom: 1px solid var(--line);
   box-shadow: var(--shadow);
+  min-height:110px;
 }
 
 .header-brand{
-  width: 160px;
+  width:220px;
   display:flex;
   align-items:center;
-  justify-content:center;
-  flex-shrink: 0;
+  flex-shrink:0;
 }
 
-.brand-stack{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
+.header-left{
+  justify-content:flex-start;
 }
 
-.header-logo,
-.header-logo-right{
+.header-right{
+  justify-content:flex-end;
+}
+
+.header-logo{
+  width:150px;
+  height:auto;
   display:block;
-  filter: drop-shadow(0 6px 18px rgba(7, 15, 20, 0.35));
+  filter:drop-shadow(0 6px 18px rgba(7,15,20,0.35));
 }
 
-.header-logo {
-  width: 150px;
+.header-logo-right{
+  width:200px;
   height:auto;
-}
-
-.header-logo-right {
-  width: 220px;
-  height:auto;
-  filter: none;
-  background: transparent;
-  opacity: 0.98;
+  display:block;
+  object-fit:contain;
 }
 
 .header-text{
@@ -101,7 +102,7 @@ body{
   letter-spacing:0.5px;
   font-weight:700;
   text-transform:uppercase;
-  text-shadow: 0 3px 10px rgba(0,0,0,0.28);
+  text-shadow:0 3px 10px rgba(0,0,0,0.28);
 }
 
 #relogio{
@@ -111,6 +112,11 @@ body{
   letter-spacing:0.5px;
   font-weight:600;
 }
+
+
+/* =========================
+   KPIs
+========================= */
 
 .kpis{
   display:flex;
@@ -127,36 +133,59 @@ body{
   font-size:18px;
   font-weight:700;
   letter-spacing:0.3px;
-  box-shadow: var(--shadow);
+  box-shadow:var(--shadow);
   border:1px solid rgba(255,255,255,0.08);
   text-transform:uppercase;
 }
 
 .kpi-atrasado{ 
   background:linear-gradient(135deg, #ff4b5d 0%, #e22d42 100%);
-  box-shadow: 0 0 20px rgba(255, 75, 93, 0.5), var(--shadow);
-  animation: pulse-alert 2s infinite;
-  font-size: 20px;
-  color: #fff;
+  box-shadow:0 0 20px rgba(255,75,93,0.5), var(--shadow);
+  animation:pulse-alert 2s infinite;
+  font-size:20px;
+  color:#fff;
 }
 
 @keyframes pulse-alert {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%, 100% {
+    transform:scale(1);
+  }
+
+  50% {
+    transform:scale(1.05);
+  }
 }
 
-.kpi-carregamento{ background:linear-gradient(135deg, var(--purple) 0%, var(--purple-strong) 100%); }
-.kpi-carregado{ background:linear-gradient(135deg, var(--green) 0%, var(--green-strong) 100%); }
-.kpi-aguardando{ background:linear-gradient(135deg, var(--patio) 0%, var(--patio-strong) 100%); color:#1f1b10; }
-.kpi-patio{ background:linear-gradient(135deg, var(--patio) 0%, var(--patio-strong) 100%); color:#1f1b10; }
+.kpi-carregamento{
+  background:linear-gradient(135deg, var(--purple) 0%, var(--purple-strong) 100%);
+}
+
+.kpi-carregado{
+  background:linear-gradient(135deg, var(--green) 0%, var(--green-strong) 100%);
+}
+
+.kpi-aguardando{
+  background:linear-gradient(135deg, var(--patio) 0%, var(--patio-strong) 100%);
+  color:#1f1b10;
+}
+
+.kpi-patio{
+  background:linear-gradient(135deg, var(--patio) 0%, var(--patio-strong) 100%);
+  color:#1f1b10;
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
 
 .section{
   margin:20px 18px 10px;
-  background: rgba(13, 28, 44, 0.78);
+  background:rgba(13,28,44,0.78);
   border:1px solid var(--line);
   border-radius:14px;
   overflow:hidden;
-  box-shadow: var(--shadow);
+  box-shadow:var(--shadow);
 }
 
 .section-title{
@@ -170,16 +199,23 @@ body{
   text-transform:uppercase;
 }
 
+
+/* =========================
+   TABELA
+========================= */
+
 table{
   width:100%;
   border-collapse:collapse;
 }
 
 thead tr th:first-child,
-tbody tr td:first-child{ border-left:none; }
+tbody tr td:first-child{
+  border-left:none;
+}
 
 th{
-  background:rgba(20, 23, 28, 0.9);
+  background:rgba(20,23,28,0.9);
   color:var(--yellow);
   padding:14px 12px;
   font-size:18px;
@@ -196,37 +232,49 @@ td{
   font-weight:700;
   border-bottom:1px solid rgba(255,255,255,0.06);
   background:rgba(255,255,255,0.03);
-  color: #f4f8ff;
+  color:#f4f8ff;
 }
 
-tr:last-child td { border-bottom:none; }
+tr:last-child td{
+  border-bottom:none;
+}
 
-tr.atrasado td {
-  background:rgba(103, 15, 29, 0.9) !important;
+
+/* =========================
+   CORES DOS STATUS
+========================= */
+
+tr.atrasado td{
+  background:rgba(103,15,29,0.9) !important;
   color:#fff3f5 !important;
   font-weight:900;
-  text-shadow: 0 0 10px rgba(255, 93, 108, 0.45);
+  text-shadow:0 0 10px rgba(255,93,108,0.45);
 }
 
-tr.emcarregamento td {
-  background:rgba(75, 46, 122, 0.82) !important;
+tr.emcarregamento td{
+  background:rgba(75,46,122,0.82) !important;
   color:#f2ebff !important;
 }
 
-tr.carregado td {
-  background:rgba(20, 77, 58, 0.85) !important;
+tr.carregado td{
+  background:rgba(20,77,58,0.85) !important;
   color:#ebfff5 !important;
 }
 
-tr.aguardando td {
-  background:rgba(118, 104, 26, 0.85) !important;
+tr.aguardando td{
+  background:rgba(118,104,26,0.85) !important;
   color:#fff9d9 !important;
 }
 
-tr.patio td {
-  background:rgba(118, 104, 26, 0.85) !important;
+tr.patio td{
+  background:rgba(118,104,26,0.85) !important;
   color:#fff9d9 !important;
 }
+
+
+/* =========================
+   RODAPÉ
+========================= */
 
 .footer{
   text-align:center;
@@ -236,36 +284,44 @@ tr.patio td {
   letter-spacing:0.4px;
 }
 
-@media (max-width: 900px) {
-  .header {
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width:900px){
+
+  .header{
     flex-direction:column;
     align-items:center;
     text-align:center;
   }
 
-  .header-brand {
+  .header-brand{
     width:auto;
+    justify-content:center;
   }
 
-  .header-logo {
+  .header-logo{
     width:120px;
   }
 
-  .header-logo-right {
+  .header-logo-right{
     width:180px;
   }
 
-  .header h1 {
+  .header h1{
     font-size:28px;
   }
 
-  th, td {
+  th,
+  td{
     font-size:14px;
     padding:10px 8px;
   }
 
-  .kpi {
-    min-width: 160px;
+  .kpi{
+    min-width:160px;
     font-size:14px;
   }
 }
@@ -276,218 +332,73 @@ tr.patio td {
 
 <body>
 
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
 <div class="header">
-  <div class="header-brand">
-    <div class="brand-stack">
-      <img
-        src="https://vectorez.biz.id/wp-content/uploads/2023/10/Logo-Yusen-Logistik-1.png"
-        alt="Yusen Logistik"
-        class="header-logo"
-      >
-      <img
-        src="https://static.vecteezy.com/system/resources/previews/019/909/647/large_2x/panasonic-transparent-panasonic-free-free-png.png"
-        alt="Panasonic"
-        class="header-logo-right"
-      >
-    </div>
+
+  <!-- LOGO YUSEN ESQUERDA -->
+  <div class="header-brand header-left">
+
+    https://vectorez.biz.id/wp-content/uploads/2023/10/Logo-Yusen-Logistik-1.png
+
   </div>
 
+
+  <!-- TÍTULO CENTRAL -->
   <div class="header-text">
+
     <h1>OPERAÇÃO YUSEN - PANASONIC SJC</h1>
+
     <div id="relogio"></div>
+
   </div>
+
+
+  <!-- LOGO PANASONIC DIREITA -->
+  <div class="header-brand header-right">
+
+    https://static.vecteezy.com/system/resources/previews/019/909/647/large_2x/panasonic-transparent-panasonic-free-free-png.png
+
+  </div>
+
 </div>
+
+
+<!-- =========================
+     KPIs
+========================= -->
 
 <div class="kpis" id="painelKpi"></div>
 
+
+<!-- =========================
+     CONTEÚDO
+========================= -->
+
 <div id="conteudo"></div>
+
+
+<!-- =========================
+     RODAPÉ
+========================= -->
 
 <div class="footer">
   Atualização automática a cada 30 segundos
 </div>
 
+
 <script>
+
+/* =========================
+   GOOGLE SHEETS
+========================= */
 
 const csvUrl =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vTN1vOH2C4htkHC3NnXIqy7JcjCe_6mfulx2Qg1NuVR6zB73jYm81QKBbaPbGoBZIjGdvB777wo7TYm/pub?gid=0&single=true&output=csv";
 
-function atualizarRelogio(){
-  const agora = new Date();
-  document.getElementById("relogio").innerHTML =
-    agora.toLocaleDateString('pt-BR') + " - " + agora.toLocaleTimeString('pt-BR');
-}
 
-setInterval(atualizarRelogio,1000);
-atualizarRelogio();
-
-function statusEmoticon(status) {
-  const s = (status || "").toUpperCase();
-
-  if (s.includes("ATRASADO")) return "🚨 ATRASADO";
-  if (s.includes("CARREGANDO") || s.includes("CARREGAMENTO")) return "📦 CARREGANDO";
-  if (s.includes("CARREGADO") || s.includes("FINALIZADO")) return "✅ CARREGADO";
-  if (s.includes("AGUARDANDO")) return "🚚 AGUARDANDO";
-  if (s.includes("PATIO") || s.includes("NO PATIO")) return "🚚 AGUARDANDO";
-  return status || "";
-}
-
-async function carregarDados(){
-
-  const resposta = await fetch(csvUrl);
-  const texto = await resposta.text();
-
-  const linhas = texto.split("\n");
-
-  let html = "";
-
-  let atrasados = 0;
-  let carregamento = 0;
-  let carregados = 0;
-  let aguardando = 0;
-  let patio = 0;
-
-  let tabelaAberta = false;
-  let secaoAtual = "";
-
-  for(let i=0;i<linhas.length;i++){
-
-    let colunas = linhas[i]
-      .split(",")
-      .map(x => x.replace(/"/g, "").trim());
-
-    if(colunas[0] === "ENERGY" || colunas[0] === "AUTOMOTIVO"){
-
-      secaoAtual = colunas[0];
-
-      if(tabelaAberta){
-        html += "</table></div>";
-      }
-
-      html += `
-      <div class="section">
-      <div class="section-title">${colunas[0]}</div>
-
-      <table>
-      <tr>
-      <th>TRANSPORTADORA</th>
-      <th>VEÍCULO</th>
-      <th>JANELA</th>
-      ${secaoAtual === "ENERGY" ? "<th>PESO</th>" : ""}
-      <th>STATUS</th>
-      </tr>
-      `;
-
-      tabelaAberta = true;
-      continue;
-    }
-
-    if(
-      colunas[0] &&
-      colunas[0] !== "TRANSPORTADORA" &&
-      colunas[0] !== "OPERAÇÃO YUSEN - EXPEDIÇÃO PANASONIC SJC"
-    ){
-
-      let statusIndex = secaoAtual === "ENERGY" ? 4 : 3;
-      let peso = "";
-
-      if(secaoAtual === "AUTOMOTIVO" && colunas.length > 4){
-        const valorQuarto = (colunas[3] || "").trim();
-        const parecePeso = /^\d+[\.,]?\d*$/.test(valorQuarto.replace(/\s/g, ""));
-        if(!parecePeso && (colunas[4] || "").trim()){
-          statusIndex = 4;
-        }
-      }
-
-      if(secaoAtual === "ENERGY"){
-        peso = colunas[3] || "";
-      }
-
-      const statusRaw = (colunas[statusIndex] || "").trim();
-      const status = statusRaw.toUpperCase();
-      let classe = "";
-
-      if(status.includes("ATRASADO")){
-        classe = "atrasado";
-        atrasados++;
-      }
-
-      else if(
-        status.includes("CARREGANDO") ||
-        status.includes("CARREGAMENTO")
-      ){
-        classe = "emcarregamento";
-        carregamento++;
-      }
-
-      else if(
-        status.includes("CARREGADO") ||
-        status.includes("FINALIZADO")
-      ){
-        classe = "carregado";
-        carregados++;
-      }
-
-      else if(
-        status.includes("AGUARDANDO") ||
-        status.includes("AGUARDANDO O VEICULO")
-      ){
-        classe = "aguardando";
-        aguardando++;
-      }
-
-      else if(
-        status.includes("PATIO") ||
-        status.includes("NO PATIO")
-      ){
-        classe = "patio";
-        patio++;
-      }
-
-      const statusTexto = statusEmoticon(statusRaw);
-
-      html += `
-      <tr class="${classe}">
-      <td>${colunas[0]}</td>
-      <td>${colunas[1] || ""}</td>
-      <td>${colunas[2] || ""}</td>
-      ${secaoAtual === "ENERGY" ? `<td>${peso}</td>` : ""}
-      <td>${statusTexto}</td>
-      </tr>
-      `;
-    }
-  }
-
-  if(tabelaAberta){
-    html += "</table></div>";
-  }
-
-  document.getElementById("conteudo").innerHTML = html;
-
-  document.getElementById("painelKpi").innerHTML = `
-
-  <div class="kpi kpi-atrasado">
-  🚨 ATRASADOS: ${atrasados}
-  </div>
-
-  <div class="kpi kpi-patio">
-  🚚 AGUARDANDO: ${patio}
-  </div>
-
-  <div class="kpi kpi-carregamento">
-  📦 CARREGANDO: ${carregamento}
-  </div>
-
-  <div class="kpi kpi-carregado">
-  ✅ CARREGADOS: ${carregados}
-  </div>
-
-  `;
-}
-
-carregarDados();
-setInterval(carregarDados,30000);
-
-</script>
-
-</body>
-</html>
+/* =========================
+   

@@ -10,6 +10,10 @@
 
 <style>
 
+/* ==================================================
+   CONFIGURAÇÕES GERAIS
+================================================== */
+
 :root{
 
   --bg:#0b2441;
@@ -37,9 +41,6 @@
 
   --orange:#ff9f1c;
   --orange-strong:#e67e00;
-
-  --blue:#51a6ff;
-  --blue-strong:#2487e4;
 
   --shadow:
     0 14px 32px
@@ -80,11 +81,9 @@ body{
 }
 
 
-
 /* ==================================================
    CABEÇALHO
 ================================================== */
-
 
 .header{
 
@@ -153,11 +152,170 @@ body{
 }
 
 
+/* ==================================================
+   TICKER DAS NF'S
+================================================== */
+
+.ticker{
+
+  width:100%;
+
+  height:55px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      #081421,
+      #111d29,
+      #081421
+    );
+
+  border-top:
+    1px solid
+    rgba(255,255,255,0.08);
+
+  border-bottom:
+    2px solid
+    var(--yellow);
+
+  display:flex;
+
+  align-items:center;
+
+  overflow:hidden;
+
+  box-shadow:
+    0 6px 18px
+    rgba(0,0,0,0.30);
+
+}
+
+
+/* TÍTULO FIXO */
+
+.ticker-label{
+
+  height:100%;
+
+  min-width:230px;
+
+  padding:
+    0 20px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--yellow),
+      var(--yellow-strong)
+    );
+
+  color:#111827;
+
+  font-size:17px;
+
+  font-weight:900;
+
+  letter-spacing:0.5px;
+
+  z-index:5;
+
+  box-shadow:
+    8px 0 18px
+    rgba(0,0,0,0.35);
+
+  white-space:nowrap;
+
+}
+
+
+/* ÁREA DO MOVIMENTO */
+
+.ticker-area{
+
+  position:relative;
+
+  flex:1;
+
+  overflow:hidden;
+
+  height:100%;
+
+  display:flex;
+
+  align-items:center;
+
+}
+
+
+/* CONTEÚDO DAS NF'S */
+
+.ticker-content{
+
+  position:absolute;
+
+  white-space:nowrap;
+
+  left:100%;
+
+  font-size:20px;
+
+  font-weight:900;
+
+  color:#ffffff;
+
+  letter-spacing:1px;
+
+  animation:
+    tickerMovimento
+    25s
+    linear
+    infinite;
+
+}
+
+
+/* ANIMAÇÃO */
+
+@keyframes tickerMovimento{
+
+  from{
+
+    transform:
+      translateX(0);
+
+  }
+
+  to{
+
+    transform:
+      translateX(-200%);
+
+  }
+
+}
+
+
+/* PAUSA AO PASSAR O MOUSE */
+
+.ticker-area:hover
+.ticker-content{
+
+  animation-play-state:
+    paused;
+
+}
+
 
 /* ==================================================
    KPIs
 ================================================== */
-
 
 .kpis{
 
@@ -204,7 +362,6 @@ body{
 }
 
 
-
 /* ATRASADOS */
 
 .kpi-atrasado{
@@ -225,7 +382,9 @@ body{
     var(--shadow);
 
   animation:
-    pulse-alert 2s infinite;
+    pulse-alert
+    2s
+    infinite;
 
   color:white;
 
@@ -236,15 +395,18 @@ body{
 
   0%,
   100%{
+
     transform:scale(1);
+
   }
 
   50%{
+
     transform:scale(1.04);
+
   }
 
 }
-
 
 
 /* AGUARDANDO */
@@ -264,7 +426,6 @@ body{
 }
 
 
-
 /* NO PATIO */
 
 .kpi-patio{
@@ -280,7 +441,6 @@ body{
   color:#17130c;
 
 }
-
 
 
 /* EM PROCESSO */
@@ -300,7 +460,6 @@ body{
 }
 
 
-
 /* FINALIZADOS */
 
 .kpi-finalizado{
@@ -318,11 +477,9 @@ body{
 }
 
 
-
 /* ==================================================
    SEÇÕES
 ================================================== */
-
 
 .section{
 
@@ -374,11 +531,9 @@ body{
 }
 
 
-
 /* ==================================================
    TABELA
 ================================================== */
-
 
 .table-container{
 
@@ -457,50 +612,41 @@ tr:last-child td{
 }
 
 
-
 /* ==================================================
-   TAMANHOS DAS COLUNAS
+   TAMANHO DAS COLUNAS
 ================================================== */
-
 
 .col-transportadora{
   min-width:150px;
 }
 
-
 .col-operacao{
   min-width:110px;
 }
-
 
 .col-veiculo{
   min-width:110px;
 }
 
-
 .col-janela{
   min-width:90px;
 }
-
 
 .col-peso{
   min-width:100px;
 }
 
-
 .col-status{
   min-width:150px;
 }
-
 
 .col-horario{
   min-width:110px;
 }
 
 
-
 /* ==================================================
-   CORES DOS STATUS
+   CORES DAS LINHAS
 ================================================== */
 
 
@@ -518,7 +664,6 @@ tr.aguardando td{
 }
 
 
-
 /* ATRASADO */
 
 tr.atrasado td{
@@ -533,12 +678,10 @@ tr.atrasado td{
   font-weight:900;
 
   text-shadow:
-
     0 0 10px
     rgba(255,93,108,0.45);
 
 }
-
 
 
 /* NO PATIO */
@@ -555,7 +698,6 @@ tr.patio td{
 }
 
 
-
 /* EM PROCESSO */
 
 tr.processo td{
@@ -568,7 +710,6 @@ tr.processo td{
     !important;
 
 }
-
 
 
 /* FINALIZADO */
@@ -585,11 +726,9 @@ tr.finalizado td{
 }
 
 
-
 /* ==================================================
    HORÁRIOS
 ================================================== */
-
 
 .horario{
 
@@ -609,11 +748,9 @@ tr.finalizado td{
 }
 
 
-
 /* ==================================================
    RODAPÉ
 ================================================== */
-
 
 .footer{
 
@@ -631,20 +768,22 @@ tr.finalizado td{
 }
 
 
-
 /* ==================================================
    RESPONSIVO
 ================================================== */
 
-
 @media(max-width:1100px){
 
   th{
+
     font-size:12px;
+
   }
 
   td{
+
     font-size:14px;
+
   }
 
 }
@@ -659,17 +798,46 @@ tr.finalizado td{
 
   }
 
+
   .header h1{
 
     font-size:25px;
 
   }
 
+
   #relogio{
 
     font-size:15px;
 
   }
+
+
+  .ticker{
+
+    height:48px;
+
+  }
+
+
+  .ticker-label{
+
+    min-width:160px;
+
+    padding:
+      0 10px;
+
+    font-size:13px;
+
+  }
+
+
+  .ticker-content{
+
+    font-size:16px;
+
+  }
+
 
   .kpi{
 
@@ -693,7 +861,6 @@ tr.finalizado td{
      CABEÇALHO
 ================================================== -->
 
-
 <div class="header">
 
   <div class="header-text">
@@ -709,11 +876,38 @@ tr.finalizado td{
 </div>
 
 
+<!-- ==================================================
+     TICKER NF'S PENDENTES
+================================================== -->
+
+<div class="ticker">
+
+  <div class="ticker-label">
+
+    📄 NF'S PENDENTES
+
+  </div>
+
+
+  <div class="ticker-area">
+
+    <div
+      class="ticker-content"
+      id="tickerNFs"
+    >
+
+      Carregando NF's...
+
+    </div>
+
+  </div>
+
+</div>
+
 
 <!-- ==================================================
      KPIs
 ================================================== -->
-
 
 <div
   class="kpis"
@@ -721,20 +915,16 @@ tr.finalizado td{
 </div>
 
 
-
 <!-- ==================================================
      TABELAS
 ================================================== -->
 
-
 <div id="conteudo"></div>
-
 
 
 <!-- ==================================================
      RODAPÉ
 ================================================== -->
-
 
 <div class="footer">
 
@@ -748,19 +938,24 @@ tr.finalizado td{
 
 
 /* ==================================================
-   GOOGLE SHEETS
+   URL PRINCIPAL
 ================================================== */
-
 
 const csvUrl =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vTN1vOH2C4htkHC3NnXIqy7JcjCe_6mfulx2Qg1NuVR6zB73jYm81QKBbaPbGoBZIjGdvB777wo7TYm/pub?gid=0&single=true&output=csv";
 
 
+/* ==================================================
+   URL ABA PIN - NF'S PENDENTES
+================================================== */
+
+const csvNFs =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vTN1vOH2C4htkHC3NnXIqy7JcjCe_6mfulx2Qg1NuVR6zB73jYm81QKBbaPbGoBZIjGdvB777wo7TYm/pub?gid=141918402&single=true&output=csv";
+
 
 /* ==================================================
    RELÓGIO
 ================================================== */
-
 
 function atualizarRelogio(){
 
@@ -798,11 +993,9 @@ setInterval(
 atualizarRelogio();
 
 
-
 /* ==================================================
    STATUS COM ÍCONES
 ================================================== */
-
 
 function statusEmoticon(status){
 
@@ -864,11 +1057,9 @@ function statusEmoticon(status){
 }
 
 
-
 /* ==================================================
-   DEFINE CLASSE DA LINHA
+   CLASSE DO STATUS
 ================================================== */
-
 
 function classeStatus(status){
 
@@ -930,18 +1121,176 @@ function classeStatus(status){
 }
 
 
-
 /* ==================================================
-   CARREGAR DADOS
+   CARREGA NF'S
 ================================================== */
 
+async function carregarNFs(){
+
+  try{
+
+
+    const resposta =
+      await fetch(
+
+        csvNFs +
+
+        "&t=" +
+
+        new Date().getTime()
+
+      );
+
+
+    if(
+      !resposta.ok
+    ){
+
+      throw new Error(
+        "Erro HTTP: " +
+        resposta.status
+      );
+
+    }
+
+
+    const texto =
+      await resposta.text();
+
+
+    const linhas =
+      texto
+      .replace(/\r/g,"")
+      .split("\n");
+
+
+    let nfs = [];
+
+
+    /* COMEÇA NA LINHA 2
+       POIS A LINHA 1 É NF'S
+    */
+
+    for(
+      let i = 1;
+      i < linhas.length;
+      i++
+    ){
+
+
+      const nf =
+        linhas[i]
+
+        .split(",")[0]
+
+        .replace(/"/g,"")
+
+        .trim();
+
+
+      if(
+        nf !== ""
+      ){
+
+        nfs.push(nf);
+
+      }
+
+    }
+
+
+    const ticker =
+      document
+      .getElementById(
+        "tickerNFs"
+      );
+
+
+    if(
+      nfs.length > 0
+    ){
+
+
+      const textoTicker =
+        nfs
+
+        .map(
+
+          nf =>
+            `📄 NF ${nf}`
+
+        )
+
+        .join(
+
+          "　◆　"
+
+        );
+
+
+      /*
+         REPETE O CONTEÚDO PARA
+         O MOVIMENTO FICAR MAIS CONTÍNUO
+      */
+
+      ticker.innerHTML =
+
+        textoTicker
+
+        +
+
+        "　◆　"
+
+        +
+
+        textoTicker;
+
+    }
+
+
+    else{
+
+
+      ticker.innerHTML =
+        "✅ NENHUMA NF PENDENTE";
+
+
+    }
+
+
+  }
+
+
+  catch(erro){
+
+
+    console.error(
+      "Erro ao carregar NF's:",
+      erro
+    );
+
+
+    document
+      .getElementById(
+        "tickerNFs"
+      )
+      .innerHTML =
+      "⚠️ ERRO AO CARREGAR NF'S";
+
+
+  }
+
+}
+
+
+/* ==================================================
+   CARREGAR DADOS OPERACIONAIS
+================================================== */
 
 async function carregarDados(){
 
   try{
 
-
-    /* EVITA CACHE */
 
     const resposta =
       await fetch(
@@ -983,14 +1332,13 @@ async function carregarDados(){
     let secaoAtual = "";
 
 
-    let tabelaAberta = false;
-
+    let tabelaAberta =
+      false;
 
 
     /* ==================================================
        CONTADORES
     ================================================== */
-
 
     let atrasados = 0;
 
@@ -1003,11 +1351,9 @@ async function carregarDados(){
     let finalizados = 0;
 
 
-
     /* ==================================================
-       PERCORRE A PLANILHA
+       PERCORRE PLANILHA
     ================================================== */
-
 
     for(
       let i = 0;
@@ -1038,15 +1384,15 @@ async function carregarDados(){
           ||
           ""
         )
+
         .trim()
+
         .toUpperCase();
 
 
-
       /* ==================================================
-         IDENTIFICA ENERGY / AUTOMOTIVO
+         ENERGY / AUTOMOTIVO
       ================================================== */
-
 
       if(
         primeiraColuna === "ENERGY"
@@ -1061,13 +1407,13 @@ async function carregarDados(){
 
           html += `
 
-            </tbody>
+          </tbody>
 
-            </table>
+          </table>
 
-            </div>
+          </div>
 
-            </div>
+          </div>
 
           `;
 
@@ -1093,85 +1439,85 @@ async function carregarDados(){
           <div class="table-container">
 
 
-          <table>
+            <table>
 
 
-            <thead>
+              <thead>
 
 
-              <tr>
+                <tr>
 
 
-                <th class="col-transportadora">
+                  <th class="col-transportadora">
 
-                  TRANSPORTADORA
+                    TRANSPORTADORA
 
-                </th>
-
-
-                <th class="col-operacao">
-
-                  OPERAÇÃO
-
-                </th>
+                  </th>
 
 
-                <th class="col-veiculo">
+                  <th class="col-operacao">
 
-                  VEÍCULO
+                    OPERAÇÃO
 
-                </th>
-
-
-                <th class="col-janela">
-
-                  JANELA
-
-                </th>
+                  </th>
 
 
-                <th class="col-peso">
+                  <th class="col-veiculo">
 
-                  PESO (KG)
+                    VEÍCULO
 
-                </th>
-
-
-                <th class="col-status">
-
-                  STATUS
-
-                </th>
+                  </th>
 
 
-                <th class="col-horario">
+                  <th class="col-janela">
 
-                  CHEGADA
+                    JANELA
 
-                </th>
-
-
-                <th class="col-horario">
-
-                  INÍCIO CARR.
-
-                </th>
+                  </th>
 
 
-                <th class="col-horario">
+                  <th class="col-peso">
 
-                  FIM CARR.
+                    PESO (KG)
 
-                </th>
-
-
-              </tr>
+                  </th>
 
 
-            </thead>
+                  <th class="col-status">
+
+                    STATUS
+
+                  </th>
 
 
-            <tbody>
+                  <th class="col-horario">
+
+                    CHEGADA
+
+                  </th>
+
+
+                  <th class="col-horario">
+
+                    INÍCIO CARR.
+
+                  </th>
+
+
+                  <th class="col-horario">
+
+                    FIM CARR.
+
+                  </th>
+
+
+                </tr>
+
+
+              </thead>
+
+
+              <tbody>
 
         `;
 
@@ -1185,11 +1531,9 @@ async function carregarDados(){
       }
 
 
-
       /* ==================================================
-         IGNORA CABEÇALHO ORIGINAL DA PLANILHA
+         IGNORA CABEÇALHO
       ================================================== */
-
 
       if(
         primeiraColuna ===
@@ -1201,11 +1545,9 @@ async function carregarDados(){
       }
 
 
-
       /* ==================================================
          IGNORA LINHAS VAZIAS
       ================================================== */
-
 
       if(
         !primeiraColuna
@@ -1216,11 +1558,9 @@ async function carregarDados(){
       }
 
 
-
       /* ==================================================
-         NÃO PROCESSA ANTES DE ENERGY/AUTOMOTIVO
+         IGNORA ANTES DE ENCONTRAR UMA SEÇÃO
       ================================================== */
-
 
       if(
         !secaoAtual
@@ -1231,9 +1571,8 @@ async function carregarDados(){
       }
 
 
-
       /* ==================================================
-         ESTRUTURA DA PLANILHA
+         COLUNAS DA PLANILHA
 
          A = TRANSPORTADORA
          B = OPERAÇÃO
@@ -1283,15 +1622,15 @@ async function carregarDados(){
         colunas[8] || "";
 
 
-
       /* ==================================================
          STATUS
       ================================================== */
 
-
       const status =
         statusRaw
+
         .trim()
+
         .toUpperCase();
 
 
@@ -1301,11 +1640,9 @@ async function carregarDados(){
         );
 
 
-
       /* ==================================================
          CONTADORES
       ================================================== */
-
 
       if(
         status.includes(
@@ -1370,23 +1707,15 @@ async function carregarDados(){
       }
 
 
-
-      /* ==================================================
-         TEXTO DO STATUS
-      ================================================== */
-
-
       const statusTexto =
         statusEmoticon(
           statusRaw
         );
 
 
-
       /* ==================================================
-         MONTA LINHA
+         MONTA A LINHA
       ================================================== */
-
 
       html += `
 
@@ -1466,11 +1795,9 @@ async function carregarDados(){
     }
 
 
-
     /* ==================================================
-       FECHA A ÚLTIMA TABELA
+       FECHA ÚLTIMA TABELA
     ================================================== */
-
 
     if(
       tabelaAberta
@@ -1478,24 +1805,22 @@ async function carregarDados(){
 
       html += `
 
-        </tbody>
+      </tbody>
 
-        </table>
+      </table>
 
-        </div>
+      </div>
 
-        </div>
+      </div>
 
       `;
 
     }
 
 
-
     /* ==================================================
-       EXIBE TABELAS
+       MOSTRA TABELAS
     ================================================== */
-
 
     document
       .getElementById(
@@ -1505,11 +1830,9 @@ async function carregarDados(){
       html;
 
 
-
     /* ==================================================
-       EXIBE KPIs
+       MOSTRA KPIs
     ================================================== */
-
 
     document
       .getElementById(
@@ -1611,29 +1934,37 @@ async function carregarDados(){
 
       `;
 
+
   }
 
 }
-
 
 
 /* ==================================================
    CARREGAMENTO INICIAL
 ================================================== */
 
-
 carregarDados();
 
+carregarNFs();
 
 
 /* ==================================================
    ATUALIZAÇÃO AUTOMÁTICA
 ================================================== */
 
-
 setInterval(
 
   carregarDados,
+
+  30000
+
+);
+
+
+setInterval(
+
+  carregarNFs,
 
   30000
 

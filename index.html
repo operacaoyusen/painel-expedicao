@@ -492,6 +492,31 @@ display: none !important;
 display: none !important;
 
 }
+
+#relogio {
+    display: none !important;
+}
+
+/* Efeito de alerta no card ATRASADOS */
+
+.kpi-atrasado.alerta-ativo{
+    animation:pulsoAtrasado 1.5s ease-in-out infinite;
+}
+
+@keyframes pulsoAtrasado{
+
+    0%, 100%{
+        transform:scale(1);
+        box-shadow:0 14px 32px rgba(0,0,0,.28);
+    }
+
+    50%{
+        transform:scale(1.04);
+        box-shadow:
+            0 14px 32px rgba(0,0,0,.28),
+            0 0 25px rgba(255,75,93,.85);
+    }
+}
   
 </style>
 

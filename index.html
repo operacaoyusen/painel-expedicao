@@ -1150,6 +1150,29 @@ if(totalVeiculos > 0){
 
 }
 
+var corProgresso;
+
+if(percentual <= 25){
+
+    corProgresso = "vermelho";
+
+}
+else if(percentual <= 50){
+
+    corProgresso = "laranja";
+
+}
+else if(percentual <= 75){
+
+    corProgresso = "amarelo";
+
+}
+else{
+
+    corProgresso = "verde";
+
+}
+
 document
 .getElementById(
 "progressoOperacao"

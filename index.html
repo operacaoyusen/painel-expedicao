@@ -1197,7 +1197,7 @@ if(totalVeiculos > 0){
 
 var corProgresso;
 
-if(percentual <= 25){
+if(percentual <= 20){
 
     corProgresso = "vermelho";
 
@@ -1207,9 +1207,9 @@ else if(percentual <= 50){
     corProgresso = "laranja";
 
 }
-else if(percentual <= 75){
+else if(percentual <= 80){
 
-    corProgresso = "amarelo";
+    corProgresso = "azul";
 
 }
 else{
@@ -1217,7 +1217,6 @@ else{
     corProgresso = "verde";
 
 }
-
 document
 .getElementById(
 "progressoOperacao"

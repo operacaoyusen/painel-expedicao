@@ -1116,6 +1116,57 @@ ${finalizados}
 
 `;
 
+/* CALCULO DO PROGRESSO DA OPERACAO */
+
+var totalVeiculos = dadosOperacao.length;
+
+var percentual = 0;
+
+if(totalVeiculos > 0){
+
+    percentual = Math.round(
+        (finalizados / totalVeiculos) * 100
+    );
+
+}
+
+document
+.getElementById(
+"progressoOperacao"
+)
+.innerHTML = `
+
+<div class="progresso-box">
+
+    <div class="progresso-topo">
+
+        <span>
+        📊 PROGRESSO DA OPERAÇÃO
+        </span>
+
+        <span class="progresso-percentual">
+        ${percentual}%
+        </span>
+
+    </div>
+
+    <div class="progresso-fundo">
+
+        <div
+        class="progresso-barra"
+        style="width:${percentual}%">
+        </div>
+
+    </div>
+
+    <div class="progresso-detalhe">
+    ${finalizados} DE ${totalVeiculos} VEÍCULOS FINALIZADOS
+    </div>
+
+</div>
+
+`;
+    
 var secoes = [
 "ENERGY",
 "AUTOMOTIVO"

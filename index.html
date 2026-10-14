@@ -1040,7 +1040,7 @@ document
 )
 .innerHTML = `
 
-<div class="kpi kpi-atrasado">
+<div class="kpi kpi-atrasado ${atrasados > 0 ? 'alerta-ativo' : ''}">
 🚨 ATRASADOS:
 ${atrasados}
 </div>

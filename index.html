@@ -1045,6 +1045,15 @@ function obterPercentualEsperado(){
 
 function obterStatusProgresso(percentualReal, percentualEsperado){
 
+if(percentualReal >= 100){
+
+    return {
+        status:"CONCLUÍDO",
+        cor:"verde"
+    };
+
+}
+    
     var diferenca =
         percentualReal - percentualEsperado;
 

@@ -1347,28 +1347,21 @@ if(totalVeiculos > 0){
 
 }
 
-var corProgresso;
+var percentualEsperado =
+    obterPercentualEsperado();
 
-if(percentual <= 20){
+var resultadoProgresso =
+    obterStatusProgresso(
+        percentual,
+        percentualEsperado
+    );
 
-    corProgresso = "vermelho";
+var corProgresso =
+    resultadoProgresso.cor;
 
-}
-else if(percentual <= 50){
-
-    corProgresso = "laranja";
-
-}
-else if(percentual <= 80){
-
-    corProgresso = "azul";
-
-}
-else{
-
-    corProgresso = "verde";
-
-}
+var statusProgresso =
+    resultadoProgresso.status;
+    
 document
 .getElementById(
 "progressoOperacao"

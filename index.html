@@ -988,6 +988,105 @@ var escalaProgresso = [
     { hora:"17:30", percentual:100 }
 
 ];
+
+function obterPercentualEsperado(){
+
+    var agora = new Date();
+
+    var minutosAgora =
+        agora.getHours() * 60 +
+        agora.getMinutes();
+
+    for(var i = 0; i < escalaProgresso.length - 1; i++){
+
+        var atual = escalaProgresso[i];
+        var proximo = escalaProgresso[i + 1];
+
+        var partesAtual =
+            atual.hora.split(":");
+
+        var partesProximo =
+            proximo.hora.split(":");
+
+        var minutosAtual =
+            parseInt(partesAtual[0]) * 60 +
+            parseInt(partesAtual[1]);
+
+        var minutosProximo =
+            parseInt(partesProximo[0]) * 60 +
+            parseInt(partesProximo[1]);
+
+        if(
+            minutosAgora >= minutosAtual &&
+            minutosAgora < minutosProximo
+        ){
+
+            var proporcao =
+                (minutosAgora - minutosAtual) /
+                (minutosProximo - minutosAtual);
+
+            return atual.percentual +
+                (
+                    proximo.percentual -
+                    atual.percentual
+                ) * proporcao;
+        }
+    }
+
+    if(minutosAgora < 8 * 60){
+        return 0;
+    }
+
+    return 100;
+}
+
+
+/* STATUS DO PROGRESSO */
+
+function obterStatusProgresso(percentualReal, percentualEsperado){
+
+    var diferenca =
+        percentualReal - percentualEsperado;
+
+    if(diferenca >= 5){
+
+        return {
+            status:"ADIANTADO",
+            cor:"verde"
+        };
+
+    }
+
+    if(diferenca >= -5){
+
+        return {
+            status:"NO RITMO",
+            cor:"azul"
+        };
+
+    }
+
+    if(diferenca >= -10){
+
+        return {
+            status:"ATENÇÃO",
+            cor:"amarelo"
+        };
+
+    }
+
+    return {
+        status:"ATRASADO",
+        cor:"vermelho"
+    };
+}
+
+
+/* CARREGAMENTO DOS DADOS */
+
+async function carregarDados(){
+
+try{
     
 async function carregarDados(){
 

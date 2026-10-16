@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>OPERAÇÃO YUSEN - PANASONIC SJC</title>
@@ -12,2410 +11,2725 @@
 <style>
 
 :root{
---bg:#0b2441;
---line:rgba(255,255,255,0.12);
---text:#edf4ff;
---muted:#dfeafc;
+    --bg:#0b2441;
+    --line:rgba(255,255,255,0.12);
+    --text:#edf4ff;
+    --muted:#dfeafc;
 
---yellow:#f6d34c;
---yellow-strong:#e8c33b;
+    --yellow:#f6d34c;
+    --yellow-strong:#e8c33b;
 
---purple:#9d69ff;
---purple-strong:#7c4ee4;
+    --purple:#9d69ff;
+    --purple-strong:#7c4ee4;
 
---green:#34d38f;
---green-strong:#20a86c;
+    --green:#34d38f;
+    --green-strong:#20a86c;
 
---orange:#ff9f1c;
---orange-strong:#e67e00;
+    --orange:#ff9f1c;
+    --orange-strong:#e67e00;
 
---shadow:0 14px 32px rgba(0,0,0,0.28);
+    --shadow:0 14px 32px rgba(0,0,0,0.28);
 }
 
 *{
-box-sizing:border-box;
+    box-sizing:border-box;
 }
 
 body{
 
-margin:0;
+    margin:0;
 
-zoom:.90;
+    zoom:.90;
 
-background:
-radial-gradient(
-circle at top,
-rgba(76,132,214,0.28),
-transparent 35%
-),
-linear-gradient(
-180deg,
-#0b2441 0%,
-#050f1d 100%
-);
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(76,132,214,0.28),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #0b2441 0%,
+            #050f1d 100%
+        );
 
-color:var(--text);
+    color:var(--text);
 
-font-family:Arial,sans-serif;
+    font-family:Arial,sans-serif;
 
 }
 
-/* ==============================================
+
+/* =====================================================
    BLOQUEIO POR SENHA
-   ============================================== */
+   ===================================================== */
 
 #bloqueio-senha{
 
-position:fixed;
+    position:fixed;
 
-inset:0;
+    inset:0;
 
-background:
-radial-gradient(
-circle at top,
-rgba(76,132,214,0.25),
-transparent 40%
-),
-linear-gradient(
-180deg,
-#0b2441,
-#050f1d
-);
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(76,132,214,.25),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #0b2441,
+            #050f1d
+        );
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:center;
+    justify-content:center;
 
-z-index:99999;
+    z-index:99999;
 
-color:white;
-
-font-family:Arial,sans-serif;
+    color:white;
 
 }
 
 #bloqueio-senha .box{
 
-background:#10283f;
+    background:#10283f;
 
-padding:36px;
+    padding:36px;
 
-border-radius:16px;
+    border-radius:16px;
 
-text-align:center;
+    text-align:center;
 
-width:350px;
+    width:350px;
 
-border:1px solid rgba(255,255,255,.12);
+    max-width:90vw;
 
-box-shadow:
-0 18px 50px rgba(0,0,0,.55);
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 18px 50px rgba(0,0,0,.55);
 
 }
 
 #bloqueio-senha h2{
 
-margin:0 0 8px 0;
+    margin:0 0 8px 0;
 
-font-size:24px;
-
-color:#ffffff;
+    font-size:24px;
 
 }
 
 #bloqueio-senha p{
 
-color:#dfeafc;
+    color:#dfeafc;
 
-margin:8px 0;
+    margin:8px 0;
 
 }
 
 #bloqueio-senha input{
 
-width:100%;
+    width:100%;
 
-padding:13px;
+    padding:13px;
 
-margin:18px 0 14px 0;
+    margin:18px 0 14px 0;
 
-border-radius:8px;
+    border-radius:8px;
 
-border:1px solid rgba(255,255,255,.18);
+    border:
+        1px solid rgba(255,255,255,.18);
 
-box-sizing:border-box;
+    background:#071522;
 
-background:#071522;
+    color:white;
 
-color:white;
+    font-size:17px;
 
-font-size:17px;
-
-outline:none;
+    outline:none;
 
 }
 
 #bloqueio-senha input:focus{
 
-border-color:#3498ff;
+    border-color:#3498ff;
 
-box-shadow:
-0 0 0 3px rgba(52,152,255,.18);
+    box-shadow:
+        0 0 0 3px rgba(52,152,255,.18);
 
 }
 
 #bloqueio-senha button{
 
-width:100%;
+    width:100%;
 
-padding:13px;
+    padding:13px;
 
-background:
-linear-gradient(
-135deg,
-#3498ff,
-#1768c4
-);
+    background:
+        linear-gradient(
+            135deg,
+            #3498ff,
+            #1768c4
+        );
 
-color:white;
+    color:white;
 
-border:none;
+    border:none;
 
-border-radius:8px;
+    border-radius:8px;
 
-cursor:pointer;
+    cursor:pointer;
 
-font-size:16px;
+    font-size:16px;
 
-font-weight:900;
+    font-weight:900;
 
 }
 
 #bloqueio-senha button:hover{
 
-filter:brightness(1.08);
+    filter:brightness(1.08);
 
 }
 
 #erroSenha{
 
-color:#ff6874 !important;
+    color:#ff6874 !important;
 
-display:none;
+    display:none;
 
-margin-top:12px !important;
+    margin-top:12px !important;
 
-font-weight:800;
+    font-weight:800;
 
 }
 
-/* ==============================================
+
+/* =====================================================
    CABEÇALHO
-   ============================================== */
+   ===================================================== */
 
 .header{
 
-background:
-linear-gradient(
-90deg,
-#0d3d68 0%,
-#0f4d7c 35%,
-#0a2d49 100%
-);
+    background:
+        linear-gradient(
+            90deg,
+            #0d3d68 0%,
+            #0f4d7c 35%,
+            #0a2d49 100%
+        );
 
-padding:12px;
+    padding:12px;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:center;
+    justify-content:center;
 
-border-bottom:1px solid var(--line);
+    border-bottom:1px solid var(--line);
 
-box-shadow:var(--shadow);
+    box-shadow:var(--shadow);
 
-min-height:80px;
+    min-height:80px;
 
 }
 
 .header-text{
 
-width:100%;
+    width:100%;
 
-text-align:center;
+    text-align:center;
 
 }
 
 .header h1{
 
-margin:0;
+    margin:0;
 
-font-size:26px;
+    font-size:26px;
 
-letter-spacing:.5px;
+    letter-spacing:.5px;
 
-font-weight:700;
+    font-weight:700;
 
-text-transform:uppercase;
+    text-transform:uppercase;
 
 }
 
 #relogio{
 
-margin-top:4px;
+    margin-top:4px;
 
-font-size:15px;
+    font-size:15px;
 
-color:var(--muted);
+    color:var(--muted);
 
-font-weight:600;
+    font-weight:600;
 
 }
 
-/* ==============================================
+
+/* =====================================================
    TICKER
-   ============================================== */
+   ===================================================== */
 
 .ticker{
 
-width:100%;
+    width:100%;
 
-height:55px;
+    height:55px;
 
-background:
-linear-gradient(
-90deg,
-#081421,
-#111d29,
-#081421
-);
+    background:
+        linear-gradient(
+            90deg,
+            #081421,
+            #111d29,
+            #081421
+        );
 
-border-bottom:2px solid var(--yellow);
+    border-bottom:
+        2px solid var(--yellow);
 
-align-items:center;
+    align-items:center;
 
-overflow:hidden;
+    overflow:hidden;
 
-box-shadow:
-0 6px 18px rgba(0,0,0,.30);
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.30);
 
 }
 
 .ticker-label{
 
-height:100%;
+    height:100%;
 
-min-width:210px;
+    min-width:210px;
 
-padding:0 20px;
+    padding:0 20px;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:center;
+    justify-content:center;
 
-background:
-linear-gradient(
-135deg,
-var(--yellow),
-var(--yellow-strong)
-);
+    background:
+        linear-gradient(
+            135deg,
+            var(--yellow),
+            var(--yellow-strong)
+        );
 
-color:#111827;
+    color:#111827;
 
-font-size:18px;
+    font-size:18px;
 
-font-weight:900;
+    font-weight:900;
 
 }
 
 .ticker-area{
 
-position:relative;
+    position:relative;
 
-flex:1;
+    flex:1;
 
-overflow:hidden;
+    overflow:hidden;
 
-height:100%;
+    height:100%;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
 }
 
 .ticker-content{
 
-position:absolute;
+    position:absolute;
 
-white-space:nowrap;
+    white-space:nowrap;
 
-left:100%;
+    left:100%;
 
-font-size:18px;
+    font-size:18px;
 
-font-weight:900;
+    font-weight:900;
 
-color:#fff;
+    color:white;
 
-animation:
-tickerMovimento 15s linear infinite;
+    animation:
+        tickerMovimento 15s linear infinite;
 
 }
 
 @keyframes tickerMovimento{
 
-from{
-transform:translateX(0);
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-350%);
+    }
+
 }
 
-to{
-transform:translateX(-350%);
-}
 
-}
-
-/* ==============================================
+/* =====================================================
    KPIs
-   ============================================== */
+   ===================================================== */
 
 .kpis{
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-gap:18px;
+    gap:18px;
 
-padding:20px;
+    padding:20px;
 
-flex-wrap:nowrap;
+    flex-wrap:nowrap;
 
 }
 
 .kpi{
 
-min-width:210px;
+    min-width:210px;
 
-padding:20px 24px;
+    padding:20px 24px;
 
-border-radius:12px;
+    border-radius:12px;
 
-font-size:18px;
+    font-size:18px;
 
-font-weight:800;
+    font-weight:800;
 
-text-align:center;
+    text-align:center;
 
-box-shadow:var(--shadow);
+    box-shadow:var(--shadow);
 
-text-transform:uppercase;
+    text-transform:uppercase;
 
 }
 
 .kpi-atrasado{
 
-background:
-linear-gradient(
-135deg,
-#ff4b5d,
-#e22d42
-);
+    background:
+        linear-gradient(
+            135deg,
+            #ff4b5d,
+            #e22d42
+        );
 
 }
 
 .kpi-aguardando{
 
-background:
-linear-gradient(
-135deg,
-#536475,
-#344454
-);
+    background:
+        linear-gradient(
+            135deg,
+            #536475,
+            #344454
+        );
 
 }
 
 .kpi-patio{
 
-background:
-linear-gradient(
-135deg,
-var(--orange),
-var(--orange-strong)
-);
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--orange-strong)
+        );
 
-color:#17130c;
+    color:#17130c;
 
 }
 
 .kpi-processo{
 
-background:
-linear-gradient(
-135deg,
-var(--purple),
-var(--purple-strong)
-);
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--purple-strong)
+        );
 
 }
 
 .kpi-finalizado{
 
-background:
-linear-gradient(
-135deg,
-var(--green),
-var(--green-strong)
-);
+    background:
+        linear-gradient(
+            135deg,
+            var(--green),
+            var(--green-strong)
+        );
 
 }
 
-/* ==============================================
-   SEÇÕES / TABELAS
-   ============================================== */
 
-.section{
-
-margin:12px;
-
-background:
-rgba(13,28,44,.78);
-
-border:1px solid var(--line);
-
-border-radius:14px;
-
-overflow:hidden;
-
-box-shadow:var(--shadow);
-
-}
-
-.section-title{
-
-background:
-linear-gradient(
-90deg,
-var(--yellow),
-var(--yellow-strong)
-);
-
-color:#0f172a;
-
-padding:8px;
-
-text-align:center;
-
-font-size:18px;
-
-font-weight:900;
-
-}
-
-.table-container{
-
-width:100%;
-
-overflow-x:auto;
-
-}
-
-table{
-
-width:100%;
-
-border-collapse:collapse;
-
-table-layout:fixed;
-
-}
-
-/* Largura das colunas */
-
-th:nth-child(1),
-td:nth-child(1){
-width:15%;
-}
-
-th:nth-child(2),
-td:nth-child(2){
-width:13%;
-}
-
-th:nth-child(3),
-td:nth-child(3){
-width:11%;
-}
-
-th:nth-child(4),
-td:nth-child(4){
-width:9%;
-}
-
-th:nth-child(5),
-td:nth-child(5){
-width:9%;
-}
-
-th:nth-child(6),
-td:nth-child(6){
-width:15%;
-}
-
-th:nth-child(7),
-td:nth-child(7){
-width:9%;
-}
-
-th:nth-child(8),
-td:nth-child(8){
-width:10%;
-}
-
-th:nth-child(9),
-td:nth-child(9){
-width:9%;
-}
-
-th{
-
-background:
-rgba(20,23,28,.95);
-
-color:var(--yellow);
-
-padding:8px 5px;
-
-font-size:14px;
-
-font-weight:700;
-
-text-transform:uppercase;
-
-border-bottom:
-1px solid var(--line);
-
-}
-
-td{
-
-padding:8px 5px;
-
-text-align:center;
-
-font-size:18px;
-
-font-weight:800;
-
-border-bottom:
-1px solid rgba(255,255,255,.06);
-
-overflow:hidden;
-
-text-overflow:ellipsis;
-
-white-space:nowrap;
-
-}
-
-tr.atrasado td{
-
-background:
-rgba(103,15,29,.90);
-
-color:#fff3f5;
-
-font-weight:900;
-
-}
-
-tr.aguardando td{
-
-background:
-rgba(50,65,80,.78);
-
-color:#edf4ff;
-
-}
-
-tr.patio td{
-
-background:
-rgba(116,76,13,.87);
-
-color:#fff6d8;
-
-}
-
-tr.processo td{
-
-background:
-rgba(75,46,122,.82);
-
-color:#f2ebff;
-
-}
-
-tr.finalizado td{
-
-background:
-rgba(20,77,58,.85);
-
-color:#ebfff5;
-
-}
-
-.janela{
-
-color:#ff6874;
-
-font-weight:900;
-
-}
-
-.horario{
-
-font-weight:900;
-
-}
-
-.footer{
-
-text-align:center;
-
-padding:12px;
-
-font-size:13px;
-
-color:var(--muted);
-
-}
-
-@media(max-width:1100px){
-
-th{
-font-size:10px;
-}
-
-td{
-font-size:11px;
-}
-
-}
-
-/* Oculta cabeçalho e relógio */
-
-.header{
-
-display:none !important;
-
-}
-
-#relogio{
-
-display:none !important;
-
-}
-
-/* ==============================================
+/* =====================================================
    ALERTA ATRASADOS
-   ============================================== */
+   ===================================================== */
 
 .kpi-atrasado.alerta-ativo{
 
-animation:
-pulsoAtrasado 1.5s ease-in-out infinite;
+    animation:
+        pulsoAtrasado 1.5s ease-in-out infinite;
 
 }
 
 @keyframes pulsoAtrasado{
 
-0%,100%{
+    0%,100%{
 
-transform:scale(1);
+        transform:scale(1);
 
-box-shadow:
-0 14px 32px rgba(0,0,0,.28);
+        box-shadow:
+            0 14px 32px rgba(0,0,0,.28);
+
+    }
+
+    50%{
+
+        transform:scale(1.04);
+
+        box-shadow:
+            0 14px 32px rgba(0,0,0,.28),
+            0 0 25px rgba(255,75,93,.85);
+
+    }
 
 }
 
-50%{
 
-transform:scale(1.04);
-
-box-shadow:
-0 14px 32px rgba(0,0,0,.28),
-0 0 25px rgba(255,75,93,.85);
-
-}
-
-}
-
-/* ==============================================
+/* =====================================================
    PROGRESSO
-   ============================================== */
+   ===================================================== */
 
 .progresso-box{
 
-margin:0 20px 20px 20px;
+    margin:
+        0 20px 20px 20px;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-gap:15px;
+    gap:15px;
 
 }
 
 .progresso-fundo{
 
-flex:1;
+    flex:1;
 
-height:24px;
+    height:24px;
 
-background:#071522;
+    background:#071522;
 
-border-radius:20px;
+    border-radius:20px;
 
-overflow:hidden;
+    overflow:hidden;
 
 }
 
 .progresso-barra{
 
-height:100%;
+    height:100%;
 
-border-radius:20px;
+    border-radius:20px;
 
-transition:
-width 1s ease,
-background .5s ease;
+    transition:
+        width 1s ease,
+        background .5s ease;
 
 }
 
 .progresso-percentual{
 
-min-width:75px;
+    min-width:75px;
 
-text-align:center;
+    text-align:center;
 
-font-size:30px;
+    font-size:30px;
 
-font-weight:900;
+    font-weight:900;
 
 }
 
 .progresso-label{
 
-font-size:18px;
+    font-size:18px;
 
-font-weight:900;
+    font-weight:900;
 
-min-width:165px;
+    min-width:165px;
 
-text-align:left;
+    text-align:left;
 
 }
 
-/* CORES DO PROGRESSO */
+
+/* VERMELHO */
 
 .progresso-barra.vermelho{
-background:#ff4b5d;
+    background:#ff4b5d;
 }
 
 .progresso-percentual.vermelho,
 .progresso-label.vermelho{
-color:#ff4b5d;
+    color:#ff4b5d;
 }
 
-.progresso-barra.laranja{
-background:#ff9f1c;
-}
 
-.progresso-percentual.laranja,
-.progresso-label.laranja{
-color:#ff9f1c;
-}
-
-.progresso-barra.azul{
-background:#3498ff;
-}
-
-.progresso-percentual.azul,
-.progresso-label.azul{
-color:#3498ff;
-}
-
-.progresso-barra.verde{
-background:#34d38f;
-}
-
-.progresso-percentual.verde,
-.progresso-label.verde{
-color:#34d38f;
-}
+/* AMARELO */
 
 .progresso-barra.amarelo{
-background:#f6d34c;
+    background:#f6d34c;
 }
 
 .progresso-percentual.amarelo,
 .progresso-label.amarelo{
-color:#f6d34c;
+    color:#f6d34c;
 }
 
+
+/* AZUL */
+
+.progresso-barra.azul{
+    background:#3498ff;
+}
+
+.progresso-percentual.azul,
+.progresso-label.azul{
+    color:#3498ff;
+}
+
+
+/* VERDE */
+
+.progresso-barra.verde{
+    background:#34d38f;
+}
+
+.progresso-percentual.verde,
+.progresso-label.verde{
+    color:#34d38f;
+}
+
+
+/* NEUTRO */
+
 .progresso-barra.neutro{
-background:#536475;
+    background:#536475;
 }
 
 .progresso-percentual.neutro,
 .progresso-label.neutro{
-color:#aebed0;
+    color:#aebed0;
+}
+
+
+/* =====================================================
+   SEÇÕES
+   ===================================================== */
+
+.section{
+
+    margin:12px;
+
+    background:
+        rgba(13,28,44,.78);
+
+    border:
+        1px solid var(--line);
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+.section-title{
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--yellow),
+            var(--yellow-strong)
+        );
+
+    color:#0f172a;
+
+    padding:8px;
+
+    text-align:center;
+
+    font-size:18px;
+
+    font-weight:900;
+
+}
+
+.table-container{
+
+    width:100%;
+
+    overflow-x:auto;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    table-layout:fixed;
+
+}
+
+
+/* =====================================================
+   COLUNAS
+   ===================================================== */
+
+th:nth-child(1),
+td:nth-child(1){
+    width:15%;
+}
+
+th:nth-child(2),
+td:nth-child(2){
+    width:13%;
+}
+
+th:nth-child(3),
+td:nth-child(3){
+    width:11%;
+}
+
+th:nth-child(4),
+td:nth-child(4){
+    width:9%;
+}
+
+th:nth-child(5),
+td:nth-child(5){
+    width:9%;
+}
+
+th:nth-child(6),
+td:nth-child(6){
+    width:15%;
+}
+
+th:nth-child(7),
+td:nth-child(7){
+    width:9%;
+}
+
+th:nth-child(8),
+td:nth-child(8){
+    width:10%;
+}
+
+th:nth-child(9),
+td:nth-child(9){
+    width:9%;
+}
+
+
+th{
+
+    background:
+        rgba(20,23,28,.95);
+
+    color:var(--yellow);
+
+    padding:8px 5px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+td{
+
+    padding:8px 5px;
+
+    text-align:center;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.06);
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+}
+
+
+/* =====================================================
+   CORES DAS LINHAS
+   ===================================================== */
+
+tr.atrasado td{
+
+    background:
+        rgba(103,15,29,.90);
+
+    color:#fff3f5;
+
+    font-weight:900;
+
+}
+
+tr.aguardando td{
+
+    background:
+        rgba(50,65,80,.78);
+
+    color:#edf4ff;
+
+}
+
+tr.patio td{
+
+    background:
+        rgba(116,76,13,.87);
+
+    color:#fff6d8;
+
+}
+
+tr.processo td{
+
+    background:
+        rgba(75,46,122,.82);
+
+    color:#f2ebff;
+
+}
+
+tr.finalizado td{
+
+    background:
+        rgba(20,77,58,.85);
+
+    color:#ebfff5;
+
+}
+
+.janela{
+
+    color:#ff6874;
+
+    font-weight:900;
+
+}
+
+.horario{
+
+    font-weight:900;
+
+}
+
+
+/* =====================================================
+   RODAPÉ
+   ===================================================== */
+
+.footer{
+
+    text-align:center;
+
+    padding:12px;
+
+    font-size:13px;
+
+    color:var(--muted);
+
+}
+
+
+/* =====================================================
+   RESPONSIVO
+   ===================================================== */
+
+@media(max-width:1100px){
+
+    th{
+        font-size:10px;
+    }
+
+    td{
+        font-size:11px;
+    }
+
+}
+
+
+/* =====================================================
+   CABEÇALHO OCULTO
+   ===================================================== */
+
+.header{
+
+    display:none !important;
+
+}
+
+#relogio{
+
+    display:none !important;
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
 
-<!-- ==========================================
-     BLOQUEIO POR SENHA
-     ========================================== -->
+<!-- ===================================================
+     BLOQUEIO
+     =================================================== -->
 
 <div id="bloqueio-senha">
 
-<div class="box">
+    <div class="box">
 
-<h2>🔒 Painel Expedição</h2>
+        <h2>🔒 Painel Expedição</h2>
 
-<p>OPERAÇÃO YUSEN - PANASONIC SJC</p>
+        <p>
+            OPERAÇÃO YUSEN - PANASONIC SJC
+        </p>
 
-<p>Digite a senha para acessar</p>
+        <p>
+            Digite a senha para acessar
+        </p>
 
-<input
-type="password"
-id="inputSenha"
-placeholder="Senha"
-autofocus
-/>
+        <input
+            type="password"
+            id="inputSenha"
+            placeholder="Senha"
+            autocomplete="current-password"
+        >
 
-<button onclick="verificaSenha()">
-Entrar
-</button>
+        <button
+            type="button"
+            id="botaoEntrar"
+        >
+            Entrar
+        </button>
 
-<p id="erroSenha">
-Senha incorreta
-</p>
+        <p id="erroSenha">
+            Senha incorreta
+        </p>
+
+    </div>
 
 </div>
 
-</div>
 
-
-<!-- ==========================================
-     PAINEL
-     ========================================== -->
+<!-- ===================================================
+     DASHBOARD
+     =================================================== -->
 
 <div class="header">
 
-<div class="header-text">
+    <div class="header-text">
 
-<h1>OPERAÇÃO YUSEN - PANASONIC SJC</h1>
+        <h1>
+            OPERAÇÃO YUSEN - PANASONIC SJC
+        </h1>
 
-<div id="relogio"></div>
+        <div id="relogio"></div>
 
-</div>
+    </div>
 
 </div>
 
 
 <div
-class="ticker"
-id="tickerContainer"
-style="display:none;"
+    class="ticker"
+    id="tickerContainer"
+    style="display:none;"
 >
 
-<div class="ticker-label">
-📌 PIN PENDENTE
+    <div class="ticker-label">
+
+        📌 PIN PENDENTE
+
+    </div>
+
+    <div class="ticker-area">
+
+        <div
+            class="ticker-content"
+            id="tickerNFs"
+        ></div>
+
+    </div>
+
 </div>
 
-<div class="ticker-area">
 
 <div
-class="ticker-content"
-id="tickerNFs">
-</div>
-
-</div>
-
-</div>
+    class="kpis"
+    id="painelKpi"
+></div>
 
 
 <div
-class="kpis"
-id="painelKpi">
-</div>
+    id="progressoOperacao"
+></div>
 
 
-<div id="progressoOperacao">
-</div>
-
-
-<div id="conteudo">
-</div>
+<div
+    id="conteudo"
+></div>
 
 
 <div class="footer">
-Atualização automática a cada 30 segundos
+
+    Atualização automática a cada 30 segundos
+
 </div>
 
 
 <script>
 
-/* ==========================================
-   BLOQUEIO POR SENHA
-   ========================================== */
+/* =====================================================
+   CONFIGURAÇÕES
+   ===================================================== */
 
-const SENHA =
-"operacaoyusen";
+const SENHA = "operacaoyusen";
 
+const CHAVE_ACESSO =
+    "acesso_yusen";
 
-function verificaSenha(){
+const HORARIO_FINAL_OPERACAO =
+    (17 * 60) + 30;
 
-const digitada =
-document
-.getElementById("inputSenha")
-.value;
-
-
-if(digitada === SENHA){
-
-localStorage.setItem(
-"acesso_yusen",
-"liberado"
-);
-
-document
-.getElementById(
-"bloqueio-senha"
-)
-.style.display =
-"none";
-
-}
-
-else{
-
-document
-.getElementById(
-"erroSenha"
-)
-.style.display =
-"block";
-
-}
-
-}
-
-
-if(
-localStorage.getItem(
-"acesso_yusen"
-)
-===
-"liberado"
-){
-
-document
-.getElementById(
-"bloqueio-senha"
-)
-.style.display =
-"none";
-
-}
-
-
-document
-.getElementById(
-"inputSenha"
-)
-.addEventListener(
-"keyup",
-function(e){
-
-if(e.key === "Enter"){
-
-verificaSenha();
-
-}
-
-}
-);
-
-
-/* ==========================================
-   GOOGLE SHEETS
-   ========================================== */
 
 var csvUrl =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vTN1vOH2C4htkHC3NnXIqy7JcjCe_6mfulx2Qg1NuVR6zB73jYm81QKBbaPbGoBZIjGdvB777wo7TYm/pub?gid=0&single=true&output=csv";
+
 
 var csvNFs =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vTN1vOH2C4htkHC3NnXIqy7JcjCe_6mfulx2Qg1NuVR6zB73jYm81QKBbaPbGoBZIjGdvB777wo7TYm/pub?gid=141918402&single=true&output=csv";
 
 
-/* ==========================================
-   RELÓGIO
-   ========================================== */
+var dadosOperacao = [];
 
-function atualizarRelogio(){
 
-var agora =
-new Date();
+/* =====================================================
+   BLOQUEIO
+   ===================================================== */
 
-document
-.getElementById(
-"relogio"
-)
-.innerHTML =
+var bloqueioSenha =
+    document.getElementById(
+        "bloqueio-senha"
+    );
 
-agora.toLocaleDateString(
-"pt-BR"
-)
+var inputSenha =
+    document.getElementById(
+        "inputSenha"
+    );
 
-+
+var botaoEntrar =
+    document.getElementById(
+        "botaoEntrar"
+    );
 
-" - "
+var erroSenha =
+    document.getElementById(
+        "erroSenha"
+    );
 
-+
 
-agora.toLocaleTimeString(
-"pt-BR"
-);
+function acessoJaLiberado(){
+
+    try{
+
+        return (
+            localStorage.getItem(
+                CHAVE_ACESSO
+            )
+            ===
+            "liberado"
+        );
+
+    }
+
+    catch(erro){
+
+        return false;
+
+    }
 
 }
 
 
-setInterval(
-atualizarRelogio,
-1000
+function liberarAcesso(){
+
+    try{
+
+        localStorage.setItem(
+            CHAVE_ACESSO,
+            "liberado"
+        );
+
+    }
+
+    catch(erro){
+
+        /*
+        Caso o navegador bloqueie localStorage,
+        o painel ainda é liberado nesta sessão.
+        */
+
+    }
+
+
+    bloqueioSenha.style.display =
+        "none";
+
+}
+
+
+function verificaSenha(){
+
+    var digitada =
+        inputSenha.value;
+
+
+    if(
+        digitada === SENHA
+    ){
+
+        erroSenha.style.display =
+            "none";
+
+        liberarAcesso();
+
+    }
+
+    else{
+
+        erroSenha.style.display =
+            "block";
+
+        inputSenha.value =
+            "";
+
+        inputSenha.focus();
+
+    }
+
+}
+
+
+if(
+    acessoJaLiberado()
+){
+
+    bloqueioSenha.style.display =
+        "none";
+
+}
+
+else{
+
+    setTimeout(
+        function(){
+
+            inputSenha.focus();
+
+        },
+        100
+    );
+
+}
+
+
+botaoEntrar.addEventListener(
+    "click",
+    verificaSenha
 );
+
+
+inputSenha.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Enter"
+        ){
+
+            event.preventDefault();
+
+            verificaSenha();
+
+        }
+
+    }
+);
+
+
+inputSenha.addEventListener(
+    "input",
+    function(){
+
+        erroSenha.style.display =
+            "none";
+
+    }
+);
+
+
+/* =====================================================
+   RELÓGIO
+   ===================================================== */
+
+function atualizarRelogio(){
+
+    var agora =
+        new Date();
+
+
+    document
+    .getElementById(
+        "relogio"
+    )
+    .textContent =
+
+        agora.toLocaleDateString(
+            "pt-BR"
+        )
+
+        +
+
+        " - "
+
+        +
+
+        agora.toLocaleTimeString(
+            "pt-BR"
+        );
+
+}
+
 
 atualizarRelogio();
 
 
-/* ==========================================
+setInterval(
+    atualizarRelogio,
+    1000
+);
+
+
+/* =====================================================
    STATUS
-   ========================================== */
+   ===================================================== */
 
 function normalizarStatus(status){
 
-return (
-status || ""
-)
-.trim()
-.toUpperCase();
+    return (
+        status || ""
+    )
+    .trim()
+    .toUpperCase();
 
 }
 
 
 function statusEmoticon(status){
 
-var s =
-normalizarStatus(status);
+    var s =
+        normalizarStatus(
+            status
+        );
 
 
-if(s.indexOf("ATRASADO") !== -1)
-return "🚨 ATRASADO";
+    if(
+        s.indexOf(
+            "ATRASADO"
+        ) !== -1
+    ){
+        return "🚨 ATRASADO";
+    }
 
 
-if(s.indexOf("AGUARDANDO") !== -1)
-return "AGUARDANDO";
+    if(
+        s.indexOf(
+            "AGUARDANDO"
+        ) !== -1
+    ){
+        return "AGUARDANDO";
+    }
 
 
-if(
-s.indexOf("NO PATIO") !== -1
-||
-s.indexOf("NO PÁTIO") !== -1
-)
-return "NO PATIO";
+    if(
+        s.indexOf(
+            "NO PATIO"
+        ) !== -1
+        ||
+        s.indexOf(
+            "NO PÁTIO"
+        ) !== -1
+    ){
+        return "NO PATIO";
+    }
 
 
-if(s.indexOf("EM PROCESSO") !== -1)
-return "EM PROCESSO";
+    if(
+        s.indexOf(
+            "EM PROCESSO"
+        ) !== -1
+    ){
+        return "EM PROCESSO";
+    }
 
 
-if(s.indexOf("FINALIZADO") !== -1)
-return "FINALIZADO";
+    if(
+        s.indexOf(
+            "FINALIZADO"
+        ) !== -1
+    ){
+        return "FINALIZADO";
+    }
 
 
-return status;
+    return status;
 
 }
 
 
 function classeStatus(status){
 
-var s =
-normalizarStatus(status);
+    var s =
+        normalizarStatus(
+            status
+        );
 
 
-if(s.indexOf("ATRASADO") !== -1)
-return "atrasado";
+    if(
+        s.indexOf(
+            "ATRASADO"
+        ) !== -1
+    ){
+        return "atrasado";
+    }
 
 
-if(
-s.indexOf("NO PATIO") !== -1
-||
-s.indexOf("NO PÁTIO") !== -1
-)
-return "patio";
+    if(
+        s.indexOf(
+            "NO PATIO"
+        ) !== -1
+        ||
+        s.indexOf(
+            "NO PÁTIO"
+        ) !== -1
+    ){
+        return "patio";
+    }
 
 
-if(s.indexOf("EM PROCESSO") !== -1)
-return "processo";
+    if(
+        s.indexOf(
+            "EM PROCESSO"
+        ) !== -1
+    ){
+        return "processo";
+    }
 
 
-if(s.indexOf("AGUARDANDO") !== -1)
-return "aguardando";
+    if(
+        s.indexOf(
+            "AGUARDANDO"
+        ) !== -1
+    ){
+        return "aguardando";
+    }
 
 
-if(s.indexOf("FINALIZADO") !== -1)
-return "finalizado";
+    if(
+        s.indexOf(
+            "FINALIZADO"
+        ) !== -1
+    ){
+        return "finalizado";
+    }
 
 
-return "";
+    return "";
 
 }
 
 
 function prioridadeStatus(status){
 
-var s =
-normalizarStatus(status);
+    var s =
+        normalizarStatus(
+            status
+        );
 
 
-if(s.indexOf("ATRASADO") !== -1)
-return 1;
+    if(
+        s.indexOf(
+            "ATRASADO"
+        ) !== -1
+    ){
+        return 1;
+    }
 
 
-if(
-s.indexOf("NO PATIO") !== -1
-||
-s.indexOf("NO PÁTIO") !== -1
-)
-return 2;
+    if(
+        s.indexOf(
+            "NO PATIO"
+        ) !== -1
+        ||
+        s.indexOf(
+            "NO PÁTIO"
+        ) !== -1
+    ){
+        return 2;
+    }
 
 
-if(s.indexOf("EM PROCESSO") !== -1)
-return 3;
+    if(
+        s.indexOf(
+            "EM PROCESSO"
+        ) !== -1
+    ){
+        return 3;
+    }
 
 
-if(s.indexOf("AGUARDANDO") !== -1)
-return 4;
+    if(
+        s.indexOf(
+            "AGUARDANDO"
+        ) !== -1
+    ){
+        return 4;
+    }
 
 
-if(s.indexOf("FINALIZADO") !== -1)
-return 5;
+    if(
+        s.indexOf(
+            "FINALIZADO"
+        ) !== -1
+    ){
+        return 5;
+    }
 
 
-return 6;
+    return 6;
 
 }
 
 
-/* ==========================================
-   TICKER DE NFs
-   ========================================== */
+/* =====================================================
+   PARSER CSV
+
+   Evita problema com células contendo vírgulas.
+   ===================================================== */
+
+function parseCSVLine(linha){
+
+    var resultado = [];
+
+    var valor = "";
+
+    var dentroAspas = false;
+
+
+    for(
+        var i = 0;
+        i < linha.length;
+        i++
+    ){
+
+        var caractere =
+            linha[i];
+
+
+        if(
+            caractere === '"'
+        ){
+
+            if(
+                dentroAspas
+                &&
+                linha[i + 1] === '"'
+            ){
+
+                valor += '"';
+
+                i++;
+
+            }
+
+            else{
+
+                dentroAspas =
+                    !dentroAspas;
+
+            }
+
+        }
+
+        else if(
+            caractere === ","
+            &&
+            !dentroAspas
+        ){
+
+            resultado.push(
+                valor.trim()
+            );
+
+            valor = "";
+
+        }
+
+        else{
+
+            valor += caractere;
+
+        }
+
+    }
+
+
+    resultado.push(
+        valor.trim()
+    );
+
+
+    return resultado;
+
+}
+
+
+/* =====================================================
+   TICKER
+   ===================================================== */
 
 async function carregarNFs(){
 
-try{
+    try{
 
-var resposta =
-await fetch(
+        var resposta =
+            await fetch(
 
-csvNFs +
+                csvNFs
 
-"&t=" +
+                +
 
-new Date().getTime()
+                "&t="
 
-);
+                +
 
+                new Date().getTime()
 
-var texto =
-await resposta.text();
+            );
 
 
-var linhas =
-texto
-.replace(/\r/g,"")
-.split("\n");
+        if(
+            !resposta.ok
+        ){
 
+            throw new Error(
+                "Erro HTTP"
+            );
 
-var nfs = [];
+        }
 
 
-for(
-var i = 1;
-i < linhas.length;
-i++
-){
+        var texto =
+            await resposta.text();
 
-var nf =
-linhas[i]
-.split(",")[0]
-.replace(/"/g,"")
-.trim();
 
+        var linhas =
+            texto
+            .replace(/\r/g,"")
+            .split("\n");
 
-if(nf !== ""){
 
-nfs.push(nf);
+        var nfs = [];
 
-}
 
-}
+        for(
+            var i = 1;
+            i < linhas.length;
+            i++
+        ){
 
+            var colunas =
+                parseCSVLine(
+                    linhas[i]
+                );
 
-var container =
-document
-.getElementById(
-"tickerContainer"
-);
 
+            var nf =
+                (
+                    colunas[0]
+                    ||
+                    ""
+                )
+                .trim();
 
-var ticker =
-document
-.getElementById(
-"tickerNFs"
-);
 
+            if(
+                nf !== ""
+            ){
 
-if(nfs.length > 0){
+                nfs.push(
+                    nf
+                );
 
-var textoTicker =
+            }
 
-nfs
+        }
 
-.map(
 
-function(nf){
+        var container =
+            document.getElementById(
+                "tickerContainer"
+            );
 
-return "📄 NF " + nf;
 
-}
+        var ticker =
+            document.getElementById(
+                "tickerNFs"
+            );
 
-)
 
-.join(
-" ◆ "
-);
+        if(
+            nfs.length > 0
+        ){
 
+            var textoTicker =
+                nfs
+                .map(
+                    function(nf){
 
-ticker.innerHTML =
-textoTicker;
+                        return (
+                            "📄 NF "
+                            +
+                            nf
+                        );
 
+                    }
+                )
+                .join(
+                    " ◆ "
+                );
 
-container.style.display =
-"flex";
 
-}
+            ticker.textContent =
+                textoTicker;
 
-else{
 
-ticker.innerHTML =
-"";
+            container.style.display =
+                "flex";
 
+        }
 
-container.style.display =
-"none";
+        else{
 
-}
+            ticker.textContent =
+                "";
 
-}
 
-catch(erro){
+            container.style.display =
+                "none";
 
-document
-.getElementById(
-"tickerContainer"
-)
-.style.display =
-"none";
+        }
 
-}
+    }
 
-}
+    catch(erro){
 
+        document
+        .getElementById(
+            "tickerContainer"
+        )
+        .style.display =
+            "none";
 
-/* ==========================================
-   DADOS DA OPERAÇÃO
-   ========================================== */
-
-var dadosOperacao = [];
-
-
-/* ==========================================
-   CONVERSÃO DE HORÁRIO
-   ========================================== */
-
-function converterHorarioParaMinutos(
-horario
-){
-
-if(!horario){
-
-return null;
-
-}
-
-
-var texto =
-String(horario)
-.trim();
-
-
-var resultado =
-texto.match(
-/(\d{1,2}):(\d{2})/
-);
-
-
-if(!resultado){
-
-return null;
+    }
 
 }
 
 
-var hora =
-parseInt(
-resultado[1],
-10
-);
+/* =====================================================
+   HORÁRIOS
+   ===================================================== */
+
+function converterHorarioParaMinutos(horario){
+
+    if(
+        !horario
+    ){
+
+        return null;
+
+    }
 
 
-var minuto =
-parseInt(
-resultado[2],
-10
-);
+    var texto =
+        String(
+            horario
+        )
+        .trim();
 
 
-if(
-isNaN(hora)
-||
-isNaN(minuto)
-||
-hora < 0
-||
-hora > 23
-||
-minuto < 0
-||
-minuto > 59
-){
+    var resultado =
+        texto.match(
+            /(\d{1,2}):(\d{2})/
+        );
 
-return null;
+
+    if(
+        !resultado
+    ){
+
+        return null;
+
+    }
+
+
+    var hora =
+        parseInt(
+            resultado[1],
+            10
+        );
+
+
+    var minuto =
+        parseInt(
+            resultado[2],
+            10
+        );
+
+
+    if(
+        isNaN(hora)
+        ||
+        isNaN(minuto)
+        ||
+        hora < 0
+        ||
+        hora > 23
+        ||
+        minuto < 0
+        ||
+        minuto > 59
+    ){
+
+        return null;
+
+    }
+
+
+    return (
+        hora * 60
+        +
+        minuto
+    );
 
 }
 
 
-return (
-hora * 60 +
-minuto
-);
-
-}
-
-
-/* ==========================================
-   PRIMEIRA JANELA DO DIA
-   ========================================== */
+/* =====================================================
+   PRIMEIRA JANELA
+   ===================================================== */
 
 function obterPrimeiraJanela(){
 
-var menorHorario =
-null;
+    var menorHorario =
+        null;
 
 
-for(
-var i = 0;
-i < dadosOperacao.length;
-i++
-){
+    for(
+        var i = 0;
+        i < dadosOperacao.length;
+        i++
+    ){
 
-var minutos =
-converterHorarioParaMinutos(
-dadosOperacao[i].janela
-);
+        var minutos =
+            converterHorarioParaMinutos(
+                dadosOperacao[i].janela
+            );
 
 
-if(minutos === null){
+        if(
+            minutos === null
+        ){
 
-continue;
+            continue;
+
+        }
+
+
+        if(
+            menorHorario === null
+            ||
+            minutos < menorHorario
+        ){
+
+            menorHorario =
+                minutos;
+
+        }
+
+    }
+
+
+    return menorHorario;
 
 }
 
 
-if(
-menorHorario === null
-||
-minutos < menorHorario
-){
-
-menorHorario =
-minutos;
-
-}
-
-}
-
-
-return menorHorario;
-
-}
-
-
-/* ==========================================
+/* =====================================================
    PERCENTUAL ESPERADO
 
-   Começa em 0% na primeira janela encontrada
-   e cresce até 100% às 17:30.
-   ========================================== */
+   0% = PRIMEIRA JANELA
+   100% = 17:30
+   ===================================================== */
 
 function obterPercentualEsperado(){
 
-var primeiraJanela =
-obterPrimeiraJanela();
+    var primeiraJanela =
+        obterPrimeiraJanela();
 
 
-var agora =
-new Date();
+    var agora =
+        new Date();
 
 
-var minutosAgora =
+    var minutosAgora =
 
-agora.getHours() * 60
+        agora.getHours() * 60
 
-+
+        +
 
-agora.getMinutes();
+        agora.getMinutes();
 
 
-/* Nenhuma janela válida */
+    /* SEM JANELA */
 
-if(
-primeiraJanela === null
-){
+    if(
+        primeiraJanela === null
+    ){
 
-return {
+        return {
 
-percentual:0,
+            percentual:0,
 
-iniciado:false,
+            iniciado:false,
 
-primeiraJanela:null
+            primeiraJanela:null
 
-};
+        };
+
+    }
+
+
+    /* ANTES DA PRIMEIRA JANELA */
+
+    if(
+        minutosAgora <
+        primeiraJanela
+    ){
+
+        return {
+
+            percentual:0,
+
+            iniciado:false,
+
+            primeiraJanela:
+                primeiraJanela
+
+        };
+
+    }
+
+
+    /*
+    Caso incomum:
+    primeira janela igual ou posterior a 17:30.
+    */
+
+    if(
+        primeiraJanela >=
+        HORARIO_FINAL_OPERACAO
+    ){
+
+        return {
+
+            percentual:0,
+
+            iniciado:true,
+
+            primeiraJanela:
+                primeiraJanela
+
+        };
+
+    }
+
+
+    /* APÓS 17:30 */
+
+    if(
+        minutosAgora >=
+        HORARIO_FINAL_OPERACAO
+    ){
+
+        return {
+
+            percentual:100,
+
+            iniciado:true,
+
+            primeiraJanela:
+                primeiraJanela
+
+        };
+
+    }
+
+
+    var tempoDecorrido =
+
+        minutosAgora
+
+        -
+
+        primeiraJanela;
+
+
+    var tempoTotal =
+
+        HORARIO_FINAL_OPERACAO
+
+        -
+
+        primeiraJanela;
+
+
+    var percentualEsperado =
+
+        (
+            tempoDecorrido
+            /
+            tempoTotal
+        )
+
+        *
+
+        100;
+
+
+    percentualEsperado =
+        Math.max(
+            0,
+            Math.min(
+                100,
+                percentualEsperado
+            )
+        );
+
+
+    return {
+
+        percentual:
+            percentualEsperado,
+
+        iniciado:true,
+
+        primeiraJanela:
+            primeiraJanela
+
+    };
 
 }
 
 
-/* Antes da primeira janela */
-
-if(
-minutosAgora <
-primeiraJanela
-){
-
-return {
-
-percentual:0,
-
-iniciado:false,
-
-primeiraJanela:
-primeiraJanela
-
-};
-
-}
-
-
-/* FINAL DA CURVA = 17:30 */
-
-var horarioFinal =
-17 * 60 + 30;
-
-
-/* Proteção */
-
-if(
-primeiraJanela >=
-horarioFinal
-){
-
-return {
-
-percentual:0,
-
-iniciado:true,
-
-primeiraJanela:
-primeiraJanela
-
-};
-
-}
-
-
-/* Depois de 17:30 */
-
-if(
-minutosAgora >=
-horarioFinal
-){
-
-return {
-
-percentual:100,
-
-iniciado:true,
-
-primeiraJanela:
-primeiraJanela
-
-};
-
-}
-
-
-/* Tempo decorrido */
-
-var tempoDecorrido =
-
-minutosAgora
-
--
-
-primeiraJanela;
-
-
-/* Tempo total */
-
-var tempoTotal =
-
-horarioFinal
-
--
-
-primeiraJanela;
-
-
-/* Percentual esperado */
-
-var percentualEsperado =
-
-(
-tempoDecorrido
-/
-tempoTotal
-)
-
-*
-
-100;
-
-
-if(
-percentualEsperado < 0
-){
-
-percentualEsperado =
-0;
-
-}
-
-
-if(
-percentualEsperado > 100
-){
-
-percentualEsperado =
-100;
-
-}
-
-
-return {
-
-percentual:
-percentualEsperado,
-
-iniciado:true,
-
-primeiraJanela:
-primeiraJanela
-
-};
-
-}
-
-
-/* ==========================================
+/* =====================================================
    STATUS DO PROGRESSO
-   ========================================== */
+   ===================================================== */
 
 function obterStatusProgresso(
-percentualReal,
-resultadoEsperado
+    percentualReal,
+    resultadoEsperado
 ){
 
+    /*
+    100% prevalece sobre qualquer comparação.
+    */
 
-/* OPERAÇÃO CONCLUÍDA */
+    if(
+        percentualReal >= 100
+    ){
 
-if(
-percentualReal >= 100
-){
+        return {
 
-return {
+            status:"CONCLUÍDO",
 
-status:"CONCLUÍDO",
+            cor:"verde"
 
-cor:"verde"
+        };
 
-};
+    }
+
+
+    /*
+    Antes da primeira janela não existe penalização.
+    */
+
+    if(
+        !resultadoEsperado.iniciado
+    ){
+
+        return {
+
+            status:"AGUARDANDO INÍCIO",
+
+            cor:"neutro"
+
+        };
+
+    }
+
+
+    var diferenca =
+
+        percentualReal
+
+        -
+
+        resultadoEsperado.percentual;
+
+
+    /* 5 pontos ou mais acima */
+
+    if(
+        diferenca >= 5
+    ){
+
+        return {
+
+            status:"ADIANTADO",
+
+            cor:"verde"
+
+        };
+
+    }
+
+
+    /* Entre +5 e -5 */
+
+    if(
+        diferenca >= -5
+    ){
+
+        return {
+
+            status:"NO RITMO",
+
+            cor:"azul"
+
+        };
+
+    }
+
+
+    /* Entre -5 e -10 */
+
+    if(
+        diferenca >= -10
+    ){
+
+        return {
+
+            status:"ATENÇÃO",
+
+            cor:"amarelo"
+
+        };
+
+    }
+
+
+    /* Mais de 10 pontos abaixo */
+
+    return {
+
+        status:"ATRASADO",
+
+        cor:"vermelho"
+
+    };
 
 }
 
 
-/* NÃO CHEGOU NA PRIMEIRA JANELA */
-
-if(
-!resultadoEsperado.iniciado
-){
-
-return {
-
-status:"AGUARDANDO INÍCIO",
-
-cor:"neutro"
-
-};
-
-}
-
-
-var percentualEsperado =
-resultadoEsperado.percentual;
-
-
-var diferenca =
-
-percentualReal
-
--
-
-percentualEsperado;
-
-
-/* 5 pontos ou mais adiantado */
-
-if(
-diferenca >= 5
-){
-
-return {
-
-status:"ADIANTADO",
-
-cor:"verde"
-
-};
-
-}
-
-
-/* Até 5 pontos abaixo */
-
-if(
-diferenca >= -5
-){
-
-return {
-
-status:"NO RITMO",
-
-cor:"azul"
-
-};
-
-}
-
-
-/* Entre -5 e -10 */
-
-if(
-diferenca >= -10
-){
-
-return {
-
-status:"ATENÇÃO",
-
-cor:"amarelo"
-
-};
-
-}
-
-
-/* Mais de 10 pontos abaixo */
-
-return {
-
-status:"ATRASADO",
-
-cor:"vermelho"
-
-};
-
-}
-
-
-/* ==========================================
-   CARREGAMENTO DA PLANILHA
-   ========================================== */
+/* =====================================================
+   CARREGAMENTO DOS DADOS
+   ===================================================== */
 
 async function carregarDados(){
 
-try{
+    try{
 
-var resposta =
-await fetch(
+        var resposta =
+            await fetch(
 
-csvUrl +
+                csvUrl
 
-"&t=" +
+                +
 
-new Date().getTime()
+                "&t="
 
-);
+                +
 
+                new Date().getTime()
 
-var texto =
-await resposta.text();
-
-
-var linhas =
-texto
-.replace(/\r/g,"")
-.split("\n");
+            );
 
 
-dadosOperacao = [];
+        if(
+            !resposta.ok
+        ){
+
+            throw new Error(
+                "Erro HTTP"
+            );
+
+        }
 
 
-var secaoAtual =
-"";
+        var texto =
+            await resposta.text();
 
 
-for(
-var i = 0;
-i < linhas.length;
-i++
-){
+        var linhas =
+            texto
+            .replace(/\r/g,"")
+            .split("\n");
 
-var colunas =
 
-linhas[i]
+        dadosOperacao = [];
 
-.split(",")
 
-.map(
+        var secaoAtual =
+            "";
 
-function(x){
 
-return x
-.replace(/^"|"$/g,"")
-.trim();
+        for(
+            var i = 0;
+            i < linhas.length;
+            i++
+        ){
+
+            if(
+                !linhas[i].trim()
+            ){
+
+                continue;
+
+            }
+
+
+            var colunas =
+                parseCSVLine(
+                    linhas[i]
+                );
+
+
+            var primeira =
+                (
+                    colunas[0]
+                    ||
+                    ""
+                )
+                .trim()
+                .toUpperCase();
+
+
+            if(
+                primeira === "ENERGY"
+                ||
+                primeira === "AUTOMOTIVO"
+            ){
+
+                secaoAtual =
+                    primeira;
+
+                continue;
+
+            }
+
+
+            if(
+                primeira ===
+                "TRANSPORTADORA"
+            ){
+
+                continue;
+
+            }
+
+
+            if(
+                !primeira
+            ){
+
+                continue;
+
+            }
+
+
+            if(
+                !secaoAtual
+            ){
+
+                continue;
+
+            }
+
+
+            dadosOperacao.push({
+
+                secao:
+                    secaoAtual,
+
+                transportadora:
+                    colunas[0] || "",
+
+                operacao:
+                    colunas[1] || "",
+
+                veiculo:
+                    colunas[2] || "",
+
+                janela:
+                    colunas[3] || "",
+
+                peso:
+                    colunas[4] || "",
+
+                status:
+                    colunas[5] || "",
+
+                chegada:
+                    colunas[6] || "",
+
+                inicio:
+                    colunas[7] || "",
+
+                fim:
+                    colunas[8] || ""
+
+            });
+
+        }
+
+
+        renderizarPainel();
+
+    }
+
+    catch(erro){
+
+        document
+        .getElementById(
+            "conteudo"
+        )
+        .innerHTML =
+
+        "<div style='margin:20px;padding:20px;background:#7a1724;color:#fff;border-radius:12px;text-align:center;font-size:20px;font-weight:bold;'>⚠️ Erro ao carregar os dados.</div>";
+
+    }
 
 }
 
-);
 
-
-var primeira =
-
-(
-colunas[0]
-||
-""
-)
-
-.trim()
-
-.toUpperCase();
-
-
-if(
-primeira === "ENERGY"
-||
-primeira === "AUTOMOTIVO"
-){
-
-secaoAtual =
-primeira;
-
-continue;
-
-}
-
-
-if(
-primeira ===
-"TRANSPORTADORA"
-){
-
-continue;
-
-}
-
-
-if(!primeira){
-
-continue;
-
-}
-
-
-if(!secaoAtual){
-
-continue;
-
-}
-
-
-dadosOperacao.push({
-
-secao:
-secaoAtual,
-
-transportadora:
-colunas[0] || "",
-
-operacao:
-colunas[1] || "",
-
-veiculo:
-colunas[2] || "",
-
-janela:
-colunas[3] || "",
-
-peso:
-colunas[4] || "",
-
-status:
-colunas[5] || "",
-
-chegada:
-colunas[6] || "",
-
-inicio:
-colunas[7] || "",
-
-fim:
-colunas[8] || ""
-
-});
-
-}
-
-
-renderizarPainel();
-
-}
-
-catch(erro){
-
-document
-.getElementById(
-"conteudo"
-)
-.innerHTML =
-
-"<div style='margin:20px;padding:20px;background:#7a1724;color:#fff;border-radius:12px;text-align:center;font-size:20px;font-weight:bold;'>⚠️ Erro ao carregar os dados.</div>";
-
-}
-
-}
-
-
-/* ==========================================
-   RENDERIZAÇÃO DO PAINEL
-   ========================================== */
+/* =====================================================
+   RENDERIZAÇÃO
+   ===================================================== */
 
 function renderizarPainel(){
 
-var atrasados =
-0;
+    var atrasados = 0;
 
-var aguardando =
-0;
+    var aguardando = 0;
 
-var noPatio =
-0;
+    var noPatio = 0;
 
-var emProcesso =
-0;
+    var emProcesso = 0;
 
-var finalizados =
-0;
+    var finalizados = 0;
 
 
-for(
-var i = 0;
-i < dadosOperacao.length;
-i++
-){
+    for(
+        var i = 0;
+        i < dadosOperacao.length;
+        i++
+    ){
 
-var s =
-normalizarStatus(
-dadosOperacao[i].status
-);
+        var s =
+            normalizarStatus(
+                dadosOperacao[i].status
+            );
 
 
-if(
-s.indexOf(
-"ATRASADO"
-) !== -1
-){
+        if(
+            s.indexOf(
+                "ATRASADO"
+            ) !== -1
+        ){
 
-atrasados++;
+            atrasados++;
 
-}
+        }
 
-else if(
+        else if(
+            s.indexOf(
+                "NO PATIO"
+            ) !== -1
+            ||
+            s.indexOf(
+                "NO PÁTIO"
+            ) !== -1
+        ){
 
-s.indexOf(
-"NO PATIO"
-) !== -1
+            noPatio++;
 
-||
+        }
 
-s.indexOf(
-"NO PÁTIO"
-) !== -1
+        else if(
+            s.indexOf(
+                "EM PROCESSO"
+            ) !== -1
+        ){
 
-){
+            emProcesso++;
 
-noPatio++;
+        }
 
-}
+        else if(
+            s.indexOf(
+                "AGUARDANDO"
+            ) !== -1
+        ){
 
-else if(
-s.indexOf(
-"EM PROCESSO"
-) !== -1
-){
+            aguardando++;
 
-emProcesso++;
+        }
 
-}
+        else if(
+            s.indexOf(
+                "FINALIZADO"
+            ) !== -1
+        ){
 
-else if(
-s.indexOf(
-"AGUARDANDO"
-) !== -1
-){
+            finalizados++;
 
-aguardando++;
+        }
 
-}
+    }
 
-else if(
-s.indexOf(
-"FINALIZADO"
-) !== -1
-){
 
-finalizados++;
+    /* =================================================
+       KPIs
+       ================================================= */
 
-}
+    document
+    .getElementById(
+        "painelKpi"
+    )
+    .innerHTML = `
 
-}
+        <div class="kpi kpi-atrasado ${atrasados > 0 ? "alerta-ativo" : ""}">
+            🚨 ATRASADOS:
+            ${atrasados}
+        </div>
 
+        <div class="kpi kpi-aguardando">
+            ⏳ AGUARDANDO:
+            ${aguardando}
+        </div>
 
-/* ==========================================
-   CARDS KPI
-   ========================================== */
+        <div class="kpi kpi-patio">
+            🚚 NO PATIO:
+            ${noPatio}
+        </div>
 
-document
-.getElementById(
-"painelKpi"
-)
-.innerHTML = `
+        <div class="kpi kpi-processo">
+            📦 EM PROCESSO:
+            ${emProcesso}
+        </div>
 
-<div class="kpi kpi-atrasado ${atrasados > 0 ? 'alerta-ativo' : ''}">
-🚨 ATRASADOS:
-${atrasados}
-</div>
+        <div class="kpi kpi-finalizado">
+            ✅ FINALIZADOS:
+            ${finalizados}
+        </div>
 
-<div class="kpi kpi-aguardando">
-⏳ AGUARDANDO:
-${aguardando}
-</div>
+    `;
 
-<div class="kpi kpi-patio">
-🚚 NO PATIO:
-${noPatio}
-</div>
 
-<div class="kpi kpi-processo">
-📦 EM PROCESSO:
-${emProcesso}
-</div>
+    /* =================================================
+       PROGRESSO REAL
+       ================================================= */
 
-<div class="kpi kpi-finalizado">
-✅ FINALIZADOS:
-${finalizados}
-</div>
+    var totalVeiculos =
+        dadosOperacao.length;
 
-`;
 
+    var percentual =
+        0;
 
-/* ==========================================
-   PROGRESSO REAL
-   ========================================== */
 
-var totalVeiculos =
-dadosOperacao.length;
+    if(
+        totalVeiculos > 0
+    ){
 
+        percentual =
+            Math.round(
 
-var percentual =
-0;
+                (
+                    finalizados
+                    /
+                    totalVeiculos
+                )
 
+                *
 
-if(
-totalVeiculos > 0
-){
+                100
 
-percentual =
-Math.round(
+            );
 
-(
-finalizados
-/
-totalVeiculos
-)
+    }
 
-*
 
-100
+    var resultadoEsperado =
+        obterPercentualEsperado();
 
-);
 
-}
+    var resultadoProgresso =
+        obterStatusProgresso(
 
+            percentual,
 
-/* PERCENTUAL ESPERADO */
+            resultadoEsperado
 
-var resultadoEsperado =
-obterPercentualEsperado();
+        );
 
 
-/* STATUS */
+    var corProgresso =
+        resultadoProgresso.cor;
 
-var resultadoProgresso =
-obterStatusProgresso(
 
-percentual,
+    var statusProgresso =
+        resultadoProgresso.status;
 
-resultadoEsperado
 
-);
+    /* =================================================
+       BARRA
+       ================================================= */
 
+    document
+    .getElementById(
+        "progressoOperacao"
+    )
+    .innerHTML = `
 
-var corProgresso =
-resultadoProgresso.cor;
+        <div class="progresso-box">
 
+            <div class="progresso-label ${corProgresso}">
+                ${statusProgresso}
+            </div>
 
-var statusProgresso =
-resultadoProgresso.status;
+            <div class="progresso-fundo">
 
+                <div
+                    class="progresso-barra ${corProgresso}"
+                    style="width:${percentual}%"
+                ></div>
 
-/* ==========================================
-   BARRA DE PROGRESSO
-   ========================================== */
+            </div>
 
-document
-.getElementById(
-"progressoOperacao"
-)
-.innerHTML = `
+            <div class="progresso-percentual ${corProgresso}">
+                ${percentual}%
+            </div>
 
-<div class="progresso-box">
+        </div>
 
-<div class="progresso-label ${corProgresso}">
-${statusProgresso}
-</div>
+    `;
 
-<div class="progresso-fundo">
 
-<div
-class="progresso-barra ${corProgresso}"
-style="width:${percentual}%">
-</div>
+    /* =================================================
+       SEÇÕES
+       ================================================= */
 
-</div>
+    var secoes = [
+        "ENERGY",
+        "AUTOMOTIVO"
+    ];
 
-<div class="progresso-percentual ${corProgresso}">
-${percentual}%
-</div>
 
-</div>
+    var html = "";
 
-`;
 
+    for(
+        var indiceSecao = 0;
+        indiceSecao < secoes.length;
+        indiceSecao++
+    ){
 
-/* ==========================================
-   TABELAS
-   ========================================== */
+        var nomeSecao =
+            secoes[indiceSecao];
 
-var secoes = [
-"ENERGY",
-"AUTOMOTIVO"
-];
 
+        var itens =
+            dadosOperacao.filter(
 
-var html =
-"";
+                function(item){
 
+                    return (
+                        item.secao ===
+                        nomeSecao
+                    );
 
-for(
-var s = 0;
-s < secoes.length;
-s++
-){
+                }
 
-var nomeSecao =
-secoes[s];
+            );
 
 
-var itens =
+        if(
+            itens.length === 0
+        ){
 
-dadosOperacao.filter(
+            continue;
 
-function(item){
+        }
 
-return (
-item.secao ===
-nomeSecao
-);
 
-}
+        itens.sort(
 
-);
+            function(a,b){
 
+                var prioridadeA =
+                    prioridadeStatus(
+                        a.status
+                    );
 
-if(
-itens.length === 0
-){
 
-continue;
+                var prioridadeB =
+                    prioridadeStatus(
+                        b.status
+                    );
 
-}
 
+                if(
+                    prioridadeA !==
+                    prioridadeB
+                ){
 
-itens.sort(
+                    return (
+                        prioridadeA
+                        -
+                        prioridadeB
+                    );
 
-function(a,b){
+                }
 
-var prioridadeA =
-prioridadeStatus(
-a.status
-);
 
+                return 0;
 
-var prioridadeB =
-prioridadeStatus(
-b.status
-);
+            }
 
+        );
 
-if(
-prioridadeA !==
-prioridadeB
-){
 
-return (
-prioridadeA
--
-prioridadeB
-);
+        html += `
 
-}
+            <div class="section">
 
+                <div class="section-title">
+                    ${nomeSecao}
+                </div>
 
-return 0;
+                <div class="table-container">
 
-}
+                    <table>
 
-);
+                        <thead>
 
+                            <tr>
 
-html += `
+                                <th>TRANSPORTADORA</th>
 
-<div class="section">
+                                <th>OPERAÇÃO</th>
 
-<div class="section-title">
-${nomeSecao}
-</div>
+                                <th>VEÍCULO</th>
 
-<div class="table-container">
+                                <th>JANELA</th>
 
-<table>
+                                <th>PESO (KG)</th>
 
-<thead>
+                                <th>STATUS</th>
 
-<tr>
+                                <th>CHEGADA</th>
 
-<th>TRANSPORTADORA</th>
+                                <th>INÍCIO CARR.</th>
 
-<th>OPERAÇÃO</th>
+                                <th>FIM CARR.</th>
 
-<th>VEÍCULO</th>
+                            </tr>
 
-<th>JANELA</th>
+                        </thead>
 
-<th>PESO (KG)</th>
+                        <tbody>
 
-<th>STATUS</th>
+        `;
 
-<th>CHEGADA</th>
 
-<th>INÍCIO CARR.</th>
+        for(
+            var j = 0;
+            j < itens.length;
+            j++
+        ){
 
-<th>FIM CARR.</th>
+            var item =
+                itens[j];
 
-</tr>
 
-</thead>
+            var classe =
+                classeStatus(
+                    item.status
+                );
 
-<tbody>
 
-`;
+            var statusTexto =
+                statusEmoticon(
+                    item.status
+                );
 
 
-for(
-var j = 0;
-j < itens.length;
-j++
-){
+            html += `
 
-var item =
-itens[j];
+                <tr class="${classe}">
 
+                    <td>
+                        ${item.transportadora}
+                    </td>
 
-var classe =
-classeStatus(
-item.status
-);
+                    <td>
+                        ${item.operacao}
+                    </td>
 
+                    <td>
+                        ${item.veiculo}
+                    </td>
 
-var statusTexto =
-statusEmoticon(
-item.status
-);
+                    <td class="janela">
+                        ${item.janela}
+                    </td>
 
+                    <td>
+                        ${item.peso}
+                    </td>
 
-html += `
+                    <td>
+                        ${statusTexto}
+                    </td>
 
-<tr class="${classe}">
+                    <td class="horario">
+                        ${item.chegada}
+                    </td>
 
-<td>
-${item.transportadora}
-</td>
+                    <td class="horario">
+                        ${item.inicio}
+                    </td>
 
-<td>
-${item.operacao}
-</td>
+                    <td class="horario">
+                        ${item.fim}
+                    </td>
 
-<td>
-${item.veiculo}
-</td>
+                </tr>
 
-<td class="janela">
-${item.janela}
-</td>
+            `;
 
-<td>
-${item.peso}
-</td>
+        }
 
-<td>
-${statusTexto}
-</td>
 
-<td class="horario">
-${item.chegada}
-</td>
+        html += `
 
-<td class="horario">
-${item.inicio}
-</td>
+                        </tbody>
 
-<td class="horario">
-${item.fim}
-</td>
+                    </table>
 
-</tr>
+                </div>
 
-`;
+            </div>
 
-}
+        `;
 
+    }
 
-html += `
 
-</tbody>
-
-</table>
-
-</div>
-
-</div>
-
-`;
+    document
+    .getElementById(
+        "conteudo"
+    )
+    .innerHTML =
+        html;
 
 }
 
 
-document
-.getElementById(
-"conteudo"
-)
-.innerHTML =
-html;
-
-}
-
-
-/* ==========================================
+/* =====================================================
    INICIALIZAÇÃO
-   ========================================== */
+   ===================================================== */
 
 carregarDados();
 
@@ -2423,14 +2737,14 @@ carregarNFs();
 
 
 setInterval(
-carregarDados,
-30000
+    carregarDados,
+    30000
 );
 
 
 setInterval(
-carregarNFs,
-30000
+    carregarNFs,
+    30000
 );
 
 </script>

@@ -48,7 +48,6 @@ circle at top,
 rgba(76,132,214,0.28),
 transparent 35%
 ),
-
 linear-gradient(
 180deg,
 #0b2441 0%,
@@ -60,6 +59,161 @@ color:var(--text);
 font-family:Arial,sans-serif;
 
 }
+
+/* ==============================================
+   BLOQUEIO POR SENHA
+   ============================================== */
+
+#bloqueio-senha{
+
+position:fixed;
+
+inset:0;
+
+background:
+radial-gradient(
+circle at top,
+rgba(76,132,214,0.25),
+transparent 40%
+),
+linear-gradient(
+180deg,
+#0b2441,
+#050f1d
+);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+z-index:99999;
+
+color:white;
+
+font-family:Arial,sans-serif;
+
+}
+
+#bloqueio-senha .box{
+
+background:#10283f;
+
+padding:36px;
+
+border-radius:16px;
+
+text-align:center;
+
+width:350px;
+
+border:1px solid rgba(255,255,255,.12);
+
+box-shadow:
+0 18px 50px rgba(0,0,0,.55);
+
+}
+
+#bloqueio-senha h2{
+
+margin:0 0 8px 0;
+
+font-size:24px;
+
+color:#ffffff;
+
+}
+
+#bloqueio-senha p{
+
+color:#dfeafc;
+
+margin:8px 0;
+
+}
+
+#bloqueio-senha input{
+
+width:100%;
+
+padding:13px;
+
+margin:18px 0 14px 0;
+
+border-radius:8px;
+
+border:1px solid rgba(255,255,255,.18);
+
+box-sizing:border-box;
+
+background:#071522;
+
+color:white;
+
+font-size:17px;
+
+outline:none;
+
+}
+
+#bloqueio-senha input:focus{
+
+border-color:#3498ff;
+
+box-shadow:
+0 0 0 3px rgba(52,152,255,.18);
+
+}
+
+#bloqueio-senha button{
+
+width:100%;
+
+padding:13px;
+
+background:
+linear-gradient(
+135deg,
+#3498ff,
+#1768c4
+);
+
+color:white;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-size:16px;
+
+font-weight:900;
+
+}
+
+#bloqueio-senha button:hover{
+
+filter:brightness(1.08);
+
+}
+
+#erroSenha{
+
+color:#ff6874 !important;
+
+display:none;
+
+margin-top:12px !important;
+
+font-weight:800;
+
+}
+
+/* ==============================================
+   CABEÇALHO
+   ============================================== */
 
 .header{
 
@@ -84,6 +238,7 @@ border-bottom:1px solid var(--line);
 box-shadow:var(--shadow);
 
 min-height:80px;
+
 }
 
 .header-text{
@@ -120,6 +275,10 @@ font-weight:600;
 
 }
 
+/* ==============================================
+   TICKER
+   ============================================== */
+
 .ticker{
 
 width:100%;
@@ -134,8 +293,7 @@ linear-gradient(
 #081421
 );
 
-border-bottom:
-2px solid var(--yellow);
+border-bottom:2px solid var(--yellow);
 
 align-items:center;
 
@@ -188,6 +346,7 @@ height:100%;
 display:flex;
 
 align-items:center;
+
 }
 
 .ticker-content{
@@ -220,6 +379,10 @@ transform:translateX(-350%);
 }
 
 }
+
+/* ==============================================
+   KPIs
+   ============================================== */
 
 .kpis{
 
@@ -256,45 +419,65 @@ text-transform:uppercase;
 }
 
 .kpi-atrasado{
-background:linear-gradient(
+
+background:
+linear-gradient(
 135deg,
 #ff4b5d,
 #e22d42
 );
+
 }
 
 .kpi-aguardando{
-background:linear-gradient(
+
+background:
+linear-gradient(
 135deg,
 #536475,
 #344454
 );
+
 }
 
 .kpi-patio{
-background:linear-gradient(
+
+background:
+linear-gradient(
 135deg,
 var(--orange),
 var(--orange-strong)
 );
+
 color:#17130c;
+
 }
 
 .kpi-processo{
-background:linear-gradient(
+
+background:
+linear-gradient(
 135deg,
 var(--purple),
 var(--purple-strong)
 );
+
 }
 
 .kpi-finalizado{
-background:linear-gradient(
+
+background:
+linear-gradient(
 135deg,
 var(--green),
 var(--green-strong)
 );
+
 }
+
+/* ==============================================
+   SEÇÕES / TABELAS
+   ============================================== */
 
 .section{
 
@@ -356,49 +539,49 @@ table-layout:fixed;
 
 th:nth-child(1),
 td:nth-child(1){
-    width:15%; /* Transportadora */
+width:15%;
 }
 
 th:nth-child(2),
 td:nth-child(2){
-    width:13%; /* Operação */
+width:13%;
 }
 
 th:nth-child(3),
 td:nth-child(3){
-    width:11%; /* Veículo */
+width:11%;
 }
 
 th:nth-child(4),
 td:nth-child(4){
-    width:9%; /* Janela */
+width:9%;
 }
 
 th:nth-child(5),
 td:nth-child(5){
-    width:9%; /* Peso */
+width:9%;
 }
 
 th:nth-child(6),
 td:nth-child(6){
-    width:15%; /* Status */
+width:15%;
 }
 
 th:nth-child(7),
 td:nth-child(7){
-    width:9%; /* Chegada */
+width:9%;
 }
 
 th:nth-child(8),
 td:nth-child(8){
-    width:10%; /* Início */
+width:10%;
 }
 
 th:nth-child(9),
 td:nth-child(9){
-    width:9%; /* Fim */
+width:9%;
 }
- 
+
 th{
 
 background:
@@ -439,6 +622,7 @@ text-overflow:ellipsis;
 white-space:nowrap;
 
 }
+
 tr.atrasado td{
 
 background:
@@ -524,158 +708,220 @@ font-size:11px;
 
 }
 
-/* Oculta cabeçalho, título e data/hora */
+/* Oculta cabeçalho e relógio */
 
-.header {
+.header{
 
-display: none !important;
-
-}
-
-#relogio {
-
-display: none !important;
+display:none !important;
 
 }
 
-#relogio {
-    display: none !important;
+#relogio{
+
+display:none !important;
+
 }
 
-/* Efeito de alerta no card ATRASADOS */
+/* ==============================================
+   ALERTA ATRASADOS
+   ============================================== */
 
 .kpi-atrasado.alerta-ativo{
-    animation:pulsoAtrasado 1.5s ease-in-out infinite;
+
+animation:
+pulsoAtrasado 1.5s ease-in-out infinite;
+
 }
 
 @keyframes pulsoAtrasado{
 
-    0%, 100%{
-        transform:scale(1);
-        box-shadow:0 14px 32px rgba(0,0,0,.28);
-    }
+0%,100%{
 
-    50%{
-        transform:scale(1.04);
-        box-shadow:
-            0 14px 32px rgba(0,0,0,.28),
-            0 0 25px rgba(255,75,93,.85);
-    }
+transform:scale(1);
+
+box-shadow:
+0 14px 32px rgba(0,0,0,.28);
+
 }
 
+50%{
+
+transform:scale(1.04);
+
+box-shadow:
+0 14px 32px rgba(0,0,0,.28),
+0 0 25px rgba(255,75,93,.85);
+
+}
+
+}
+
+/* ==============================================
+   PROGRESSO
+   ============================================== */
+
 .progresso-box{
-    margin:0 20px 20px 20px;
-    display:flex;
-    align-items:center;
-    gap:15px;
+
+margin:0 20px 20px 20px;
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
 }
 
 .progresso-fundo{
-    flex:1;
-    height:24px;
-    background:#071522;
-    border-radius:20px;
-    overflow:hidden;
+
+flex:1;
+
+height:24px;
+
+background:#071522;
+
+border-radius:20px;
+
+overflow:hidden;
+
 }
 
 .progresso-barra{
-    height:100%;
-    border-radius:20px;
-    transition:
-        width 1s ease,
-        background 0.5s ease;
+
+height:100%;
+
+border-radius:20px;
+
+transition:
+width 1s ease,
+background .5s ease;
+
 }
 
-/* CORES DA BARRA E DA PORCENTAGEM */
+.progresso-percentual{
+
+min-width:75px;
+
+text-align:center;
+
+font-size:30px;
+
+font-weight:900;
+
+}
+
+.progresso-label{
+
+font-size:18px;
+
+font-weight:900;
+
+min-width:165px;
+
+text-align:left;
+
+}
+
+/* CORES DO PROGRESSO */
 
 .progresso-barra.vermelho{
-    background:#ff4b5d;
+background:#ff4b5d;
 }
 
-.progresso-percentual.vermelho{
-    color:#ff4b5d;
+.progresso-percentual.vermelho,
+.progresso-label.vermelho{
+color:#ff4b5d;
 }
 
 .progresso-barra.laranja{
-    background:#ff9f1c;
+background:#ff9f1c;
 }
 
-.progresso-percentual.laranja{
-    color:#ff9f1c;
+.progresso-percentual.laranja,
+.progresso-label.laranja{
+color:#ff9f1c;
 }
 
 .progresso-barra.azul{
-    background:#3498ff;
+background:#3498ff;
 }
 
-.progresso-percentual.azul{
-    color:#3498ff;
-}
-    
-.progresso-barra.verde{
-    background:#34d38f;
-}
-
-.progresso-percentual.verde{
-    color:#34d38f;
-}
-
-
-/* TAMANHO DA PORCENTAGEM */
-
-.progresso-percentual{
-    min-width:75px;
-    text-align:center;
-    font-size:30px;
-    font-weight:900;
-}
-
-/* TEXTO PROGRESSO */
-
-.progresso-label{
-    font-size:18px;
-    font-weight:900;
-    min-width:105px;
-    text-align:left;
-}
-
-/* CORES DO TEXTO PROGRESSO */
-
-.progresso-label.vermelho{
-    color:#ff4b5d;
-}
-
-.progresso-label.laranja{
-    color:#ff9f1c;
-}
-
+.progresso-percentual.azul,
 .progresso-label.azul{
-    color:#3498ff;
+color:#3498ff;
 }
 
+.progresso-barra.verde{
+background:#34d38f;
+}
+
+.progresso-percentual.verde,
 .progresso-label.verde{
-    color:#34d38f;
+color:#34d38f;
 }
-
-/* COR AMARELA - STATUS ATENÇÃO */
 
 .progresso-barra.amarelo{
-    background:#f6d34c;
+background:#f6d34c;
 }
 
-.progresso-percentual.amarelo{
-    color:#f6d34c;
-}
-
+.progresso-percentual.amarelo,
 .progresso-label.amarelo{
-    color:#f6d34c;
+color:#f6d34c;
 }
-    
+
+.progresso-barra.neutro{
+background:#536475;
+}
+
+.progresso-percentual.neutro,
+.progresso-label.neutro{
+color:#aebed0;
+}
+
 </style>
 
 </head>
 
 <body>
+
+
+<!-- ==========================================
+     BLOQUEIO POR SENHA
+     ========================================== -->
+
+<div id="bloqueio-senha">
+
+<div class="box">
+
+<h2>🔒 Painel Expedição</h2>
+
+<p>OPERAÇÃO YUSEN - PANASONIC SJC</p>
+
+<p>Digite a senha para acessar</p>
+
+<input
+type="password"
+id="inputSenha"
+placeholder="Senha"
+autofocus
+/>
+
+<button onclick="verificaSenha()">
+Entrar
+</button>
+
+<p id="erroSenha">
+Senha incorreta
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ==========================================
+     PAINEL
+     ========================================== -->
 
 <div class="header">
 
@@ -688,7 +934,8 @@ display: none !important;
 </div>
 
 </div>
-  
+
+
 <div
 class="ticker"
 id="tickerContainer"
@@ -696,9 +943,7 @@ style="display:none;"
 >
 
 <div class="ticker-label">
-
 📌 PIN PENDENTE
-
 </div>
 
 <div class="ticker-area">
@@ -712,22 +957,113 @@ id="tickerNFs">
 
 </div>
 
+
 <div
 class="kpis"
 id="painelKpi">
 </div>
 
-<div id="progressoOperacao"></div>
-    
-<div id="conteudo"></div>
 
-<div class="footer">
-
-Atualização automática a cada 30 segundos
-
+<div id="progressoOperacao">
 </div>
 
+
+<div id="conteudo">
+</div>
+
+
+<div class="footer">
+Atualização automática a cada 30 segundos
+</div>
+
+
 <script>
+
+/* ==========================================
+   BLOQUEIO POR SENHA
+   ========================================== */
+
+const SENHA =
+"operacaoyusen";
+
+
+function verificaSenha(){
+
+const digitada =
+document
+.getElementById("inputSenha")
+.value;
+
+
+if(digitada === SENHA){
+
+localStorage.setItem(
+"acesso_yusen",
+"liberado"
+);
+
+document
+.getElementById(
+"bloqueio-senha"
+)
+.style.display =
+"none";
+
+}
+
+else{
+
+document
+.getElementById(
+"erroSenha"
+)
+.style.display =
+"block";
+
+}
+
+}
+
+
+if(
+localStorage.getItem(
+"acesso_yusen"
+)
+===
+"liberado"
+){
+
+document
+.getElementById(
+"bloqueio-senha"
+)
+.style.display =
+"none";
+
+}
+
+
+document
+.getElementById(
+"inputSenha"
+)
+.addEventListener(
+"keyup",
+function(e){
+
+if(e.key === "Enter"){
+
+verificaSenha();
+
+}
+
+}
+);
+
+
+/* ==========================================
+   GOOGLE SHEETS
+   ========================================== */
 
 var csvUrl =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vTN1vOH2C4htkHC3NnXIqy7JcjCe_6mfulx2Qg1NuVR6zB73jYm81QKBbaPbGoBZIjGdvB777wo7TYm/pub?gid=0&single=true&output=csv";
@@ -735,16 +1071,25 @@ var csvUrl =
 var csvNFs =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vTN1vOH2C4htkHC3NnXIqy7JcjCe_6mfulx2Qg1NuVR6zB73jYm81QKBbaPbGoBZIjGdvB777wo7TYm/pub?gid=141918402&single=true&output=csv";
 
+
+/* ==========================================
+   RELÓGIO
+   ========================================== */
+
 function atualizarRelogio(){
 
 var agora =
 new Date();
 
 document
-.getElementById("relogio")
+.getElementById(
+"relogio"
+)
 .innerHTML =
 
-agora.toLocaleDateString("pt-BR")
+agora.toLocaleDateString(
+"pt-BR"
+)
 
 +
 
@@ -752,9 +1097,12 @@ agora.toLocaleDateString("pt-BR")
 
 +
 
-agora.toLocaleTimeString("pt-BR");
+agora.toLocaleTimeString(
+"pt-BR"
+);
 
 }
+
 
 setInterval(
 atualizarRelogio,
@@ -762,6 +1110,11 @@ atualizarRelogio,
 );
 
 atualizarRelogio();
+
+
+/* ==========================================
+   STATUS
+   ========================================== */
 
 function normalizarStatus(status){
 
@@ -773,89 +1126,116 @@ status || ""
 
 }
 
+
 function statusEmoticon(status){
 
 var s =
 normalizarStatus(status);
 
-if(s.indexOf("ATRASADO")!==-1)
+
+if(s.indexOf("ATRASADO") !== -1)
 return "🚨 ATRASADO";
 
-if(s.indexOf("AGUARDANDO")!==-1)
+
+if(s.indexOf("AGUARDANDO") !== -1)
 return "AGUARDANDO";
 
+
 if(
-s.indexOf("NO PATIO")!==-1
+s.indexOf("NO PATIO") !== -1
 ||
-s.indexOf("NO PÁTIO")!==-1
+s.indexOf("NO PÁTIO") !== -1
 )
 return "NO PATIO";
 
-if(s.indexOf("EM PROCESSO")!==-1)
+
+if(s.indexOf("EM PROCESSO") !== -1)
 return "EM PROCESSO";
 
-if(s.indexOf("FINALIZADO")!==-1)
+
+if(s.indexOf("FINALIZADO") !== -1)
 return "FINALIZADO";
+
 
 return status;
 
 }
+
 
 function classeStatus(status){
 
 var s =
 normalizarStatus(status);
 
-if(s.indexOf("ATRASADO")!==-1)
+
+if(s.indexOf("ATRASADO") !== -1)
 return "atrasado";
 
+
 if(
-s.indexOf("NO PATIO")!==-1
+s.indexOf("NO PATIO") !== -1
 ||
-s.indexOf("NO PÁTIO")!==-1
+s.indexOf("NO PÁTIO") !== -1
 )
 return "patio";
 
-if(s.indexOf("EM PROCESSO")!==-1)
+
+if(s.indexOf("EM PROCESSO") !== -1)
 return "processo";
 
-if(s.indexOf("AGUARDANDO")!==-1)
+
+if(s.indexOf("AGUARDANDO") !== -1)
 return "aguardando";
 
-if(s.indexOf("FINALIZADO")!==-1)
+
+if(s.indexOf("FINALIZADO") !== -1)
 return "finalizado";
+
 
 return "";
 
 }
+
 
 function prioridadeStatus(status){
 
 var s =
 normalizarStatus(status);
 
-if(s.indexOf("ATRASADO")!==-1)
+
+if(s.indexOf("ATRASADO") !== -1)
 return 1;
 
+
 if(
-s.indexOf("NO PATIO")!==-1
+s.indexOf("NO PATIO") !== -1
 ||
-s.indexOf("NO PÁTIO")!==-1
+s.indexOf("NO PÁTIO") !== -1
 )
 return 2;
 
-if(s.indexOf("EM PROCESSO")!==-1)
+
+if(s.indexOf("EM PROCESSO") !== -1)
 return 3;
 
-if(s.indexOf("AGUARDANDO")!==-1)
+
+if(s.indexOf("AGUARDANDO") !== -1)
 return 4;
 
-if(s.indexOf("FINALIZADO")!==-1)
+
+if(s.indexOf("FINALIZADO") !== -1)
 return 5;
+
 
 return 6;
 
 }
+
+
+/* ==========================================
+   TICKER DE NFs
+   ========================================== */
+
 async function carregarNFs(){
 
 try{
@@ -871,15 +1251,19 @@ new Date().getTime()
 
 );
 
+
 var texto =
 await resposta.text();
+
 
 var linhas =
 texto
 .replace(/\r/g,"")
 .split("\n");
 
+
 var nfs = [];
+
 
 for(
 var i = 1;
@@ -893,9 +1277,8 @@ linhas[i]
 .replace(/"/g,"")
 .trim();
 
-if(
-nf !== ""
-){
+
+if(nf !== ""){
 
 nfs.push(nf);
 
@@ -903,11 +1286,13 @@ nfs.push(nf);
 
 }
 
+
 var container =
 document
 .getElementById(
 "tickerContainer"
 );
+
 
 var ticker =
 document
@@ -915,9 +1300,8 @@ document
 "tickerNFs"
 );
 
-if(
-nfs.length > 0
-){
+
+if(nfs.length > 0){
 
 var textoTicker =
 
@@ -937,8 +1321,10 @@ return "📄 NF " + nf;
 " ◆ "
 );
 
+
 ticker.innerHTML =
 textoTicker;
+
 
 container.style.display =
 "flex";
@@ -949,6 +1335,7 @@ else{
 
 ticker.innerHTML =
 "";
+
 
 container.style.display =
 "none";
@@ -970,127 +1357,446 @@ document
 
 }
 
+
+/* ==========================================
+   DADOS DA OPERAÇÃO
+   ========================================== */
+
 var dadosOperacao = [];
 
-/* ESCALA DE PROGRESSO ESPERADO */
 
-var escalaProgresso = [
+/* ==========================================
+   CONVERSÃO DE HORÁRIO
+   ========================================== */
 
-    { hora:"08:00", percentual:0 },
-    { hora:"09:00", percentual:13 },
-    { hora:"10:00", percentual:26 },
-    { hora:"11:00", percentual:39 },
-    { hora:"12:00", percentual:52 },
-    { hora:"14:00", percentual:65 },
-    { hora:"15:00", percentual:78 },
-    { hora:"16:00", percentual:91 },
-    { hora:"17:00", percentual:100 },
-    { hora:"17:30", percentual:100 }
+function converterHorarioParaMinutos(
+horario
+){
 
-];
+if(!horario){
+
+return null;
+
+}
+
+
+var texto =
+String(horario)
+.trim();
+
+
+var resultado =
+texto.match(
+/(\d{1,2}):(\d{2})/
+);
+
+
+if(!resultado){
+
+return null;
+
+}
+
+
+var hora =
+parseInt(
+resultado[1],
+10
+);
+
+
+var minuto =
+parseInt(
+resultado[2],
+10
+);
+
+
+if(
+isNaN(hora)
+||
+isNaN(minuto)
+||
+hora < 0
+||
+hora > 23
+||
+minuto < 0
+||
+minuto > 59
+){
+
+return null;
+
+}
+
+
+return (
+hora * 60 +
+minuto
+);
+
+}
+
+
+/* ==========================================
+   PRIMEIRA JANELA DO DIA
+   ========================================== */
+
+function obterPrimeiraJanela(){
+
+var menorHorario =
+null;
+
+
+for(
+var i = 0;
+i < dadosOperacao.length;
+i++
+){
+
+var minutos =
+converterHorarioParaMinutos(
+dadosOperacao[i].janela
+);
+
+
+if(minutos === null){
+
+continue;
+
+}
+
+
+if(
+menorHorario === null
+||
+minutos < menorHorario
+){
+
+menorHorario =
+minutos;
+
+}
+
+}
+
+
+return menorHorario;
+
+}
+
+
+/* ==========================================
+   PERCENTUAL ESPERADO
+
+   Começa em 0% na primeira janela encontrada
+   e cresce até 100% às 17:30.
+   ========================================== */
 
 function obterPercentualEsperado(){
 
-    var agora = new Date();
+var primeiraJanela =
+obterPrimeiraJanela();
 
-    var minutosAgora =
-        agora.getHours() * 60 +
-        agora.getMinutes();
 
-    for(var i = 0; i < escalaProgresso.length - 1; i++){
+var agora =
+new Date();
 
-        var atual = escalaProgresso[i];
-        var proximo = escalaProgresso[i + 1];
 
-        var partesAtual =
-            atual.hora.split(":");
+var minutosAgora =
 
-        var partesProximo =
-            proximo.hora.split(":");
+agora.getHours() * 60
 
-        var minutosAtual =
-            parseInt(partesAtual[0]) * 60 +
-            parseInt(partesAtual[1]);
++
 
-        var minutosProximo =
-            parseInt(partesProximo[0]) * 60 +
-            parseInt(partesProximo[1]);
+agora.getMinutes();
 
-        if(
-            minutosAgora >= minutosAtual &&
-            minutosAgora < minutosProximo
-        ){
 
-            var proporcao =
-                (minutosAgora - minutosAtual) /
-                (minutosProximo - minutosAtual);
+/* Nenhuma janela válida */
 
-            return atual.percentual +
-                (
-                    proximo.percentual -
-                    atual.percentual
-                ) * proporcao;
-        }
-    }
+if(
+primeiraJanela === null
+){
 
-    if(minutosAgora < 8 * 60){
-        return 0;
-    }
+return {
 
-    return 100;
+percentual:0,
+
+iniciado:false,
+
+primeiraJanela:null
+
+};
+
+}
+
+
+/* Antes da primeira janela */
+
+if(
+minutosAgora <
+primeiraJanela
+){
+
+return {
+
+percentual:0,
+
+iniciado:false,
+
+primeiraJanela:
+primeiraJanela
+
+};
+
 }
 
 
-/* STATUS DO PROGRESSO */
+/* FINAL DA CURVA = 17:30 */
 
-function obterStatusProgresso(percentualReal, percentualEsperado){
+var horarioFinal =
+17 * 60 + 30;
 
-if(percentualReal >= 100){
 
-    return {
-        status:"CONCLUÍDO",
-        cor:"verde"
-    };
+/* Proteção */
+
+if(
+primeiraJanela >=
+horarioFinal
+){
+
+return {
+
+percentual:0,
+
+iniciado:true,
+
+primeiraJanela:
+primeiraJanela
+
+};
 
 }
-    
-    var diferenca =
-        percentualReal - percentualEsperado;
 
-    if(diferenca >= 5){
 
-        return {
-            status:"ADIANTADO",
-            cor:"verde"
-        };
+/* Depois de 17:30 */
 
-    }
+if(
+minutosAgora >=
+horarioFinal
+){
 
-    if(diferenca >= -5){
+return {
 
-        return {
-            status:"NO RITMO",
-            cor:"azul"
-        };
+percentual:100,
 
-    }
+iniciado:true,
 
-    if(diferenca >= -10){
+primeiraJanela:
+primeiraJanela
 
-        return {
-            status:"ATENÇÃO",
-            cor:"amarelo"
-        };
+};
 
-    }
-
-    return {
-        status:"ATRASADO",
-        cor:"vermelho"
-    };
 }
 
-/* CARREGAMENTO DOS DADOS */
+
+/* Tempo decorrido */
+
+var tempoDecorrido =
+
+minutosAgora
+
+-
+
+primeiraJanela;
+
+
+/* Tempo total */
+
+var tempoTotal =
+
+horarioFinal
+
+-
+
+primeiraJanela;
+
+
+/* Percentual esperado */
+
+var percentualEsperado =
+
+(
+tempoDecorrido
+/
+tempoTotal
+)
+
+*
+
+100;
+
+
+if(
+percentualEsperado < 0
+){
+
+percentualEsperado =
+0;
+
+}
+
+
+if(
+percentualEsperado > 100
+){
+
+percentualEsperado =
+100;
+
+}
+
+
+return {
+
+percentual:
+percentualEsperado,
+
+iniciado:true,
+
+primeiraJanela:
+primeiraJanela
+
+};
+
+}
+
+
+/* ==========================================
+   STATUS DO PROGRESSO
+   ========================================== */
+
+function obterStatusProgresso(
+percentualReal,
+resultadoEsperado
+){
+
+
+/* OPERAÇÃO CONCLUÍDA */
+
+if(
+percentualReal >= 100
+){
+
+return {
+
+status:"CONCLUÍDO",
+
+cor:"verde"
+
+};
+
+}
+
+
+/* NÃO CHEGOU NA PRIMEIRA JANELA */
+
+if(
+!resultadoEsperado.iniciado
+){
+
+return {
+
+status:"AGUARDANDO INÍCIO",
+
+cor:"neutro"
+
+};
+
+}
+
+
+var percentualEsperado =
+resultadoEsperado.percentual;
+
+
+var diferenca =
+
+percentualReal
+
+-
+
+percentualEsperado;
+
+
+/* 5 pontos ou mais adiantado */
+
+if(
+diferenca >= 5
+){
+
+return {
+
+status:"ADIANTADO",
+
+cor:"verde"
+
+};
+
+}
+
+
+/* Até 5 pontos abaixo */
+
+if(
+diferenca >= -5
+){
+
+return {
+
+status:"NO RITMO",
+
+cor:"azul"
+
+};
+
+}
+
+
+/* Entre -5 e -10 */
+
+if(
+diferenca >= -10
+){
+
+return {
+
+status:"ATENÇÃO",
+
+cor:"amarelo"
+
+};
+
+}
+
+
+/* Mais de 10 pontos abaixo */
+
+return {
+
+status:"ATRASADO",
+
+cor:"vermelho"
+
+};
+
+}
+
+
+/* ==========================================
+   CARREGAMENTO DA PLANILHA
+   ========================================== */
 
 async function carregarDados(){
 
@@ -1107,18 +1813,23 @@ new Date().getTime()
 
 );
 
+
 var texto =
 await resposta.text();
+
 
 var linhas =
 texto
 .replace(/\r/g,"")
 .split("\n");
 
+
 dadosOperacao = [];
+
 
 var secaoAtual =
 "";
+
 
 for(
 var i = 0;
@@ -1127,7 +1838,9 @@ i++
 ){
 
 var colunas =
+
 linhas[i]
+
 .split(",")
 
 .map(
@@ -1142,6 +1855,7 @@ return x
 
 );
 
+
 var primeira =
 
 (
@@ -1151,7 +1865,9 @@ colunas[0]
 )
 
 .trim()
+
 .toUpperCase();
+
 
 if(
 primeira === "ENERGY"
@@ -1166,6 +1882,7 @@ continue;
 
 }
 
+
 if(
 primeira ===
 "TRANSPORTADORA"
@@ -1175,21 +1892,20 @@ continue;
 
 }
 
-if(
-!primeira
-){
+
+if(!primeira){
 
 continue;
 
 }
 
-if(
-!secaoAtual
-){
+
+if(!secaoAtual){
 
 continue;
 
 }
+
 
 dadosOperacao.push({
 
@@ -1227,6 +1943,7 @@ colunas[8] || ""
 
 }
 
+
 renderizarPainel();
 
 }
@@ -1244,13 +1961,29 @@ document
 }
 
 }
+
+
+/* ==========================================
+   RENDERIZAÇÃO DO PAINEL
+   ========================================== */
+
 function renderizarPainel(){
 
-var atrasados = 0;
-var aguardando = 0;
-var noPatio = 0;
-var emProcesso = 0;
-var finalizados = 0;
+var atrasados =
+0;
+
+var aguardando =
+0;
+
+var noPatio =
+0;
+
+var emProcesso =
+0;
+
+var finalizados =
+0;
+
 
 for(
 var i = 0;
@@ -1263,8 +1996,11 @@ normalizarStatus(
 dadosOperacao[i].status
 );
 
+
 if(
-s.indexOf("ATRASADO") !== -1
+s.indexOf(
+"ATRASADO"
+) !== -1
 ){
 
 atrasados++;
@@ -1273,9 +2009,15 @@ atrasados++;
 
 else if(
 
-s.indexOf("NO PATIO") !== -1
+s.indexOf(
+"NO PATIO"
+) !== -1
+
 ||
-s.indexOf("NO PÁTIO") !== -1
+
+s.indexOf(
+"NO PÁTIO"
+) !== -1
 
 ){
 
@@ -1284,7 +2026,9 @@ noPatio++;
 }
 
 else if(
-s.indexOf("EM PROCESSO") !== -1
+s.indexOf(
+"EM PROCESSO"
+) !== -1
 ){
 
 emProcesso++;
@@ -1292,7 +2036,9 @@ emProcesso++;
 }
 
 else if(
-s.indexOf("AGUARDANDO") !== -1
+s.indexOf(
+"AGUARDANDO"
+) !== -1
 ){
 
 aguardando++;
@@ -1300,7 +2046,9 @@ aguardando++;
 }
 
 else if(
-s.indexOf("FINALIZADO") !== -1
+s.indexOf(
+"FINALIZADO"
+) !== -1
 ){
 
 finalizados++;
@@ -1308,6 +2056,11 @@ finalizados++;
 }
 
 }
+
+
+/* ==========================================
+   CARDS KPI
+   ========================================== */
 
 document
 .getElementById(
@@ -1342,35 +2095,71 @@ ${finalizados}
 
 `;
 
-/* CALCULO DO PROGRESSO DA OPERACAO */
 
-var totalVeiculos = dadosOperacao.length;
+/* ==========================================
+   PROGRESSO REAL
+   ========================================== */
 
-var percentual = 0;
+var totalVeiculos =
+dadosOperacao.length;
 
-if(totalVeiculos > 0){
 
-    percentual = Math.round(
-        (finalizados / totalVeiculos) * 100
-    );
+var percentual =
+0;
+
+
+if(
+totalVeiculos > 0
+){
+
+percentual =
+Math.round(
+
+(
+finalizados
+/
+totalVeiculos
+)
+
+*
+
+100
+
+);
 
 }
 
-var percentualEsperado =
-    obterPercentualEsperado();
+
+/* PERCENTUAL ESPERADO */
+
+var resultadoEsperado =
+obterPercentualEsperado();
+
+
+/* STATUS */
 
 var resultadoProgresso =
-    obterStatusProgresso(
-        percentual,
-        percentualEsperado
-    );
+obterStatusProgresso(
+
+percentual,
+
+resultadoEsperado
+
+);
+
 
 var corProgresso =
-    resultadoProgresso.cor;
+resultadoProgresso.cor;
+
 
 var statusProgresso =
-    resultadoProgresso.status;
-    
+resultadoProgresso.status;
+
+
+/* ==========================================
+   BARRA DE PROGRESSO
+   ========================================== */
+
 document
 .getElementById(
 "progressoOperacao"
@@ -1380,32 +2169,40 @@ document
 <div class="progresso-box">
 
 <div class="progresso-label ${corProgresso}">
-    ${statusProgresso}
+${statusProgresso}
 </div>
 
-    <div class="progresso-fundo">
+<div class="progresso-fundo">
 
-        <div
-        class="progresso-barra ${corProgresso}"
-        style="width:${percentual}%">
-        </div>
+<div
+class="progresso-barra ${corProgresso}"
+style="width:${percentual}%">
+</div>
 
-    </div>
+</div>
 
-    <div class="progresso-percentual ${corProgresso}">
-        ${percentual}%
-    </div>
+<div class="progresso-percentual ${corProgresso}">
+${percentual}%
+</div>
 
 </div>
 
 `;
-    
+
+
+/* ==========================================
+   TABELAS
+   ========================================== */
+
 var secoes = [
 "ENERGY",
 "AUTOMOTIVO"
 ];
 
-var html = "";
+
+var html =
+"";
+
 
 for(
 var s = 0;
@@ -1416,6 +2213,7 @@ s++
 var nomeSecao =
 secoes[s];
 
+
 var itens =
 
 dadosOperacao.filter(
@@ -1423,12 +2221,14 @@ dadosOperacao.filter(
 function(item){
 
 return (
-item.secao === nomeSecao
+item.secao ===
+nomeSecao
 );
 
 }
 
 );
+
 
 if(
 itens.length === 0
@@ -1437,6 +2237,7 @@ itens.length === 0
 continue;
 
 }
+
 
 itens.sort(
 
@@ -1447,13 +2248,16 @@ prioridadeStatus(
 a.status
 );
 
+
 var prioridadeB =
 prioridadeStatus(
 b.status
 );
 
+
 if(
-prioridadeA !== prioridadeB
+prioridadeA !==
+prioridadeB
 ){
 
 return (
@@ -1464,11 +2268,13 @@ prioridadeB
 
 }
 
+
 return 0;
 
 }
 
 );
+
 
 html += `
 
@@ -1512,6 +2318,7 @@ ${nomeSecao}
 
 `;
 
+
 for(
 var j = 0;
 j < itens.length;
@@ -1521,15 +2328,18 @@ j++
 var item =
 itens[j];
 
+
 var classe =
 classeStatus(
 item.status
 );
 
+
 var statusTexto =
 statusEmoticon(
 item.status
 );
+
 
 html += `
 
@@ -1577,6 +2387,7 @@ ${item.fim}
 
 }
 
+
 html += `
 
 </tbody>
@@ -1591,6 +2402,7 @@ html += `
 
 }
 
+
 document
 .getElementById(
 "conteudo"
@@ -1600,19 +2412,27 @@ html;
 
 }
 
+
+/* ==========================================
+   INICIALIZAÇÃO
+   ========================================== */
+
 carregarDados();
 
 carregarNFs();
+
 
 setInterval(
 carregarDados,
 30000
 );
 
+
 setInterval(
 carregarNFs,
 30000
 );
+
 </script>
 
 </body>

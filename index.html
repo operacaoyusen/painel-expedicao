@@ -1668,135 +1668,63 @@ function obterPrimeiraJanela(){
 
 function obterPercentualEsperado(){
 
-    var primeiraJanela =
-        obterPrimeiraJanela();
+    var totalVeiculos =
+        dadosOperacao.length;
 
+    if(totalVeiculos === 0){
+
+        return {
+            percentual:0,
+            iniciado:false
+        };
+
+    }
 
     var agora =
         new Date();
 
-
     var minutosAgora =
-        agora.getHours() * 60
-        +
+        (agora.getHours() * 60) +
         agora.getMinutes();
 
+    var janelasVencidas = 0;
 
-    if(
-        primeiraJanela === null
+    for(
+        var i = 0;
+        i < dadosOperacao.length;
+        i++
     ){
 
-        return {
+        var janela =
+            converterHorarioParaMinutos(
+                dadosOperacao[i].janela
+            );
 
-            percentual:0,
+        if(
+            janela !== null &&
+            minutosAgora >= janela
+        ){
 
-            iniciado:false,
+            janelasVencidas++;
 
-            primeiraJanela:null
-
-        };
-
-    }
-
-
-    if(
-        minutosAgora <
-        primeiraJanela
-    ){
-
-        return {
-
-            percentual:0,
-
-            iniciado:false,
-
-            primeiraJanela:
-                primeiraJanela
-
-        };
+        }
 
     }
-
-
-    if(
-        primeiraJanela >=
-        HORARIO_FINAL_OPERACAO
-    ){
-
-        return {
-
-            percentual:0,
-
-            iniciado:true,
-
-            primeiraJanela:
-                primeiraJanela
-
-        };
-
-    }
-
-
-    if(
-        minutosAgora >=
-        HORARIO_FINAL_OPERACAO
-    ){
-
-        return {
-
-            percentual:100,
-
-            iniciado:true,
-
-            primeiraJanela:
-                primeiraJanela
-
-        };
-
-    }
-
-
-    var tempoDecorrido =
-        minutosAgora -
-        primeiraJanela;
-
-
-    var tempoTotal =
-        HORARIO_FINAL_OPERACAO -
-        primeiraJanela;
-
-
-    var percentualEsperado =
-        (
-            tempoDecorrido /
-            tempoTotal
-        ) * 100;
-
-
-    percentualEsperado =
-        Math.max(
-            0,
-            Math.min(
-                100,
-                percentualEsperado
-            )
-        );
-
 
     return {
 
         percentual:
-            percentualEsperado,
+            (
+                janelasVencidas /
+                totalVeiculos
+            ) * 100,
 
-        iniciado:true,
-
-        primeiraJanela:
-            primeiraJanela
+        iniciado:
+            janelasVencidas > 0
 
     };
 
 }
-
 
 /* =====================================
    STATUS DO PROGRESSO

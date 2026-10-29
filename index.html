@@ -2185,22 +2185,26 @@ function renderizarPainel(){
        PROGRESSO REAL
     ================================= */
 
-    var totalVeiculos =
-        dadosOperacao.length;
+   var totalVeiculosValidos =
+    dadosOperacao.filter(function(item){
+
+        return normalizarStatus(item.status)
+            .indexOf("POSTERGOU") === -1;
+
+    }).length;
 
 
-    var percentual =
-        totalVeiculos > 0
-        ?
-        Math.round(
-            (
-                finalizados /
-                totalVeiculos
-            ) * 100
-        )
-        :
-        0;
-
+var percentual =
+    totalVeiculosValidos > 0
+    ?
+    Math.round(
+        (
+            finalizados /
+            totalVeiculosValidos
+        ) * 100
+    )
+    :
+    0;
 
     var resultadoEsperado =
         obterPercentualEsperado();

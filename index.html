@@ -1668,8 +1668,16 @@ function obterPrimeiraJanela(){
 
 function obterPercentualEsperado(){
 
+    var veiculosValidos =
+        dadosOperacao.filter(function(item){
+
+            return normalizarStatus(item.status)
+                .indexOf("POSTERGOU") === -1;
+
+        });
+
     var totalVeiculos =
-        dadosOperacao.length;
+        veiculosValidos.length;
 
     if(totalVeiculos === 0){
 
@@ -1691,13 +1699,13 @@ function obterPercentualEsperado(){
 
     for(
         var i = 0;
-        i < dadosOperacao.length;
+        i < veiculosValidos.length;
         i++
     ){
 
         var janela =
             converterHorarioParaMinutos(
-                dadosOperacao[i].janela
+                veiculosValidos[i].janela
             );
 
         if(
@@ -1725,7 +1733,7 @@ function obterPercentualEsperado(){
     };
 
 }
-
+    
 /* =====================================
    STATUS DO PROGRESSO
 ===================================== */
